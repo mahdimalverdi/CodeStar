@@ -1,0 +1,54 @@
+.description {
+  line-height: 2rem;
+  font-size: 1.5rem;
+
+  text-align: justify;
+
+  @media (max-width: 575px) {
+    padding: 75px 20px;
+  }
+
+  @media (min-width: 576px) {
+    padding: 75px 38px;
+  }
+
+  @media (min-width: 768px) {
+    padding: 75px 134px;
+  }
+
+  @media (min-width: 992px) {
+    padding: 75px 246px;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 75px 350px;
+  }
+
+  &__text {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+  }
+
+
+  &__list {
+    &-item {
+      min-height: 2.5rem;
+      line-height: 2rem;
+      align-items: flex-end;
+
+      &-circle {
+        list-style-type: circle;
+      }
+
+      &-number {
+        list-style-type: persian;
+      }
+    }
+  }
+}

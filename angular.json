@@ -25,12 +25,13 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/icons"
             ],
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": ["node_modules/particles.js/particles.js"]
           },
           "configurations": {
             "production": {
@@ -123,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "CodeStar"
+    }
+  },
+  "defaultProject": "CodeStar",
+  "cli": {
+    "analytics": "c4d092c0-845a-45b3-9ffe-89d75ed3b5af"
+  }
 }

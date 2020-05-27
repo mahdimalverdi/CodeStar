@@ -1,0 +1,97 @@
+.time-line {
+
+  line-height: 2rem;
+  font-size: 1.5rem;
+
+  text-align: justify;
+
+  @media (max-width: 575px) {
+    padding: 75px 20px;
+  }
+
+  @media (min-width: 576px) {
+    padding: 75px 38px;
+  }
+
+  @media (min-width: 768px) {
+    padding: 75px 134px;
+  }
+
+  @media (min-width: 992px) {
+    padding: 75px 246px;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 75px 350px;
+  }
+
+
+  &__title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+  }
+
+  &__event {
+    display: flex;
+
+    &-bar {
+      width: 100px;
+      display: flex;
+      flex-direction: column;
+      min-height: 150px;
+
+      &_circle {
+        font-size: 1rem;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        border-radius: 100%;
+        background: #222;
+        color: #eee;
+      }
+
+      &_line {
+        width: 100%;
+        min-height: 50px;
+        height: 100%;
+        flex: 1;
+        padding-top: 5px;
+        padding-bottom: 5px;
+
+        span {
+          border-left: #222 dashed 6px;
+          width: 47px;
+          display: block;
+          height: 100%;
+
+        }
+      }
+    }
+
+    &-content {
+      flex: 1;
+      padding: 20px;
+
+      &_title {
+        font-weight: 600;
+      }
+
+      &_description {
+        font-size: 1rem;
+      }
+
+      &_action-bar {
+        text-align: center;
+        padding: 20px;
+      }
+    }
+  }
+}
+
+.mat-stroked-button {
+  font-size: 1rem;
+  padding: 1rem;
+}

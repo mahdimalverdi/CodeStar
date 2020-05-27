@@ -1,0 +1,59 @@
+.header {
+
+  transition: 1s margin;
+
+  @media (max-width: 575px) {
+    margin: 0 20px;
+  }
+
+  @media (min-width: 576px) {
+    margin: 0 38px;
+  }
+
+  @media (min-width: 768px) {
+    margin: 0 134px;
+  }
+
+  @media (min-width: 992px) {
+    margin: 0 246px;
+  }
+
+  @media (min-width: 1200px) {
+    margin: 0 350px;
+  }
+
+  &__container {
+    padding-top: 30vh;
+    padding-bottom: 20vh;
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 200;
+    line-height: 5rem;
+    border-bottom: 1px solid #222;
+  }
+
+  &__list {
+    font-size: 2rem;
+    line-height: 3rem;
+    font-weight: 200;
+  }
+
+  &__offer {
+    font-size: 2rem;
+    line-height: 3rem;
+    font-weight: 200;
+
+    &-action-bar {
+
+      padding-top: 2rem;
+      text-align: center;
+
+      .mat-stroked-button {
+        font-size: 1.5rem;
+        padding: 1.5rem;
+      }
+    }
+  }
+}

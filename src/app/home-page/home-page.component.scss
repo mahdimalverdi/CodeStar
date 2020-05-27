@@ -1,0 +1,74 @@
+.home-page {
+  min-height: 100vh;
+  position: relative;
+
+  &__header {
+    min-height: 100vh;
+    z-index: 10;
+  }
+
+  &__detail {
+    min-height: 100vh;
+    background: #ffffff88;
+    z-index: 10;
+
+    &-owner{
+      text-align: center;
+      padding: 10px;
+      margin: 0;
+    }
+  }
+
+  &__toolbar {
+    position: fixed;
+    top: 0;
+
+
+    @media (max-width: 575px) {
+      padding: 0 20px;
+    }
+
+    @media (min-width: 576px) {
+      padding: 0 38px;
+    }
+
+    @media (min-width: 768px) {
+      padding: 0 134px;
+    }
+
+    @media (min-width: 992px) {
+      padding: 0 246px;
+
+    }
+
+    @media (max-width: 1200px) {
+      .mat-button.not-important {
+        display: none;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      padding: 0 350px;
+    }
+
+    &-logo {
+      margin-left: 20px;
+    }
+
+    &-spacer {
+      flex: 1 1 auto;
+    }
+  }
+}
+
+.particles {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+
+  * {
+    width: 100vw;
+    height: 100vh;
+  }
+}

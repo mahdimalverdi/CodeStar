@@ -1,0 +1,37 @@
+.what-is-code-star {
+
+  @media (max-width: 575px) {
+    padding: 100px 20px;
+  }
+
+  @media (min-width: 576px) {
+    padding: 100px 38px;
+  }
+
+  @media (min-width: 768px) {
+    padding: 100px 134px;
+  }
+
+  @media (min-width: 992px) {
+    padding: 100px 246px;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 100px 350px;
+  }
+
+  &__text{
+    line-height: 2rem;
+    font-size: 1.5rem;
+
+    text-align: justify;
+    text-align-last: center;
+  }
+
+  &__image{
+    margin: 100px auto 0 auto;
+    width: 300px;
+    max-width: 40%;
+    display: block;
+  }
+}
