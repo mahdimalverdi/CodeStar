@@ -1,6 +1,13 @@
 .technologies {
   line-height: 2rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 992px) {
+    flex-direction: row;
+  }
 
   text-align: justify;
 
@@ -24,6 +31,24 @@
     padding: 75px 350px;
   }
 
+  &__col {
+    &:nth-child(1) {
+      flex: 1;
+    }
+
+    &:nth-child(2) {
+      align-items: center;
+      justify-content: center;
+
+      @media (min-width: 992px) {
+        align-items: flex-end;
+      }
+
+      display: flex;
+    }
+
+    justify-content: end;
+  }
 
   &__list {
     &-item {
@@ -34,12 +59,12 @@
 
       text-align: right;
 
-      &-flex{
+      &-flex {
         display: flex;
       }
     }
 
-    &-icon{
+    &-icon {
       height: 2rem;
       margin-left: 10px;
     }

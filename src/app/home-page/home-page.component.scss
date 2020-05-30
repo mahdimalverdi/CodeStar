@@ -9,7 +9,7 @@
 
   &__detail {
     min-height: 100vh;
-    background: #ffffff88;
+    background: #ffffffaa;
     z-index: 10;
 
     &-owner{
@@ -22,22 +22,12 @@
   &__toolbar {
     position: fixed;
     top: 0;
+    z-index: 1;
 
-
-    @media (max-width: 575px) {
-      padding: 0 20px;
-    }
-
-    @media (min-width: 576px) {
-      padding: 0 38px;
-    }
-
-    @media (min-width: 768px) {
-      padding: 0 134px;
-    }
+    padding: 0 20px;
 
     @media (min-width: 992px) {
-      padding: 0 246px;
+      padding: 0 150px;
 
     }
 
@@ -48,7 +38,7 @@
     }
 
     @media (min-width: 1200px) {
-      padding: 0 350px;
+      padding: 0 150px;
     }
 
     &-logo {

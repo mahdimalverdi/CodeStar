@@ -31,6 +31,8 @@ $CodeStar-theme: mat-light-theme($CodeStar-primary, $CodeStar-accent, $CodeStar-
 
 html,
 body {
+
+  scroll-behavior: smooth;
   height: 100%;
   background: #ccc;
   color: #222;

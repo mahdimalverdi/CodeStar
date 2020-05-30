@@ -1,6 +1,6 @@
 .requirements {
   line-height: 2rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 
   text-align: justify;
 
@@ -33,6 +33,7 @@
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 60px;
+    color: #7b66b5;
   }
 
   &__list {
@@ -46,8 +47,20 @@
       }
 
       &-number {
-        list-style-type: persian;
+        list-style-type: none;
+        font-size: 1rem;
       }
+    }
+  }
+
+
+  &__image {
+    padding: 50px 0;
+    text-align: center;
+
+    img {
+      max-width: 100%;
+      object-fit: cover;
     }
   }
 }
