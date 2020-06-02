@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/CodeStar",
+            "outputPath": "dist/CodeStar/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -31,7 +31,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": ["node_modules/particles.js/particles.js"]
+            "scripts": [
+              "node_modules/particles.js/particles.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -121,6 +123,53 @@
             "production": {
               "devServerTarget": "CodeStar:serve:production"
             }
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/CodeStar/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": true
+            }
+          }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "CodeStar:build",
+            "serverTarget": "CodeStar:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "CodeStar:build:production",
+              "serverTarget": "CodeStar:server:production"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "CodeStar:build:production",
+            "serverTarget": "CodeStar:server:production",
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {}
           }
         }
       }

@@ -7,7 +7,11 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "dev:ssr": "ng run CodeStar:serve-ssr",
+    "serve:ssr": "node dist/CodeStar/server/main.js",
+    "build:ssr": "ng build --prod && ng run CodeStar:server:production",
+    "prerender": "ng run CodeStar:prerender"
   },
   "private": true,
   "dependencies": {
@@ -20,11 +24,16 @@
     "@angular/material": "^9.2.4",
     "@angular/platform-browser": "~9.1.9",
     "@angular/platform-browser-dynamic": "~9.1.9",
+    "@angular/platform-server": "~9.1.9",
     "@angular/router": "~9.1.9",
+    "@nguniversal/express-engine": "^9.1.1",
     "@scullyio/init": "0.0.28",
     "@scullyio/ng-lib": "latest",
     "@scullyio/scully": "latest",
+    "express": "^4.15.2",
+    "npm": "^6.14.5",
     "particles.js": "^2.0.0",
+    "puppeteer-core": "^1.9.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
@@ -33,6 +42,8 @@
     "@angular-devkit/build-angular": "~0.901.7",
     "@angular/cli": "~9.1.7",
     "@angular/compiler-cli": "~9.1.9",
+    "@nguniversal/builders": "^9.1.1",
+    "@types/express": "^4.17.0",
     "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",

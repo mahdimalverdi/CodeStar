@@ -9,7 +9,7 @@
 
   &__detail {
     min-height: 100vh;
-    background: #ffffffaa;
+    background: #ffffffdd;
     z-index: 10;
 
     &-owner{
@@ -43,6 +43,8 @@
 
     &-logo {
       margin-left: 20px;
+      max-height: 20px;
+      object-fit: contain;
     }
 
     &-spacer {

@@ -31,12 +31,11 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
     ContactUsComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatButtonModule,
-    ScullyLibModule
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

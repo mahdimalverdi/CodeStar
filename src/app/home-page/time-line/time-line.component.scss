@@ -1,3 +1,5 @@
+@import '../../../colors.scss';
+
 .time-line {
 
   line-height: 2rem;
@@ -30,7 +32,7 @@
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 60px;
-    color:#7b66b5;
+    color:$base-color;
   }
 
   &__event {
@@ -50,7 +52,7 @@
         justify-content: center;
         height: 100px;
         border-radius: 100%;
-        background: #7b66b5;
+        background: $base-color;
         color: #eee;
         padding-left: 10px;
         padding-right: 10px;
@@ -65,7 +67,7 @@
         padding-bottom: 5px;
 
         span {
-          border-left: #7b66b5 dashed 6px;
+          border-left: $base-color dashed 6px;
           width: 47px;
           display: block;
           height: 100%;
@@ -97,4 +99,5 @@
 .mat-stroked-button {
   font-size: 1rem;
   padding: 1rem;
+  white-space: unset;
 }
