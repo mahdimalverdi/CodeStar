@@ -21,7 +21,7 @@ export class AppComponent {
       { name: 'og:title', content: 'کارآموزی کداستار' },
       { name: 'og:site_name', content: 'کداستار' },
       { name: 'og:description', content: description },
-      { name: 'og:image', content: 'http://code-star.ir/assets/logo-square.png' }
+      { name: 'og:image', content: 'http://code-star.ir/assets/logo-light-orginal.png' }
     ], true);
   }
 }
