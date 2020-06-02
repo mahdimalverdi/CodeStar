@@ -15,7 +15,7 @@ import { DescriptionComponent } from './home-page/description/description.compon
 import { RequirementsComponent } from './home-page/requirements/requirements.component';
 import { TimeLineComponent } from './home-page/time-line/time-line.component';
 import { ContactUsComponent } from './home-page/contact-us/contact-us.component';
-import { ScullyLibModule } from '@scullyio/ng-lib';
+
 
 @NgModule({
   declarations: [
