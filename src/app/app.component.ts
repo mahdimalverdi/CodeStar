@@ -10,12 +10,7 @@ export class AppComponent {
   title = 'کداستار';
 
   constructor(private meta: Meta) {
-    const description = ` برنامه‌ی دوره‌ی کارآموزی امسال به خاطر شرایط خاصی که ویروس کرونا ایجاد کرده
-      جوری طراحی شده تا بدون نگرانی، بتونین از خونه و به صورت دورکاری شرکت کنین
-      بنابراین در این دوره کارگاه‌های آموزشی، صحبت و مشورت با مربی و کار با هم
-      تیمی‌ها از طریق ویدیو کنفرانس انجام میشه. همچنین pair programming یکی از
-      بخش‌های مهم کارآموزی هست که تاثیر قابل توجهی در یادگیری مهارت‌های
-      برنامه‌نویسی داره و از طریق screen share انجام میشه.`;
+    const description = `کُداِستار، دوره‌ی کارآموزیِ تابستانه‌ی آکادمی ستاره هست، این دوره جوری طراحی شده که مهارت های فنی و همچنین مهارت‌های نرم دانشجو‌های رشته مهندسی و علوم کامپیوتر رو رشد بده و یک تجربه‌ی منحصر به فرد از یادگیری تکنولوژی‌های متنوع و کار تیمی رو برای شما فراهم کنه. توی این دوره علاوه بر کارگاه‌ها و آموزش‌های فشرده‌ی مربی‌های آکادمی، با مسائل واقعی صنعت دست و پنجه نرم می‌کنین.`;
     this.meta.addTags([
       {
         name: 'description', content: description
@@ -23,10 +18,10 @@ export class AppComponent {
       { name: 'robots', content: 'index, follow' },
       { name: 'keywords', content: 'کداستار, CodeStar, Code-Star, Programming, intership, کارآموزی, مهیمن, مجازی' },
       { name: 'og:url', content: 'http://code-star.ir/' },
-      { name: 'og:title', content: 'صفحه اصلی' },
+      { name: 'og:title', content: 'کارآموزی کداستار' },
       { name: 'og:site_name', content: 'کداستار' },
       { name: 'og:description', content: description },
-      { name: 'og:image', content: 'http://code-star.ir/assets/logo-light.png' }
+      { name: 'og:image', content: 'http://code-star.ir/assets/logo-square.png' }
     ], true);
   }
 }
