@@ -16,7 +16,7 @@ export class AppComponent {
         name: 'description', content: description
       },
       { name: 'robots', content: 'index, follow' },
-      { name: 'keywords', content: 'کداستار, CodeStar, Code-Star, Programming, intership, کارآموزی, مهیمن, مجازی' },
+      { name: 'keywords', content: 'کداستار, CodeStar, Code-Star, Programming, intership, کارآموزی, مهیمن, مجازی, کد استار' },
       { name: 'og:url', content: 'http://code-star.ir/' },
       { name: 'og:title', content: 'کارآموزی کداستار' },
       { name: 'og:site_name', content: 'کداستار' },
