@@ -20,14 +20,12 @@ steps:
 - task: Npm@1
   inputs:
     command: 'install'
-    workingDir: 'front'
     
     
 - task: Npm@1
   inputs:
     command: 'custom'
-    workingDir: 'front'
-    customCommand: 'run build'
+    customCommand: 'ng build --prod --aot --output-path=$(Build.ArtifactStagingDirectory)'
 
 - task: PublishPipelineArtifact@1
   inputs:
