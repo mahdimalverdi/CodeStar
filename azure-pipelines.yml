@@ -20,3 +20,8 @@ steps:
     npm install
     ng build --prod --aot
   displayName: 'npm install and build'
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Build.ArtifactStagingDirectory)'
+    publishLocation: 'pipeline'
