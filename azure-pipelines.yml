@@ -25,7 +25,13 @@ steps:
 - task: Npm@1
   inputs:
     command: 'custom'
-    customCommand: 'build --output-path=$(Build.ArtifactStagingDirectory)'
+    customCommand: 'run build'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: 'dist/CodeStar'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
 - task: PublishPipelineArtifact@1
   inputs:
