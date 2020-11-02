@@ -4,13 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --aot",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "dev:ssr": "ng run CodeStar:serve-ssr",
-    "serve:ssr": "node dist/CodeStar/server/main.js",
-    "build:ssr": "ng build --prod && ng run CodeStar:server:production",
     "prerender": "ng run CodeStar:prerender"
   },
   "private": true,

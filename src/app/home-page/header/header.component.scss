@@ -1,5 +1,6 @@
-.header {
+@import '../../../colors.scss';
 
+.header {
   transition: 1s margin;
 
   @media (max-width: 575px) {
@@ -24,24 +25,27 @@
 
   &__container {
 
-    padding-top: 25vh;
-    padding-bottom: 20vh;
+    background-color: $background-dark ;
+    margin-top: 25vh;
+    margin-bottom: 20vh;
+    padding: 10px;
+    border-radius: 10px;
   }
 
   &__title {
     font-size: 2rem;
-    font-weight: 300;
+    font-weight: 800;
     line-height: 5rem;
-    color: #fff;
-    text-shadow: 1px 1px #333;
+    color: $color5;
+    text-shadow: 1px 1px $color2;
   }
 
   &__list {
     font-size: 1.5rem;
     line-height: 3rem;
-    font-weight: 300;
-    color: #fff;
-    text-shadow: 1px 1px #333;
+    font-weight: 600;
+    color: $color5;
+    text-shadow: 1px 1px $color2;
 
     li:nth-child(1) {
       animation: showText1 .4s;
@@ -57,11 +61,11 @@
   }
 
   &__offer {
-    color: #fff;
+    color: $color5;
     font-size: 1.5rem;
     line-height: 3rem;
     font-weight: 300;
-    text-shadow: 1px 1px #333;
+    text-shadow: 1px 1px $color2;
 
     animation: showText4 1.6s;
 
@@ -70,19 +74,20 @@
       padding-top: 2rem;
       text-align: center;
 
-      .mat-stroked-button {
+      .mat-raised-button {
         font-size: 1.25rem;
         padding: 1rem;
         border-width: 2px;
-        border-color: #fff;
+        background-color: $color5;
+        color: $color2;
       }
     }
   }
 
   hr{
-    border-top: solid 1px #fff;
+    border-top: solid 1px $color5;
     border-bottom: 0;
-    box-shadow: 1px 1px #333;
+    box-shadow: 1px 1px $color1;
   }
 }
 

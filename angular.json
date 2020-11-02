@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/CodeStar/browser",
+            "outputPath": "dist/CodeStar",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -143,19 +143,6 @@
               ],
               "sourceMap": false,
               "optimization": true
-            }
-          }
-        },
-        "serve-ssr": {
-          "builder": "@nguniversal/builders:ssr-dev-server",
-          "options": {
-            "browserTarget": "CodeStar:build",
-            "serverTarget": "CodeStar:server"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "CodeStar:build:production",
-              "serverTarget": "CodeStar:server:production"
             }
           }
         },
