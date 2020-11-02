@@ -10,16 +10,24 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
 
-- script: |
-    npm install -g @angular/cli
-    npm install
-    ng build --prod --aot
-  displayName: 'npm install and build'
+- task: RestoreAndSaveCache@1
+  inputs:
+    keyfile: '**/package-lock.json, !**/node_modules/**/package-lock.json'
+    targetfolder: '**/node_modules, !**/node_modules/**/node_modules'
+    vstsFeed: 'e8e4ec96-6001-41da-86cb-0ab6d463d3f4'
+
+- task: Npm@1
+  inputs:
+    command: 'install'
+    workingDir: 'front'
+    
+    
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    workingDir: 'front'
+    customCommand: 'run build'
 
 - task: PublishPipelineArtifact@1
   inputs:
