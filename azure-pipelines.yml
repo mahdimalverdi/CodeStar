@@ -25,7 +25,13 @@ steps:
 - task: Npm@1
   inputs:
     command: 'custom'
-    customCommand: 'run build --output=$(Build.ArtifactStagingDirectory)'
+    customCommand: 'run build'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: 'dist'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
 - task: PublishPipelineArtifact@1
   inputs:
