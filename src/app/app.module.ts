@@ -18,8 +18,7 @@ import { HomeModule } from './pages/home/home.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatButtonModule,
-    HomeModule
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

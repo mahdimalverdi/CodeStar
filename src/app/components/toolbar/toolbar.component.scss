@@ -1,0 +1,100 @@
+@import "../../../colors.scss";
+
+.toolbar {
+  z-index: 1000;
+  width: 100%;
+  position: absolute;
+
+  &-container {
+    height: 70px;
+    padding: 0 10px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+
+    @media (min-width: 576px) {
+      max-width: 540px;
+      height: 85px;
+    }
+    @media (min-width: 768px) {
+      max-width: 720px;
+      height: 100px;
+    }
+    @media (min-width: 992px) {
+      max-width: 960px;
+      height: 120px;
+    }
+    @media (min-width: 1200px) {
+      max-width: 1140px;
+      height: 150px;
+    }
+    @media (min-width: 1400px) {
+      max-width: 1320px;
+    }
+  }
+
+  &-button {
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  &-spacer {
+    flex: 1;
+  }
+
+  &-logo {
+    height: 50px;
+    align-items: center;
+    display: flex;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+
+    &__text {
+      display: inline-block;
+    }
+
+    &__text + &__image {
+      margin-inline-start: 20px;
+    }
+
+    &__image {
+      height: 100%;
+    }
+  }
+}
+
+.light .toolbar {
+  &-logo {
+    &__text {
+      color: $light;
+    }
+  }
+
+  &-button {
+    color: $light;
+
+    &:hover {
+      background: $dark-transparent;
+    }
+  }
+}
+
+.dark .toolbar {
+  &-logo {
+    &__text {
+      color: $dark;
+    }
+  }
+
+  &-button {
+    color: $dark;
+
+    &:hover {
+      background: $light-transparent;
+    }
+  }
+}
