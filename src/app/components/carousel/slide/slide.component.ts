@@ -7,7 +7,8 @@ import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 })
 export class SlideComponent implements OnInit {
 
-  @ViewChild(TemplateRef) template: TemplateRef<any>;
+  @ViewChild(TemplateRef)
+  public template: TemplateRef<any>;
 
   constructor() { }
 

@@ -1,5 +1,5 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { AfterViewChecked, AfterViewInit, Component, ContentChildren, Input, OnInit, QueryList } from '@angular/core';
+import { AfterContentInit, AfterViewChecked, AfterViewInit, Component, ContentChildren, Input, OnInit, QueryList } from '@angular/core';
 import { SlideComponent } from './slide/slide.component';
 
 @Component({
@@ -32,7 +32,6 @@ export class CarouselComponent implements AfterViewInit {
   private timeoutTime = 500000;
 
   constructor() { }
-
   ngAfterViewInit(): void {
     this.setTimeout();
   }
@@ -60,8 +59,4 @@ export class CarouselComponent implements AfterViewInit {
     clearTimeout(this.timeout);
     this.setTimeout();
   }
-
-
-
-
 }

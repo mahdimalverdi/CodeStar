@@ -1,21 +1,14 @@
-@import '../../../colors.scss';
+@import "../../../colors.scss";
 
 .slide {
   height: 100%;
   color: $light;
-   padding: 0 70px 0 70px;
+  padding: 0 70px 0 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  @media (min-width: 768px) {
-    padding-left: calc(calc(100% - 720px) / 2);
-    padding-right: calc(calc(100% - 720px) / 2);
-  }
-  @media (min-width: 992px) {
-    padding-left: calc(calc(100% - 960px) / 2);
-    padding-right: calc(calc(100% - 960px) / 2);
-  }
+
   @media (min-width: 1200px) {
     padding-left: calc(calc(100% - 1140px) / 2);
     padding-right: calc(calc(100% - 1140px) / 2);
@@ -25,14 +18,27 @@
     padding-right: calc(calc(100% - 1320px) / 2);
   }
 
-  &-title{
+  &-title {
     font-size: 4em;
     line-height: 1.5em;
+    font-weight: 900;
+
+    @media (max-width: 500px) {
+      font-size: 2em;
+      line-height: 1.5em;
+    }
   }
 
-  &-subtitle{
+  &-subtitle {
     font-size: 2em;
     line-height: 1.5em;
+    text-align: justify;
+    font-weight: 300;
+
+    @media (max-width: 500px) {
+      font-size: 1.5em;
+      line-height: 1.5em;
+    }
   }
 }
 

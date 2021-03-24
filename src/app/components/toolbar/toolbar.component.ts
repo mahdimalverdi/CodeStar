@@ -8,7 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ToolbarComponent implements OnInit {
 
   @Input()
-  public theme: 'dark'|'light' = 'dark';
+  public theme: 'dark' | 'light' = 'dark';
+
+  public showSidebar = false;
 
   constructor() { }
 

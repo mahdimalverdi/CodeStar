@@ -13,9 +13,7 @@ import { SlideComponent } from './slide/slide.component';
     SlideComponent
   ],
   imports: [
-    CommonModule,
-    // BrowserModule,
-    // BrowserAnimationsModule
+    CommonModule
   ],
   exports:[
     CarouselComponent,
