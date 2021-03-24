@@ -1,0 +1,71 @@
+@import '../../../colors.scss';
+
+.requirements {
+
+  padding: 90px 20px;
+  margin: 0 auto;
+  font-size: 1.5em;
+  line-height: 2em;
+  text-align: justify;
+
+
+  @media (min-width: 576px) {
+    max-width: 540px;
+    padding-top: 95px;
+  }
+  @media (min-width: 768px) {
+    max-width: 720px;
+    padding-top: 120px;
+  }
+  @media (min-width: 992px) {
+    max-width: 960px;
+    padding-top: 140px;
+    font-size: 2em;
+    line-height: 2em;
+  }
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+    padding-top: 170px;
+  }
+  @media (min-width: 1400px) {
+    max-width: 1320px;
+  }
+
+  &__text {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: $base-color;
+  }
+
+  &__list {
+    &-item {
+      align-items: flex-end;
+
+      &-circle {
+        list-style-type: circle;
+      }
+
+      &-number {
+        list-style-type: none;
+        font-size: 1rem;
+      }
+    }
+  }
+
+
+  &__image {
+    padding: 50px 0;
+    text-align: center;
+
+    img {
+      max-width: 100%;
+      object-fit: cover;
+    }
+  }
+}
