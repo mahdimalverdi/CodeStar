@@ -14,7 +14,7 @@ export class CarouselComponent implements AfterViewInit {
 
   public templates: any[] = [];
   public currentSlide = 0;
-  private timeoutTime = 500000;
+  private timeoutTime = 3000;
 
   constructor() { }
 
