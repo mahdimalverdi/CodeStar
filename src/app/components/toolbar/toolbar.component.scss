@@ -1,0 +1,150 @@
+@import "../../../colors.scss";
+
+.toolbar {
+  z-index: 1000;
+  width: 100%;
+  position: absolute;
+  font-size: 1.5em;
+
+  &-container {
+    height: 70px;
+    padding: 0 10px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+
+    @media (min-width: 576px) {
+      max-width: 540px;
+      height: 85px;
+    }
+    @media (min-width: 768px) {
+      max-width: 720px;
+      height: 100px;
+    }
+    @media (min-width: 992px) {
+      max-width: 960px;
+      height: 120px;
+    }
+    @media (min-width: 1200px) {
+      max-width: 1140px;
+      height: 150px;
+    }
+    @media (min-width: 1400px) {
+      max-width: 1320px;
+    }
+  }
+
+  &-sidebar {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    transition: width 1s;
+
+    &__container {
+      padding-top: 50px;
+      width: 200px;
+      height: calc(100% - 50px);
+      transition: width 1s;
+      overflow: hidden;
+    }
+
+    &__spacer {
+      height: 100%;
+      flex: 1;
+    }
+  }
+
+  &-button {
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 5px;
+    background: transparent;
+    border: none;
+  }
+
+  &-spacer {
+    flex: 1;
+  }
+
+  &-logo {
+    height: 50px;
+    align-items: center;
+    display: flex;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+
+    &__text {
+      display: inline-block;
+    }
+
+    &__text + &__image {
+      margin-inline-start: 20px;
+    }
+
+    &__image {
+      height: 100%;
+    }
+  }
+}
+
+.light .toolbar {
+  &-logo {
+    &__text {
+      color: $light;
+    }
+  }
+
+  &-button {
+    color: $light;
+
+    &:hover {
+      background: $dark-transparent;
+    }
+  }
+
+  &-sidebar {
+    &__container {
+      background: $dark;
+    }
+  }
+}
+
+.dark .toolbar {
+  &-logo {
+    &__text {
+      color: $dark;
+    }
+  }
+
+  &-button {
+    color: $dark;
+
+    &:hover {
+      background: $light-transparent;
+    }
+  }
+
+  &-sidebar {
+    &__container {
+      background: $light;
+    }
+  }
+}
+
+.hide.toolbar-sidebar {
+  width: 0;
+}
+
+.hide .toolbar-sidebar {
+  &__container {
+    width: 0;
+  }
+  &__spacer {
+    width: 0;
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+}

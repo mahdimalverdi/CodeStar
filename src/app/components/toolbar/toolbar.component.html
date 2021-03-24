@@ -1,0 +1,28 @@
+<div class="toolbar light" [ngClass]="[theme]">
+  <div class="toolbar-sidebar" [ngClass]="{ hide: !showSidebar }">
+    <div class="toolbar-sidebar__container">
+      <a [routerLink]="" class="toolbar-button">خانه</a>
+    </div>
+    <div class="toolbar-sidebar__spacer" (click)="showSidebar = false"></div>
+  </div>
+  <div class="toolbar-container">
+    <button (click)="showSidebar = true" class="toolbar-button">
+      <mat-icon aria-hidden="false" aria-label="منو">menu</mat-icon>
+    </button>
+    <a [routerLink]="" class="toolbar-button">خانه</a>
+    <span class="toolbar-spacer"></span>
+    <div class="toolbar-logo">
+      <div class="toolbar-logo__text">کداستار</div>
+      <img
+        *ngIf="theme === 'dark'"
+        class="toolbar-logo__image"
+        src="../../../assets/logo-light.png"
+      />
+      <img
+        *ngIf="theme === 'light'"
+        class="toolbar-logo__image"
+        src="../../../assets/logo-dark.png"
+      />
+    </div>
+  </div>
+</div>
