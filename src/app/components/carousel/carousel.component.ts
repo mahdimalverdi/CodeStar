@@ -14,12 +14,13 @@ export class CarouselComponent implements AfterViewInit {
 
   public templates: any[] = [];
   public currentSlide = 0;
-  private timeoutTime = 3000;
+  private timeoutTime = 7000;
 
   constructor() { }
 
   ngAfterViewInit(): void {
-    setTimeout(() => this.templates = this.inputTabs.map(i => i.template), 100)
+    setTimeout(() => this.templates = this.inputTabs.map(i => i.template), 100);
+    this.setTimeout();
   }
 
   public onPreviousClick() {
