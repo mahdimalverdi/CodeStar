@@ -1,10 +1,14 @@
+import { animate, animateChild, group, query, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
+import { RouterOutlet } from '@angular/router';
+import { carouselAnimation, slideInAnimation } from './route-animation';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [slideInAnimation, carouselAnimation]
 })
 export class AppComponent {
   title = 'کداستار';

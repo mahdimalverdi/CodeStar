@@ -1,15 +1,25 @@
 <div class="toolbar light" [ngClass]="[theme]">
   <div class="toolbar-sidebar" [ngClass]="{ hide: !showSidebar }">
     <div class="toolbar-sidebar__container">
-      <a [routerLink]="" class="toolbar-button">خانه</a>
+      <a [routerLink]="['/','Home']" routerLinkActive="current" class="toolbar-button">خانه</a>
+      <a [routerLink]="['/','Benefits']" routerLinkActive="current" class="toolbar-button">مزایا</a>
+      <a [routerLink]="['/','Technologies']" routerLinkActive="current" class="toolbar-button">فناوری‌ها</a>
+      <a [routerLink]="['/','Requirements']" routerLinkActive="current" class="toolbar-button">پیشنیازها</a>
+      <a [routerLink]="['/','Timeline']" routerLinkActive="current" class="toolbar-button">زمان‌بندی</a>
+      <a  routerLinkActive="current" class="toolbar-button strocked">ثبت نام</a>
     </div>
     <div class="toolbar-sidebar__spacer" (click)="showSidebar = false"></div>
   </div>
   <div class="toolbar-container">
-    <button (click)="showSidebar = true" class="toolbar-button">
+    <button (click)="showSidebar = true" class="toolbar-button mobile-view">
       <mat-icon aria-hidden="false" aria-label="منو">menu</mat-icon>
     </button>
-    <a [routerLink]="" class="toolbar-button">خانه</a>
+    <a [routerLink]="['/','Home']" routerLinkActive="current" class="toolbar-button desktop-view">خانه</a>
+    <a [routerLink]="['/','Benefits']" routerLinkActive="current" class="toolbar-button desktop-view">مزایا</a>
+    <a [routerLink]="['/','Technologies']" routerLinkActive="current" class="toolbar-button desktop-view">فناوری‌ها</a>
+    <a [routerLink]="['/','Requirements']" routerLinkActive="current" class="toolbar-button desktop-view">پیشنیازها</a>
+    <a [routerLink]="['/','Timeline']" routerLinkActive="current" class="toolbar-button desktop-view ">زمان‌بندی</a>
+    <a  routerLinkActive="current" class="toolbar-button desktop-view strocked">ثبت نام</a>
     <span class="toolbar-spacer"></span>
     <div class="toolbar-logo">
       <div class="toolbar-logo__text">کداستار</div>
