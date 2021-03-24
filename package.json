@@ -24,7 +24,6 @@
     "@angular/platform-server": "~11.2.6",
     "@angular/router": "~11.2.6",
     "express": "^4.15.2",
-    "material-design-icons": "^3.0.1",
     "npm": "^6.14.5",
     "particles.js": "^2.0.0",
     "rxjs": "~6.6.6",
