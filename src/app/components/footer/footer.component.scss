@@ -1,4 +1,4 @@
-@import "../../../colors.scss";
+@use "/src/app/styles" as *;
 
 .footer {
   border-top: solid $light 1px;

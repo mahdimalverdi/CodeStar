@@ -1,0 +1,3 @@
+@mixin transform-transition($duration: 0.1s) {
+  transition: transform #{$duration} ease-in-out;
+}

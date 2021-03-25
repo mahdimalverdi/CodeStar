@@ -1,4 +1,4 @@
-@import "../../../colors.scss";
+@use "/src/app/styles" as *;
 
 .toolbar {
   z-index: 1000;
@@ -34,6 +34,55 @@
     }
   }
 
+  &-button {
+    background: transparent;
+
+    position: relative;
+
+    padding: 10px;
+
+    border: none;
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    transform: scale(1);
+
+    @include transform-transition;
+
+    &:not(:first-of-type) {
+      margin-inline-start: 15px;
+    }
+
+    &:not(:last-of-type) {
+      margin-inline-end: 15px;
+    }
+
+    &:hover,
+    &:focus {
+      transform: scale(1.05);
+    }
+
+    &.active {
+      font-weight: bold;
+
+      &::after {
+        content: '';
+
+        background: currentColor;
+
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        display: block;
+
+        height: 2px;
+      }
+    }
+  }
+
   &-sidebar {
     width: 100vw;
     height: 100vh;
@@ -57,22 +106,6 @@
     }
   }
 
-  &-button {
-    text-decoration: none;
-    padding: 20px;
-    border-radius: 5px;
-    background: transparent;
-    border: none;
-
-    &:not(:first-of-type) {
-      margin-inline-start: 5px;
-    }
-
-    &:not(:last-of-type) {
-      margin-inline-end: 5px;
-    }
-  }
-
   &-spacer {
     flex: 1;
   }
@@ -86,6 +119,8 @@
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
 
+    @include transform-transition;
+
     &__text {
       display: inline-block;
     }
@@ -98,7 +133,7 @@
       height: 100%;
     }
 
-    &:hover{
+    &:hover {
       transform: scale(1.05);
     }
   }
@@ -114,16 +149,8 @@
   &-button {
     color: $light;
 
-    &:hover {
-      background: $dark-transparent;
-    }
-
-    &.current{
-      background: $dark-transparent;
-    }
-
-    &.strocked{
-      border: solid $dark;
+    &.stroked {
+      border: solid $light;
     }
   }
 
@@ -144,16 +171,8 @@
   &-button {
     color: $dark;
 
-    &:hover {
-      background: $light-transparent;
-    }
-
-    &.current{
-      background: $light-transparent;
-    }
-
-    &.strocked{
-      border: solid $light;
+    &.stroked {
+      border: solid $dark;
     }
   }
 
@@ -172,6 +191,7 @@
   &__container {
     width: 0;
   }
+
   &__spacer {
     width: 0;
     flex-shrink: 0;
@@ -179,13 +199,13 @@
   }
 }
 
-.mobile-view{
+.mobile-view {
   @media (min-width: 768px) {
     display: none;
   }
 }
 
-.desktop-view{
+.desktop-view {
   @media (max-width: 769px) {
     display: none;
   }

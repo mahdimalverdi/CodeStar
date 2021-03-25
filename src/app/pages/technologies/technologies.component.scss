@@ -1,4 +1,4 @@
-@import "../../../colors.scss";
+@use "/src/app/styles" as *;
 
 .technologies {
   padding: 90px 10px;
@@ -43,6 +43,8 @@
     user-select: none; /* Standard */
     text-decoration: none;
     color: $dark;
+
+    @include transform-transition;
 
     &-image {
       width: 200px;

@@ -10,7 +10,7 @@
 // Be sure that you only ever include this mixin once!
 @include mat-core();
 
-@import './colors.scss';
+@import 'app/styles/colors';
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
@@ -33,26 +33,40 @@ $CodeStar-theme: mat-light-theme($CodeStar-primary, $CodeStar-accent, $CodeStar-
 
 html,
 body {
+  background: #fff;
+  color: #222;
+
+  height: 100%;
 
   scroll-behavior: smooth;
-  height: 100%;
-  background: #fff;
-
-  color: #222;
 }
 
 body {
   margin: 0;
 
-  * {
-    font-family: peyda !important;
+  *,
+  *::before,
+  *::after {
+    background: none;
+
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    outline: none;
+
+    font-family: peyda, sans-serif !important;
+
+    text-decoration: none;
   }
 }
 
-.star{
+.star {
   font-family: initial !important;
 }
 
 .material-icons {
-  font-family: 'Material Icons' !important;
+  font-family: 'Material Icons', sans-serif !important;
 }

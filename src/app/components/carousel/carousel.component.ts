@@ -1,22 +1,18 @@
-import { animate, style, transition, trigger } from '@angular/animations';
-import { AfterContentInit, AfterViewChecked, AfterViewInit, Component, ContentChildren, Input, OnInit, QueryList } from '@angular/core';
-import { carouselAnimation } from 'src/app/route-animation';
-import { SlideComponent } from './slide/slide.component';
+import {AfterViewInit, Component, ContentChildren, QueryList} from '@angular/core';
+import {SlideComponent} from './slide/slide.component';
 
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
-  styleUrls: ['./carousel.component.scss'],
-  animations: [carouselAnimation]
+  styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent implements AfterViewInit {
   @ContentChildren(SlideComponent) inputTabs: QueryList<SlideComponent>;
 
   public templates: any[] = [];
   public currentSlide = 0;
-  private timeoutTime = 7000;
-
-  constructor() { }
+  private timeoutTime = 10000;
+  private timeout: any;
 
   ngAfterViewInit(): void {
     setTimeout(() => this.templates = this.inputTabs.map(i => i.template), 100);
@@ -34,9 +30,6 @@ export class CarouselComponent implements AfterViewInit {
     this.currentSlide = next === this.inputTabs.length ? 0 : next;
     this.resetTimeout();
   }
-
-  private timeout: any;
-
 
   private setTimeout() {
     this.timeout = setTimeout(() => this.onNextClick(), this.timeoutTime);

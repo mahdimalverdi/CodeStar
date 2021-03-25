@@ -1,4 +1,9 @@
-@import "../../../colors.scss";
+@use "/src/app/styles" as *;
+
+@mixin slide-gradient( $first-color, $second-color ) {
+  background-color: $first-color;
+  background-image: linear-gradient(315deg, $first-color 0%, $second-color 74%);
+}
 
 .slide {
   height: 100%;
@@ -7,7 +12,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
 
   @media (min-width: 1200px) {
     padding-left: calc(calc(100% - 1140px) / 2);
@@ -43,20 +47,17 @@
 }
 
 .slide1 {
-  background-color: #3f0d12;
-  background-image: linear-gradient(315deg, #3f0d12 0%, #a71d31 74%);
+  @include slide-gradient(#29539b, #1e3b70);
 }
 
 .slide2 {
-  background-color: #29539b;
-  background-image: linear-gradient(315deg, #29539b 0%, #1e3b70 74%);
+  @include slide-gradient(#ff9716, #ca792f);
 }
+
 .slide3 {
-  background-color: #63d471;
-  background-image: linear-gradient(315deg, #63d471 0%, #233329 74%);
+  @include slide-gradient(#63d471, #233329);
 }
 
-
-.home{
+.home {
   height: 100vh;
 }
