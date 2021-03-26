@@ -1,15 +1,17 @@
 <!-- carousel -->
 <div class="carousel">
-  <ng-container *ngFor="let slide of templates; let i = index">
-    <div *ngIf="i === currentSlide" class="slide" @carouselAnimation>
-      <ng-container *ngTemplateOutlet="slide"></ng-container>
-    </div>
-  </ng-container>
+  <div class="slides" [ngClass]="'step--' +(currentSlide + 1).toString()">
+    <ng-container *ngFor="let slide of templates; let i = index">
+      <div class="slide" [ngClass]="'slide--' +(i + 1).toString()">
+        <ng-container *ngTemplateOutlet="slide"></ng-container>
+      </div>
+    </ng-container>
+  </div>
   <!-- controls -->
-  <button class="control prev" (click)="onPreviousClick()">
+  <button class="control next" (click)="onNextClick()">
     <span class="arrow left"></span>
   </button>
-  <button class="control next" (click)="onNextClick()">
+  <button class="control prev" (click)="onPreviousClick()">
     <span class="arrow right"></span>
   </button>
 </div>

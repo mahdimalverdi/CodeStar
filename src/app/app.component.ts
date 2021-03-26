@@ -1,14 +1,12 @@
-import { animate, animateChild, group, query, style, transition, trigger } from '@angular/animations';
-import { Component } from '@angular/core';
-import { Meta } from '@angular/platform-browser';
-import { RouterOutlet } from '@angular/router';
-import { carouselAnimation, slideInAnimation } from './route-animation';
+import {Component} from '@angular/core';
+import {Meta} from '@angular/platform-browser';
+import {slideInAnimation} from './route-animation';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [slideInAnimation, carouselAnimation]
+  animations: [slideInAnimation]
 })
 export class AppComponent {
   title = 'کداستار';
@@ -19,13 +17,16 @@ export class AppComponent {
       {
         name: 'description', content: description
       },
-      { name: 'robots', content: 'index, follow' },
-      { name: 'keywords', content: 'کداستار, CodeStar, Code-Star, Programming, intership, کارآموزی, آکادمی ستاره, مجازی, کد استار' },
-      { name: 'og:url', content: 'http://code-star.ir/' },
-      { name: 'og:title', content: 'کارآموزی کداستار' },
-      { name: 'og:site_name', content: 'کداستار' },
-      { name: 'og:description', content: description },
-      { name: 'og:image', content: 'http://code-star.ir/assets/logo-light-orginal.png' }
+      {name: 'robots', content: 'index, follow'},
+      {
+        name: 'keywords',
+        content: 'کداستار, CodeStar, Code-Star, Programming, intership, کارآموزی, آکادمی ستاره, مجازی, کد استار'
+      },
+      {name: 'og:url', content: 'http://code-star.ir/'},
+      {name: 'og:title', content: 'کارآموزی کداستار'},
+      {name: 'og:site_name', content: 'کداستار'},
+      {name: 'og:description', content: description},
+      {name: 'og:image', content: 'http://code-star.ir/assets/logo-light-orginal.png'}
     ], true);
   }
 }
