@@ -86,18 +86,30 @@
   &-sidebar {
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     display: flex;
     transition: width 1s;
+    overflow: hidden;
+
+    &.hide{
+      width: 0;
+    }
 
     &__container {
       padding-top: 50px;
-      width: 200px;
-      height: calc(100% - 50px);
+      padding-inline-end: 20px;
+      min-width: 200px;
+      height: 100%;
       transition: width 1s;
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      flex-wrap: nowrap;
+      flex: 1;
+
+      *{
+        word-wrap: unset;
+      }
     }
 
     &__spacer {
@@ -183,21 +195,6 @@
   }
 }
 
-.hide.toolbar-sidebar {
-  width: 0;
-}
-
-.hide .toolbar-sidebar {
-  &__container {
-    width: 0;
-  }
-
-  &__spacer {
-    width: 0;
-    flex-shrink: 0;
-    flex-grow: 0;
-  }
-}
 
 .mobile-view {
   @media (min-width: 768px) {
