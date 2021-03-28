@@ -1,21 +1,19 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ToolbarComponent } from './toolbar.component';
-import { RouterModule } from '@angular/router';
-import { MatIconModule } from '@angular/material/icon';
-
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {ToolbarComponent} from './toolbar.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
-  declarations: [
-    ToolbarComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    MatIconModule
-  ],
-  exports: [
-    ToolbarComponent
-  ]
+    declarations: [
+        ToolbarComponent,
+    ],
+    imports: [
+        CommonModule,
+        RouterModule,
+    ],
+    exports: [
+        ToolbarComponent,
+    ],
 })
-export class ToolbarModule { }
+export class ToolbarModule {
+}

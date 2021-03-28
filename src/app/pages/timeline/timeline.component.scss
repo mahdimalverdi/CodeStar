@@ -1,107 +1,84 @@
 @use "/src/app/styles" as *;
 
 .time-line {
-  padding: 90px 10px;
-  margin: 0 auto;
-  font-size: 2em;
-  line-height: 1.5em;
-
-  @media (min-width: 576px) {
-    max-width: 540px;
-    padding-top: 95px;
-  }
-  @media (min-width: 768px) {
-    max-width: 720px;
-    padding-top: 120px;
-  }
-  @media (min-width: 992px) {
-    max-width: 960px;
-    padding-top: 140px;
-  }
-  @media (min-width: 1200px) {
-    max-width: 1140px;
-    padding-top: 170px;
-  }
-  @media (min-width: 1400px) {
-    max-width: 1320px;
-  }
-
-  &__title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 60px;
-    color: $base-color;
-  }
-
-  &__button {
-    border: solid $light;
-    padding: 20px;
-    border-radius: 10px;
-    text-decoration: none;
-    color: $dark;
-
-    &:hover{
-      background-color: $light-transparent;
-    }
-  }
-
-  &__event {
-    display: flex;
-
-    &-bar {
-      width: 100px;
-      display: flex;
-      flex-direction: column;
-      min-height: 150px;
-
-      &_circle {
-        font-size: 1rem;
-        display: flex;
+    @include technologies-and-time-line;
+    
+    &__title {
         text-align: center;
-        align-items: center;
-        justify-content: center;
-        height: 100px;
-        border-radius: 100%;
-        background-color: $dark;
-        background-image: linear-gradient(147deg, $dark 0%, #04619f 74%);
-        color: #eee;
-        padding-left: 10px;
-        padding-right: 10px;
-      }
-
-      &_line {
-        width: 100%;
-        min-height: 50px;
-        height: 100%;
-        flex: 1;
-        padding-top: 5px;
-        padding-bottom: 5px;
-
-        span {
-          border-left: $dark dashed 6px;
-          width: 47px;
-          display: block;
-          height: 100%;
-        }
-      }
+        font-size: 2.5rem;
+        margin-bottom: 60px;
+        color: $color-light;
     }
-
-    &-content {
-      flex: 1;
-      padding: 20px;
-
-      &_title {
-        font-weight: 600;
-      }
-
-      &_description {
-        font-size: 1rem;
-      }
-
-      &_action-bar {
-        text-align: center;
+    
+    &__button {
+        border: solid $color-light;
         padding: 20px;
-      }
+        border-radius: 10px;
+        text-decoration: none;
+        color: $color-dark;
+        
+        &:hover {
+            background-color: $light-transparent;
+        }
     }
-  }
+    
+    &__event {
+        display: flex;
+        
+        &-bar {
+            width: 100px;
+            display: flex;
+            flex-direction: column;
+            min-height: 150px;
+            
+            &_circle {
+                font-size: 1rem;
+                display: flex;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+                height: 100px;
+                border-radius: 100%;
+                background-color: $color-dark;
+                background-image: linear-gradient(147deg, $color-dark 0%, #04619f 74%);
+                color: $color-light;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            
+            &_line {
+                width: 100%;
+                min-height: 50px;
+                height: 100%;
+                flex: 1;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                
+                span {
+                    border-left: $color-dark dashed 6px;
+                    width: 47px;
+                    display: block;
+                    height: 100%;
+                }
+            }
+        }
+        
+        &-content {
+            flex: 1;
+            padding: 20px;
+            
+            &_title {
+                font-weight: 600;
+            }
+            
+            &_description {
+                font-size: 1rem;
+            }
+            
+            &_action-bar {
+                text-align: center;
+                padding: 20px;
+            }
+        }
+    }
 }

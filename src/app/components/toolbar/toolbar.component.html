@@ -1,36 +1,35 @@
 <div class="toolbar" [ngClass]="[theme]">
-  <div class="toolbar-sidebar" [ngClass]="{ hide: !showSidebar }">
-    <div class="toolbar-sidebar__container">
-      <a [routerLink]="['/','Home']" routerLinkActive="active" class="toolbar-button">خانه</a>
-      <a [routerLink]="['/','Benefits']" routerLinkActive="active" class="toolbar-button">مزایا</a>
-      <a [routerLink]="['/','Technologies']" routerLinkActive="active" class="toolbar-button">فناوری‌ها</a>
-      <a [routerLink]="['/','Requirements']" routerLinkActive="active" class="toolbar-button">پیشنیازها</a>
-      <a [routerLink]="['/','Timeline']" routerLinkActive="active" class="toolbar-button">زمان‌بندی</a>
-      <a routerLinkActive="active" class="toolbar-button stroked">ثبت نام</a>
+    <div class="toolbar-sidebar" [ngClass]="{ hide: !showSidebar }">
+        <div class="toolbar-sidebar__container">
+            <a [routerLink]="['/','Home']" routerLinkActive="active" class="toolbar-button">خانه</a>
+            <a [routerLink]="['/','Benefits']" routerLinkActive="active" class="toolbar-button">مزایا</a>
+            <a [routerLink]="['/','Technologies']" routerLinkActive="active" class="toolbar-button">فناوری‌ها</a>
+            <a [routerLink]="['/','Requirements']" routerLinkActive="active" class="toolbar-button">پیشنیازها</a>
+            <a [routerLink]="['/','Timeline']" routerLinkActive="active" class="toolbar-button">زمان‌بندی</a>
+            <a routerLinkActive="active" class="toolbar-button stroked">ثبت نام</a>
+        </div>
+        
+        <div class="toolbar-sidebar__spacer" (click)="showSidebar = false"></div>
     </div>
-
-    <div class="toolbar-sidebar__spacer" (click)="showSidebar = false"></div>
-  </div>
-  <div class="toolbar-container">
-    <button (click)="showSidebar = true" class="toolbar-button mobile-view">
-      <mat-icon aria-hidden="false" aria-label="منو">menu</mat-icon>
-    </button>
-
-    <a [routerLink]="['/','Home']" routerLinkActive="active" class="toolbar-button desktop-view">خانه</a>
-    <a [routerLink]="['/','Benefits']" routerLinkActive="active" class="toolbar-button desktop-view">مزایا</a>
-    <a [routerLink]="['/','Technologies']" routerLinkActive="active" class="toolbar-button desktop-view">فناوری‌ها</a>
-    <a [routerLink]="['/','Requirements']" routerLinkActive="active" class="toolbar-button desktop-view">پیشنیازها</a>
-    <a [routerLink]="['/','Timeline']" routerLinkActive="active" class="toolbar-button desktop-view ">زمان‌بندی</a>
-    <a routerLinkActive="active" class="toolbar-button desktop-view stroked">ثبت نام</a>
-
-    <span class="toolbar-spacer"></span>
-
-    <a [routerLink]="['/','Home']" class="toolbar-logo">
-      <div class="toolbar-logo__text">کداستار</div>
-      <img
-        class="toolbar-logo__image"
-        [src]="'../../../assets/logo-'+theme+'.png'"
-        alt="Star Academy Logo"/>
-    </a>
-  </div>
+    <div class="toolbar-container">
+        <button (click)="showSidebar = true" class="toolbar-button mobile-view">
+            <span class="material-icons" aria-hidden="false" aria-label="منو">menu</span>
+        </button>
+        
+        <a [routerLink]="['/','Home']" routerLinkActive="active" class="toolbar-button desktop-view">خانه</a>
+        <a [routerLink]="['/','Benefits']" routerLinkActive="active" class="toolbar-button desktop-view">مزایا</a>
+        <a [routerLink]="['/','Technologies']" routerLinkActive="active" class="toolbar-button desktop-view">فناوری‌ها
+        </a>
+        <a [routerLink]="['/','Requirements']" routerLinkActive="active" class="toolbar-button desktop-view">پیشنیازها
+        </a>
+        <a [routerLink]="['/','Timeline']" routerLinkActive="active" class="toolbar-button desktop-view ">زمان‌بندی</a>
+        <a routerLinkActive="active" class="toolbar-button desktop-view stroked">ثبت نام</a>
+        
+        <span class="toolbar-spacer"></span>
+        
+        <a [routerLink]="['/','Home']" class="toolbar-logo">
+            <div class="toolbar-logo__text">کداستار</div>
+            <img class="toolbar-logo__image" [src]="'../../../assets/logo-'+theme+'.png'" alt="Star Academy Logo"/>
+        </a>
+    </div>
 </div>

@@ -1,0 +1,5 @@
+$color-light: #f1f1f1;
+$color-dark: #1a1a1a;
+
+$light-transparent: transparentize($color-light, 0.7);
+$dark-transparent: transparentize($color-dark, 0.7);
