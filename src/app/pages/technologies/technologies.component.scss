@@ -1,67 +1,45 @@
 @use "/src/app/styles" as *;
 
 .technologies {
-  padding: 90px 10px;
-  margin: 0 auto;
-  font-size: 2em;
-  line-height: 1.5em;
-
-  @media (min-width: 576px) {
-    max-width: 540px;
-    padding-top: 95px;
-  }
-  @media (min-width: 768px) {
-    max-width: 720px;
-    padding-top: 120px;
-  }
-  @media (min-width: 992px) {
-    max-width: 960px;
-    padding-top: 140px;
-  }
-  @media (min-width: 1200px) {
-    max-width: 1140px;
-    padding-top: 170px;
-  }
-  @media (min-width: 1400px) {
-    max-width: 1320px;
-  }
-
-  &__list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 50px 10px;
-  }
-
-  &__technology {
-    width: 200px;
-    display: block;
-    text-align: center;
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
-    text-decoration: none;
-    color: $dark;
-
-    @include transform-transition;
-
-    &-image {
-      width: 200px;
-      height: 200px;
-      object-fit: contain;
+    @include technologies-and-time-line;
+    
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        
+        margin: 50px 10px;
     }
-
-    &:not(:first-of-type) {
-      margin-inline-start: 10px;
+    
+    &__technology {
+        --size: 200px;
+        
+        color: $color-dark;
+        
+        display: block;
+        
+        width: var(--size);
+        
+        user-select: none;
+        
+        text-align: center;
+        text-decoration: none;
+        
+        @include transform-transition;
+        
+        &-image {
+            width: var(--size);
+            height: var(--size);
+            object-fit: contain;
+        }
+        
+        p {
+            direction: ltr;
+        }
+        
+        &:hover {
+            transform: scale(1.05);
+        }
     }
-
-    &:not(:last-of-type) {
-      margin-inline-end: 10px;
-    }
-
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
 }

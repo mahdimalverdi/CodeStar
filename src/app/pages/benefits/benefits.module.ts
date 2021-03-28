@@ -1,21 +1,21 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { BenefitsRoutingModule } from './benefits-routing.module';
-import { BenefitsComponent } from './benefits.component';
-import { ToolbarModule } from 'src/app/components/toolbar/toolbar.module';
-import { FooterModule } from 'src/app/components/footer/footer.module';
-
+import {BenefitsRoutingModule} from './benefits-routing.module';
+import {BenefitsComponent} from './benefits.component';
+import {HeaderModule} from 'src/app/components/header/header.module';
+import {FooterModule} from 'src/app/components/footer/footer.module';
 
 @NgModule({
-  declarations: [
-    BenefitsComponent
-  ],
-  imports: [
-    CommonModule,
-    BenefitsRoutingModule,
-    ToolbarModule,
-    FooterModule
-  ]
+    declarations: [
+        BenefitsComponent,
+    ],
+    imports: [
+        CommonModule,
+        BenefitsRoutingModule,
+        HeaderModule,
+        FooterModule,
+    ],
 })
-export class BenefitsModule { }
+export class BenefitsModule {
+}

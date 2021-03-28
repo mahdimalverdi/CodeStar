@@ -1,63 +1,68 @@
 @use "/src/app/styles" as *;
 
-@mixin slide-gradient( $first-color, $second-color ) {
-  background-color: $first-color;
-  background-image: linear-gradient(315deg, $first-color 0%, $second-color 74%);
-}
-
-.slide {
-  height: 100%;
-  color: $light;
-  padding: 0 70px 0 70px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  @media (min-width: 1200px) {
-    padding-left: calc(calc(100% - 1140px) / 2);
-    padding-right: calc(calc(100% - 1140px) / 2);
-  }
-  @media (min-width: 1400px) {
-    padding-left: calc(calc(100% - 1320px) / 2);
-    padding-right: calc(calc(100% - 1320px) / 2);
-  }
-
-  &-title {
-    font-size: 4em;
-    line-height: 1.5em;
-    font-weight: 900;
-
-    @media (max-width: 500px) {
-      font-size: 2em;
-      line-height: 1.5em;
-    }
-  }
-
-  &-subtitle {
-    font-size: 2em;
-    line-height: 1.5em;
-    text-align: justify;
-    font-weight: 300;
-
-    @media (max-width: 500px) {
-      font-size: 1.5em;
-      line-height: 1.5em;
-    }
-  }
-}
-
-.slide1 {
-  @include slide-gradient(#29539b, #1e3b70);
-}
-
-.slide2 {
-  @include slide-gradient(#ff9716, #ca792f);
-}
-
-.slide3 {
-  @include slide-gradient(#63d471, #233329);
+@mixin slide-gradient($i) {
+    background-color: var(--slide-color-#{$i}-1);
+    background-image: linear-gradient(
+            135deg,
+            var(--slide-color-#{$i}-1) 0,
+            var(--slide-color-#{$i}-2) 75%
+    );
 }
 
 .home {
-  height: 100vh;
+    height: 100vh;
+    
+    .slide {
+        color: $color-light;
+        
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+        
+        height: 100%;
+        
+        padding: 0 70px 0 70px;
+        
+        &--1 {
+            @include slide-gradient(1);
+        }
+        
+        &--2 {
+            @include slide-gradient(2);
+        }
+        
+        &--3 {
+            @include slide-gradient(3);
+        }
+        
+        &__title {
+            font-size: var(--font-size-home-title);
+            font-weight: var(--font-weight-home-title);
+            text-align: center;
+        }
+        
+        &__subtitle {
+            max-width: 1200px;
+            
+            font-size: var(--font-size-home-subtitle);
+            font-weight: var(--font-weight-home-subtitle);
+            text-align: justify;
+        }
+        
+        &__cta {
+            background: $color-light;
+            color: $color-dark;
+            mix-blend-mode: screen;
+            
+            margin-block-start: 1rem;
+            padding: 0.5em 3em;
+            
+            border-radius: 999rem;
+            
+            font-size: var(--font-size-home-cta);
+            font-weight: var(--font-weight-home-cta);
+        }
+    }
 }

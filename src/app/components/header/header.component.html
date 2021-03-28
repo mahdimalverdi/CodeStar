@@ -1,0 +1,20 @@
+<header class="header" [ngClass]="[theme, open ? 'open' : '']">
+    <button (click)="toggleOpen()" class="header__menu">
+        <span class="header__menu__icon material-icons" aria-hidden="false" aria-label="منو">menu</span>
+        <span class="header__menu__background"></span>
+    </button>
+    
+    <nav class="header__nav">
+        <a [routerLink]="['/','Home']" routerLinkActive="active">خانه</a>
+        <a [routerLink]="['/','Benefits']" routerLinkActive="active">مزایا</a>
+        <a [routerLink]="['/','Technologies']" routerLinkActive="active">فناوری‌ها</a>
+        <a [routerLink]="['/','Requirements']" routerLinkActive="active">پیشنیازها</a>
+        <a [routerLink]="['/','Timeline']" routerLinkActive="active">زمان‌بندی</a>
+        <a routerLinkActive="active" class="primary">ثبت نام</a>
+    </nav>
+    
+    <a [routerLink]="['/','Home']" class="header__logo">
+        <div class="header__logo__text">کداستار</div>
+        <img class="header__logo__image" [src]="'../../../assets/logo-'+theme+'.png'" alt="Star Academy Logo"/>
+    </a>
+</header>
