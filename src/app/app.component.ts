@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {routeAnimation} from './route-animation';
+import {NavigationEnd, Router} from '@angular/router';
+import {Meta} from '@angular/platform-browser';
 
 @Component({
     selector: 'app-root',
@@ -8,5 +10,15 @@ import {routeAnimation} from './route-animation';
     animations: [routeAnimation],
 })
 export class AppComponent {
-    title = 'کداستار';
+    constructor(private router: Router, private meta: Meta) {
+        router.events.subscribe((e) => {
+                if (e instanceof NavigationEnd) {
+                    if ((e as NavigationEnd).urlAfterRedirects !== '/Home') {
+                        this.meta.removeTag('name="theme-color"');
+                        this.meta.addTag({name: 'theme-color', content: '#fafafa'}, true);
+                    }
+                }
+            },
+        );
+    }
 }

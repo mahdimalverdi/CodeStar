@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 
 import {TimelineRoutingModule} from './timeline-routing.module';
 import {TimelineComponent} from './timeline.component';
-import {ToolbarModule} from 'src/app/components/toolbar/toolbar.module';
+import {HeaderModule} from 'src/app/components/header/header.module';
 import {FooterModule} from 'src/app/components/footer/footer.module';
 
 @NgModule({
@@ -11,7 +11,7 @@ import {FooterModule} from 'src/app/components/footer/footer.module';
     imports: [
         CommonModule,
         TimelineRoutingModule,
-        ToolbarModule,
+        HeaderModule,
         FooterModule,
     ],
 })

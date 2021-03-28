@@ -12,15 +12,20 @@ export class CarouselComponent implements AfterViewInit {
     @Output() public slideChange = new EventEmitter<number>();
     
     public templates: any[] = [];
-    public currentSlide = 1;
-    // private timeoutTime = 10000;
-    // TODO:
-    private timeoutTime = 999999;
+    public currentSlide = 0;
+    private timeoutTime = 10000;
     private timeout: any;
     
     ngAfterViewInit(): void {
         setTimeout(() => this.templates = this.inputTabs.map(i => i.template), 100);
         this.setTimeout();
+    }
+    
+    public swipeHandler(e) {
+        if (e.direction === 2)
+            this.onPreviousClick();
+        else if (e.direction === 4)
+            this.onNextClick();
     }
     
     public onPreviousClick() {

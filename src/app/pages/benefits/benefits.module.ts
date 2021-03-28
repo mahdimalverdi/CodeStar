@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 
 import {BenefitsRoutingModule} from './benefits-routing.module';
 import {BenefitsComponent} from './benefits.component';
-import {ToolbarModule} from 'src/app/components/toolbar/toolbar.module';
+import {HeaderModule} from 'src/app/components/header/header.module';
 import {FooterModule} from 'src/app/components/footer/footer.module';
 
 @NgModule({
@@ -13,7 +13,7 @@ import {FooterModule} from 'src/app/components/footer/footer.module';
     imports: [
         CommonModule,
         BenefitsRoutingModule,
-        ToolbarModule,
+        HeaderModule,
         FooterModule,
     ],
 })

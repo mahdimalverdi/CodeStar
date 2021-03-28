@@ -20,7 +20,7 @@
             
             transform: translateX(0);
             
-            @include transform-transition(1s);
+            @include transform-transition(0.5s);
             
             &.step--1 {
                 transform: translateX(0);

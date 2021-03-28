@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 
 import {RequirementsRoutingModule} from './requirements-routing.module';
 import {FooterModule} from 'src/app/components/footer/footer.module';
-import {ToolbarModule} from 'src/app/components/toolbar/toolbar.module';
+import {HeaderModule} from 'src/app/components/header/header.module';
 import {RequirementsComponent} from './requirements.component';
 
 @NgModule({
@@ -13,7 +13,7 @@ import {RequirementsComponent} from './requirements.component';
     imports: [
         CommonModule,
         RequirementsRoutingModule,
-        ToolbarModule,
+        HeaderModule,
         FooterModule,
     ],
 })

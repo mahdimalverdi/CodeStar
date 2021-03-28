@@ -8,12 +8,15 @@ import {Meta} from '@angular/platform-browser';
 })
 export class HomeComponent {
     public slideColors = [
-        ['#3c62a5', '#183365'],
-        ['#ff9716', '#ca792f'],
-        ['#30b340', '#194e2d'],
+        ['#30134d', '#200040'],
+        ['#1a3366', '#001233'],
+        // ['#ff9716', '#ca792f'],
+        ['#053305', '#002600'],
     ];
-    
     public slideColorsStyle = {};
+    
+    private headerMenuOpen = false;
+    private currentSlide = 0;
     
     constructor(private meta: Meta) {
         for (const [i, colors] of this.slideColors.entries()) {
@@ -21,11 +24,25 @@ export class HomeComponent {
             this.slideColorsStyle[`--slide-color-${i + 1}-2`] = colors[1];
         }
         
-        this.slideChangeHandler(0);
+        this.updateThemeColor();
     }
     
-    public slideChangeHandler(currentSlide: number) {
+    public headerMenuOpenChangeHandler(open: boolean) {
+        this.headerMenuOpen = open;
+        this.updateThemeColor();
+    }
+    
+    public updateThemeColor(currentSlide: number = this.currentSlide) {
+        this.currentSlide = currentSlide;
+        
+        if (!this.headerMenuOpen)
+            setTimeout(() => this.setThemeColor(this.slideColors[currentSlide][0]), 250);
+        else
+            this.setThemeColor('#1a1a1a');
+    }
+    
+    private setThemeColor(content: string) {
         this.meta.removeTag('name="theme-color"');
-        this.meta.addTag({name: 'theme-color', content: this.slideColors[currentSlide][1]}, true);
+        this.meta.addTag({name: 'theme-color', content}, true);
     }
 }
