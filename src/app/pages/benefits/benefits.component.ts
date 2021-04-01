@@ -13,8 +13,8 @@ export class BenefitsComponent {
     };
     
     public style = {
-        '--color-primary--light': colors.orangered.light,
-        '--color-primary--dark': colors.orangered.dark,
+        '--color-primary--light': this.colors.light,
+        '--color-primary--dark': this.colors.dark,
     };
     
     public get footerBackground() {

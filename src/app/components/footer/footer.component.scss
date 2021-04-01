@@ -1,50 +1,60 @@
 @use "/src/app/styles";
 
-footer {
-    div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        
-        max-width: var(--container-max-width);
-        width: 100%;
-        
-        margin: 0 auto;
-        padding: 1rem var(--container-inline-padding);
-        
-        h4 {
-            flex: 1;
-        }
-        
-        ul {
+:host {
+    margin-top: auto;
+    
+    footer {
+        div {
             display: flex;
-            gap: 2rem;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
             
-            list-style: none;
+            max-width: var(--container-max-width);
+            width: 100%;
             
-            li {
-                display: inline;
+            margin: 0 auto;
+            padding: 1rem var(--container-inline-padding);
+            
+            h4 {
+                flex: 1;
                 
-                width: 2rem;
+                text-align: center;
+            }
+            
+            ul {
+                display: flex;
+                gap: 2rem;
                 
-                a {
-                    color: inherit;
+                list-style: none;
+                
+                li {
+                    display: inline;
                     
-                    &::ng-deep {
-                        fill: currentColor;
+                    width: 2rem;
+                    
+                    a {
+                        color: inherit;
+                        
+                        &::ng-deep {
+                            fill: currentColor;
+                        }
                     }
                 }
             }
         }
     }
-}
-
-@media (min-width: 576px) {
-    footer {
-        div {
-            flex-direction: row;
+    
+    @media (min-width: 576px) {
+        footer {
+            div {
+                flex-direction: row;
+                
+                h4 {
+                    text-align: start;
+                }
+            }
         }
     }
 }

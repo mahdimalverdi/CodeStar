@@ -42,7 +42,7 @@ html {
 
 html,
 body {
-    min-height: 100%;
+    min-height: 100vh;
     
     scroll-behavior: smooth;
 }
@@ -69,6 +69,7 @@ svg {
 
 body {
     --container-max-width: 1200px;
+    --container-padding-block-start: 16rem;
     --container-inline-padding: 2rem;
     
     --font-size-h1: 2.4rem;
@@ -81,6 +82,7 @@ body {
     --font-weight-h1: 700;
     --font-weight-h2: 600;
     --font-weight-h3: 300;
+    --font-weight-h3--active: 500;
     --font-weight-h4: 500;
     --font-weight-header-logo: 700;
     --font-weight-header-nav: var(--font-weight-h4);

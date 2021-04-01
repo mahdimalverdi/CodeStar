@@ -8,8 +8,6 @@
     flex-direction: column;
     align-items: center;
     
-    padding-inline: var(--container-inline-padding);
-    
     &__svg {
         fill: url("#gradient");
         
@@ -25,6 +23,8 @@
     &__bottom {
         width: 100%;
         max-width: var(--container-max-width);
+        
+        padding-inline: var(--container-inline-padding);
     }
     
     &__top {
@@ -37,7 +37,7 @@
         
         height: 900px;
         
-        padding-block-start: 16rem;
+        padding-block-start: var(--container-padding-block-start);
         
         &__text {
             flex: 1;
@@ -65,21 +65,27 @@
     
     &__bottom {
         ul {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(25rem, 35rem));
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: stretch;
             justify-content: center;
-            gap: 5rem;
+            gap: 4rem;
             
             list-style: none;
             
             margin-bottom: 5rem;
             
             li {
+                flex: 1 0 25rem;
+                
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-start;
                 gap: 1rem;
+                
+                max-width: 35rem;
                 
                 .icon {
                     position: relative;
