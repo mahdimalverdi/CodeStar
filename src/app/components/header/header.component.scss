@@ -3,6 +3,7 @@
 .header {
     --background: #{styles.$color-gray-10};
     --color: #{styles.$color-gray-98};
+    --color-hover: #{styles.$shade-light-gray-90};
     
     position: absolute;
     top: 0;
@@ -32,6 +33,7 @@
     &.dark {
         --background: #{styles.$color-gray-98};
         --color: #{styles.$color-gray-10};
+        --color-hover: #{styles.$shade-light-gray-10};
     }
     
     &__menu {
@@ -91,12 +93,12 @@
             &::before {
                 content: "";
                 
-                background: currentColor;
-                opacity: 0.2;
+                background: var(--color-hover);
                 
                 position: absolute;
                 top: 50%;
                 left: 50%;
+                z-index: -1;
                 
                 box-sizing: content-box;
                 

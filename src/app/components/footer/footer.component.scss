@@ -41,6 +41,24 @@
                             fill: currentColor;
                         }
                     }
+                    
+                    &.aparat {
+                        &:hover {
+                            color: #ed145b;
+                        }
+                    }
+                    
+                    &.instagram {
+                        &:hover {
+                            color: #fd1d1d;
+                        }
+                    }
+                    
+                    &.telegram {
+                        &:hover {
+                            color: #25a3e2;
+                        }
+                    }
                 }
             }
         }

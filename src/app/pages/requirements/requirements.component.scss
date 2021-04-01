@@ -1,9 +1,5 @@
 @use "/src/app/styles";
 
-@mixin _shadow($horizontal-multiplier) {
-    box-shadow: #{$horizontal-multiplier * 0.2rem} 0.2rem 0.8rem styles.$shade-dark-gray-90;
-}
-
 @mixin _status-indicator($color) {
     content: "";
     
@@ -37,7 +33,7 @@
     }
     
     i {
-        @include _shadow($shadow-horizontal-multiplier);
+        @include styles.shadow-offset($shadow-horizontal-multiplier);
         
         &::after {
             border-color: $color;
@@ -45,7 +41,7 @@
     }
     
     h3 {
-        @include _shadow($shadow-horizontal-multiplier);
+        @include styles.shadow-offset($shadow-horizontal-multiplier);
         @include _rounded-corners($side-circle);
     }
 }

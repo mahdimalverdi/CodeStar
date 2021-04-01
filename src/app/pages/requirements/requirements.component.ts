@@ -6,7 +6,7 @@ import {Component} from '@angular/core';
     styleUrls: ['./requirements.component.scss'],
 })
 export class RequirementsComponent {
-    public requirements: string [] = [
+    public requirements: string[] = [
         'دانشجوی کارشناسی رشتۀ مهندسی کامپیوتر یا علوم کامپیوتر',
         'کسب نمرۀ قبولی در درس برنامه‌سازی پیشرفته (Advanced Programming)',
         'وقت کافی در طول دوره (از اول اسفند تا آخر اردیبهشت)، ساعت ۱۷ تا ۲۰:۳۰ شنبه تا چهارشنبه',
@@ -14,9 +14,8 @@ export class RequirementsComponent {
         'لذت بردن از کار تیمی و یادگیری مهارت‌های نرم',
     ];
     
-    public extras: string  [ ] = [
+    public extras: string[] = [
         'آشنایی با ساختمان داده‌ها و الگوریتم‌ها (Data Structures & Algorithms)',
         'آشنایی با پایگاه داده (Database)',
-    
     ];
 }

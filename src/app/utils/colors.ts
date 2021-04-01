@@ -1,4 +1,8 @@
 const colors = {
+    magenta: {
+        light: '#ff0095',
+        dark: '#ff0040',
+    },
     purple: {
         light: '#30134d',
         dark: '#200040',
@@ -6,6 +10,14 @@ const colors = {
     blue: {
         light: '#1a3366',
         dark: '#001233',
+    },
+    blueGreen: {
+        light: '#00ffb8',
+        dark: '#0089ff',
+    },
+    lime: {
+        light: '#00ffaa',
+        dark: '#00ff55',
     },
     green: {
         light: '#053305',

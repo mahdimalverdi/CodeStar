@@ -94,6 +94,24 @@
             
             padding: var(--padding);
             
+            transform: scale(1);
+            
+            @include styles.transform-transition;
+            
+            &:hover {
+                color: styles.$color-gray-98;
+                
+                transform: scale(1.1);
+                
+                h3 {
+                    font-weight: var(--font-weight-h3--active);
+                }
+                
+                i {
+                    border-color: currentColor !important;
+                }
+            }
+            
             @for $li from 1 to 6  + 1 {
                 &:nth-child(#{$li}) {
                     $hue: ($li + 1) * 45;
@@ -117,18 +135,12 @@
                         
                         @for $i from 1 to 3  + 1 {
                             &:nth-child(#{$i}) {
-                                animation: xyz #{1 + $i * 2}s linear infinite -#{$i * 2 + $li}s;
+                                animation: rotateAnimation #{1 + $i * 2}s linear infinite -#{$i * 2 + $li}s;
                             }
                         }
                     }
                     
                     &:hover {
-                        color: styles.$color-gray-98;
-                        
-                        h3 {
-                            font-weight: var(--font-weight-h3--active);
-                        }
-                        
                         i {
                             background: $color;
                         }
@@ -139,7 +151,7 @@
     }
 }
 
-@keyframes xyz {
+@keyframes rotateAnimation {
     0% {
         transform: rotate(0deg);
     }
