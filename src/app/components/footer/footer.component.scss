@@ -1,61 +1,78 @@
-@use "/src/app/styles" as *;
+@use "/src/app/styles";
 
-.footer {
-    border-top: solid $color-light 1px;
-    line-height: 2rem;
-    font-size: 1.25rem;
-    text-align: justify;
-    text-align-last: center;
+:host {
+    margin-top: auto;
     
-    @media (max-width: 575px) {
-        padding: 20px 20px 0 10px;
-    }
-    
-    @media (min-width: 576px) {
-        padding: 20px 38px 0 38px;
-    }
-    
-    @media (min-width: 768px) {
-        padding: 20px 134px 0 134px;
-    }
-    
-    @media (min-width: 992px) {
-        padding: 20px 246px 0 246px;
-    }
-    
-    @media (min-width: 1200px) {
-        padding: 20px 350px 0 350px;
-    }
-    
-    &__text {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        
-        &-icon {
-            width: 30px;
-            object-fit: cover;
-            margin: 0 10px;
+    footer {
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            
+            max-width: var(--container-max-width);
+            width: 100%;
+            
+            margin: 0 auto;
+            padding: 1rem var(--container-inline-padding);
+            
+            h4 {
+                flex: 1;
+                
+                text-align: center;
+            }
+            
+            ul {
+                display: flex;
+                gap: 2rem;
+                
+                list-style: none;
+                
+                li {
+                    display: inline;
+                    
+                    width: 2rem;
+                    
+                    a {
+                        color: inherit;
+                        
+                        &::ng-deep {
+                            fill: currentColor;
+                        }
+                    }
+                    
+                    &.aparat {
+                        &:hover {
+                            color: #ed145b;
+                        }
+                    }
+                    
+                    &.instagram {
+                        &:hover {
+                            color: #fd1d1d;
+                        }
+                    }
+                    
+                    &.telegram {
+                        &:hover {
+                            color: #25a3e2;
+                        }
+                    }
+                }
+            }
         }
     }
     
-    &__title {
-        text-align: center;
-        font-size: 2.5rem;
-        margin-bottom: 60px;
-        color: $color-light;
-    }
-    
-    &__detail {
-        min-height: 100vh;
-        background: $color-light;
-        z-index: 10;
-        
-        &-owner {
-            text-align: center;
-            padding: 10px 0;
-            margin: 0;
-            line-height: 1rem;
-            font-size: 1rem;
+    @media (min-width: 576px) {
+        footer {
+            div {
+                flex-direction: row;
+                
+                h4 {
+                    text-align: start;
+                }
+            }
         }
     }
 }

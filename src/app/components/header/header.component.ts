@@ -6,8 +6,7 @@ import {Component, EventEmitter, HostListener, Input, Output} from '@angular/cor
     styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-    @Input()
-    public theme: 'dark' | 'light' = 'dark';
+    @Input() public theme: 'dark' | 'light' = 'dark';
     
     @Output() openChange = new EventEmitter<boolean>();
     

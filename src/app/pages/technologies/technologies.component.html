@@ -1,67 +1,25 @@
 <app-header theme="dark"></app-header>
+
 <div class="technologies">
-    <p class="technologies__text">
-        در کارآموزی کُداِستار در کار با این زبان‌ها و فناوری‌ها تجربه به دست میارین:
-    </p>
-    <div class="technologies__list">
-        <a [routerLink]="['CSharp']" class="technologies__technology">
-            <img class="technologies__technology-image" src="../../../assets/CSharp.png" alt="C#"/>
-            <p>C#</p>
-        </a>
-        <a class="technologies__technology">
-            <img class="technologies__technology-image" src="../../../assets/Java.png" alt="Java"/>
-            <p>Java</p>
-        </a>
-        <a class="technologies__technology">
-            <img class="technologies__technology-image" src="../../../assets/TypeScript.png" alt="TypeScript"/>
-            <p>TypeScript</p>
-        </a>
-        <a class="technologies__technology">
-            <img class="technologies__technology-image" src="../../../assets/SqlServer.png" alt="Microsoft SQL server"/>
-            <p>Microsoft SQL server</p>
-        </a>
-        <a class="technologies__technology">
-            <img class="technologies__technology-image" src="../../../assets/Elasticsearch.png" alt="Elasticsearch"/>
-            <p>Elasticsearch</p>
-        </a>
-        <a class="technologies__technology">
-            <img class="technologies__technology-image" src="../../../assets/Kibana.png" alt="Kibana"/>
-            <p>Kibana</p>
-        </a>
-        <a class="technologies__technology">
-            <img class="technologies__technology-image" src="../../../assets/APM.png" alt="APM"/>
-            <p>APM</p>
-        </a>
-        <a class="technologies__technology">
-            <img class="technologies__technology-image" src="../../../assets/ASP.png" alt="Asp.Net Core"/>
-            <p>Asp.Net Core</p>
-        </a>
-        <a class="technologies__technology">
-            <img class="technologies__technology-image" src="../../../assets/Angular.png" alt="Angular"/>
-            <p>Angular</p>
-        </a>
-    </div>
-    <p class="technologies__text">همچنین با این مفاهیم آشنا میشین:</p>
-    
+    <h1>کسب مهارت در کار با فناوری‌های مطرح دنیا</h1>
     <ul>
-        <li>
-            <span>Advanced Object Oriented Programming</span>
-        </li>
-        <li>
-            <span>SOLID principles</span>
-        </li>
-        <li>
-            <span>Test Driven Development</span>
-        </li>
-        <li>
-            <span>Application Profiling</span>
-        </li>
-        <li>
-            <span>Unit Testing, Integration Testing, Load Testing</span>
-        </li>
-        <li>
-            <span>SQL, NoSQL, High Availability Databases</span>
+        <li *ngFor="let technology of technologies">
+            <img [src]="technology.image" alt=""/>
+            <h3>{{technology.title}}</h3>
         </li>
     </ul>
 </div>
+
+<div class="concepts">
+    <h2>آشنایی با مفاهیم پیشرفتۀ برنامه‌نویسی</h2>
+    <ul>
+        <li *ngFor="let concept of concepts">
+            <i></i>
+            <i></i>
+            <i></i>
+            <h3>{{concept}}</h3>
+        </li>
+    </ul>
+</div>
+
 <app-footer></app-footer>

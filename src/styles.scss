@@ -1,5 +1,5 @@
-@import "assets/fonts/fontiran.css";
-@import "app/styles/color";
+@use "assets/fonts/fontiran.css";
+@use "/src/app/styles";
 
 *,
 *::before,
@@ -26,11 +26,6 @@
 
 *::-webkit-scrollbar {
     width: 1rem;
-    height: 1rem;
-}
-
-*::-webkit-scrollbar-track {
-    background: transparent;
 }
 
 *::-webkit-scrollbar-thumb {
@@ -47,15 +42,16 @@ html {
 
 html,
 body {
-    min-height: 100%;
-    height: 100%;
+    overflow-x: hidden;
+    
+    min-height: 100vh;
     
     scroll-behavior: smooth;
 }
 
 body {
-    background: $color-light;
-    color: $color-dark;
+    background: styles.$color-gray-98;
+    color: styles.$color-gray-10;
     
     margin: 0;
     
@@ -68,42 +64,63 @@ svg {
 }
 
 .material-icons {
+    display: flex;
+    
     font-family: "Material Icons", sans-serif !important;
 }
 
 body {
-    --font-size-header-logo: 2rem;
-    --font-size-header-nav: 2rem;
-    --font-size-home-title: 2.4rem;
-    --font-size-home-subtitle: 1.6rem;
-    --font-size-home-cta: 1.6rem;
+    --container-max-width: 1200px;
+    --container-padding-block-start: 16rem;
+    --container-inline-padding: 2rem;
     
+    --font-size-h1: 2.4rem;
+    --font-size-h2: 2rem;
+    --font-size-h3: 1.6rem;
+    --font-size-h4: 1.2rem;
+    --font-size-header-logo: 2.4rem;
+    --font-size-header-nav: var(--font-size-h3);
+    
+    --font-weight-h1: 700;
+    --font-weight-h2: 600;
+    --font-weight-h3: 300;
+    --font-weight-h3--active: 500;
+    --font-weight-h4: 500;
     --font-weight-header-logo: 700;
-    --font-weight-header-nav: 500;
-    --font-weight-header-nav--active: 600;
-    --font-weight-home-title: 700;
-    --font-weight-home-subtitle: 300;
-    --font-weight-home-cta: 700;
+    --font-weight-header-nav: var(--font-weight-h4);
+    --font-weight-header-nav--active: var(--font-weight-h2);
     
     @media (min-width: 576px) {
+        --container-inline-padding: 4rem;
     }
     
     @media (min-width: 768px) {
-        --font-size-header-logo: 2.4rem;
-        --font-size-header-nav: 1.6rem;
-        --font-size-home-title: 3.2rem;
-        --font-size-home-subtitle: 2rem;
-        --font-size-home-cta: 2rem;
+        --font-size-h1: 3.2rem;
+        --font-size-h2: 2.4rem;
+        --font-size-h3: 2rem;
+        --font-size-h4: 1.6rem;
+        --font-size-header-nav: var(--font-size-h4);
     }
     
     @media (min-width: 992px) {
     }
     
     @media (min-width: 1200px) {
-        --font-size-header-logo: 2.4rem;
-        --font-size-header-nav: 1.6rem;
-        --font-size-home-title: 3.6rem;
-        --font-size-home-subtitle: 2.4rem;
-        --font-size-home-cta: 2.4rem;
+        --font-size-h1: 3.6rem;
+        --font-size-h2: 2.8rem;
+        --font-size-h3: 2.4rem;
+        --font-size-h4: 1.6rem;
     }
+}
+
+@for $i from 1 to 6 + 1 {
+    h#{$i} {
+        font-size: var(--font-size-h#{$i});
+        font-weight: var(--font-weight-h#{$i});
+    }
+}
+
+p {
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-h4);
 }

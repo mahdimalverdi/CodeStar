@@ -1,15 +1,23 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
+import colors, {generateLinearBackground} from '../../utils/colors';
 
 @Component({
     selector: 'app-benefits',
     templateUrl: './benefits.component.html',
     styleUrls: ['./benefits.component.scss'],
 })
-export class BenefitsComponent implements OnInit {
+export class BenefitsComponent {
+    public colors = {
+        light: colors.orangered.light,
+        dark: colors.orangered.dark,
+    };
     
-    constructor() { }
+    public style = {
+        '--color-primary--light': this.colors.light,
+        '--color-primary--dark': this.colors.dark,
+    };
     
-    ngOnInit(): void {
+    public get footerBackground() {
+        return generateLinearBackground(this.colors.light, this.colors.dark);
     }
-    
 }

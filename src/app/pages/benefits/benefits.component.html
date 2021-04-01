@@ -1,67 +1,83 @@
-<app-header theme="dark"></app-header>
-<div class="benefits">
-    <p class="benefits__text">
-        شرکت توی کارآموزی کداستار این مزیت‌ها رو برای شما داره:
-    </p>
-    <ul class="benefits__list">
-        <li class="benefits__list-item benefits__list-item-circle">
-            یادگیری مفاهیم پیشرفته‌ی برنامه‌نویسی و تکنولوژی‌های به‌روز و متنوع
-        </li>
-        <li class="benefits__list-item benefits__list-item-circle">
-            رشد کردن در مواجهه با چالش‌های فنی در کنار مربی‌های با تجربه
-        </li>
-        <li class="benefits__list-item benefits__list-item-circle">
-            دورکاری از خانه
-            <span class="star">*</span>
-            ، از هر جای ایران بدون نگرانی از
-            مشکلات کرونا، حمل و نقل، خوابگاه و...
-        </li>
-        <li class="benefits__list-item benefits__list-item-circle">
-            تجربه‌ی کار تیمی و رشد مهارت‌های نرم
-        </li>
-        <li class="benefits__list-item benefits__list-item-circle">
-            امکان شرکت در دوره به صورت واحد رسمی کارآموزی دانشگاه
-            <span class="star">**
-            </span>
-        </li>
-        <li class="benefits__list-item benefits__list-item-circle">
-            به‌دست‌آوردن یک تجربه‌ی واقعی در صنعت کامپیوتر
-        </li>
-        <li class="benefits__list-item benefits__list-item-circle">
-            احتمال دریافت پیشنهاد کار رسمی در تیم فنی نرم‌افزار تحلیل داده ستاره بعد
-            از دوره کارآموزی
-            <span class="star">***</span>
-        </li>
-    </ul>
+<app-header theme="light"></app-header>
+
+<div class="benefits" [style]="style">
+    <svg class="benefits__svg"
+         xmlns="http://www.w3.org/2000/svg"
+         width="2384.137"
+         height="941.838"
+         viewBox="0 0 2384.137 941.838">
+        <path id="Top"
+              d="M1330.389,458c-767.5,0-619.313-223.649-853.313-118.965S-81.953,402.489-159.337,23.574-263.405-456.684-263.405-456.684s2330.728-61.095,2376.5,0C2147.029-411.387,2097.894,458,1330.389,458Z"
+              transform="translate(263.405 483.838)"/>
+        <defs>
+            <linearGradient id="gradient" gradientTransform="rotate(45)">
+                <stop offset="0" [attr.stop-color]="colors.light"/>
+                <stop offset="100%" [attr.stop-color]="colors.dark"/>
+            </linearGradient>
+        </defs>
+    </svg>
     
-    <div class="benefits__image">
-        <img src="../../../assets/Picture2.png" alt="Benefits"/>
+    <div class="benefits__top">
+        <div class="benefits__top__text">
+            <h1>مزایای شرکت در کارآموزی کداستار</h1>
+            
+            <ul>
+                <li>یادگیری مفاهیم پیشرفته‌ی برنامه‌نویسی و تکنولوژی‌های به‌روز و متنوع</li>
+                <li>رشد کردن در مواجهه با چالش‌های فنی در کنار مربی‌های با تجربه</li>
+                <li>تجربه‌ی کار تیمی و رشد مهارت‌های نرم</li>
+                <li>به‌دست‌آوردن یک تجربه‌ی واقعی در صنعت کامپیوتر</li>
+                <li>امکان شرکت در دوره به صورت واحد رسمی کارآموزی دانشگاه</li>
+                <li>احتمال دریافت پیشنهاد کار رسمی در تیم فنی نرم‌افزار تحلیل داده ستاره</li>
+                <li>دورکاری از خانه، در هر نقطه از ایران، بدون نگرانی مشکلات کرونا، حمل و نقل، خوابگاه و...</li>
+            </ul>
+        </div>
+        
+        <div class="benefits__top__svg">
+            <svg-computer-spaceship></svg-computer-spaceship>
+        </div>
     </div>
     
-    <ol class="benefits__list">
-        <li class="benefits__list-item benefits__list-item-number">
-            <span class="star">*</span>
-            همه‌ی مراحل دوره‌ی کداستار امسال از ثبت نام،
-            آزمون، مصاحبه و شرکت در دوره، انجام و تحویل پروژه‌ها و کار با هم تیمی‌ها
-            به صورت دورکاری و از طریق اینترنت هست بنابراین حواستون باشه برای برقراری
-            ویدیو کنفرانس نیاز به یک اینترنت مناسب دارین
-        </li>
-        <li class="benefits__list-item benefits__list-item-number">
-            <span class="star">**</span>
-            در صورت پذیرفته شدن در آزمون ورودی و مصاحبه‌ی
-            کداستار می‌تونین درخواست کنین شرکت در کداستار به عنوان واحد رسمی کارآموزی
-            دانشگاه شما حساب بشه، البته به شرطی که شما شرایط دانشگاه خودتون برای
-            برداشتن واحد کارآموزی رو داشته باشین و گذروندن واحد رسمی کارآموزی به صورت
-            دورکاری مورد پذیرش دانشگاه شما باشه (مثلاً دانشکده مهندسی کامپیوتر دانشگاه
-            شریف گذروندن واحد کارآموزی رو به صورت دورکاری پذیرفته)
-        </li>
-        <li class="benefits__list-item benefits__list-item-number">
-            <span class="star">***</span>
-            بله! اگه عملکرد شما در دوره‌ی کارآموزی قوی
-            باشه ممکنه آخر کارآموزی‌تون پیشنهاد کار رسمی از طرف تیم ستاره داشته باشین
-            و مستقل از این، گذروندن یه دوره‌ی کارآموزی حرفه‌ای رزومه شما رو تقویت
-            می‌کنه و رزومه‌ی قوی‌تر فرصت‌های آینده‌ی شما رو بیشتر می‌کنه.
-        </li>
-    </ol>
+    <div class="benefits__bottom">
+        <ul>
+            <li>
+                <div class="icon">
+                    <svg-virus></svg-virus>
+                </div>
+                <h2>دورکاری</h2>
+                <p>
+                    تمام مراحل دورۀ کداستار امسال شامل ثبت نام،
+                    آزمون، مصاحبه، شرکت در دوره، انجام و تحویل پروژه‌ها و کار با هم تیمی‌ها
+                    به صورت دورکاری و از طریق اینترنت انجام میشه. بنابراین دقت کنید برای برقراری
+                    ویدیو کنفرانس نیاز به یک اینترنت مناسب خواهید داشت.
+                </p>
+            </li>
+            <li>
+                <div class="icon">
+                    <svg-graduation-cap></svg-graduation-cap>
+                </div>
+                <h2>دانشگاه</h2>
+                <p>
+                    در صورت پذیرفته‌شدن در آزمون ورودی و مصاحبۀ
+                    کداستار می‌تونین درخواست کنین این دوره به عنوان واحد رسمی کارآموزی
+                    دانشگاه شما حساب شه؛ البته به شرطی که شما شرایط دانشگاه خودتون برای
+                    برداشتن واحد کارآموزی رو داشته باشین و گذروندن کارآموزی به صورت
+                    دورکاری، مورد پذیرش دانشگاه شما باشه.
+                </p>
+            </li>
+            <li>
+                <div class="icon">
+                    <svg-working-with-computer></svg-working-with-computer>
+                </div>
+                <h2>شغل</h2>
+                <p>
+                    اگه عملکرد شما در کارآموزی خوب
+                    باشه ممکنه در آخر دوره، پیشنهاد کار رسمی از طرف تیم ستاره رو داشته باشین.
+                    در نهایت گذروندن یه دورۀ کارآموزی حرفه‌ای، رزومۀ شما رو تقویت
+                    می‌کنه و یک رزومۀ قوی، فرصت‌های شغلی آیندۀ شما رو بیشتر می‌کنه.
+                </p>
+            </li>
+        </ul>
+    </div>
 </div>
-<app-footer></app-footer>
+
+<app-footer [background]="footerBackground" color="white"></app-footer>

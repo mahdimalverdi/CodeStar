@@ -13,7 +13,9 @@ export class AppComponent {
     constructor(private router: Router, private meta: Meta) {
         router.events.subscribe((e) => {
                 if (e instanceof NavigationEnd) {
-                    if ((e as NavigationEnd).urlAfterRedirects !== '/Home') {
+                    const url = (e as NavigationEnd).urlAfterRedirects;
+                    
+                    if (['/Home', '/Benefits'].includes(url)) {
                         this.meta.removeTag('name="theme-color"');
                         this.meta.addTag({name: 'theme-color', content: '#fafafa'}, true);
                     }

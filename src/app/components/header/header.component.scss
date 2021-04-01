@@ -1,9 +1,9 @@
-@use "/src/app/styles" as *;
+@use "/src/app/styles";
 
 .header {
-    --background: #{$color-dark};
-    --color: #{$color-light};
-    --gap: 2em;
+    --background: #{styles.$color-gray-10};
+    --color: #{styles.$color-gray-98};
+    --color-hover: #{styles.$shade-light-gray-90};
     
     position: absolute;
     top: 0;
@@ -17,9 +17,9 @@
     justify-content: space-between;
     
     width: 100%;
-    max-width: 1200px;
+    max-width: var(--container-max-width);
     
-    padding: var(--gap);
+    padding: 2rem var(--container-inline-padding);
     
     font-size: var(--font-size-header-navbar);
     font-weight: var(--font-weight-header-navbar);
@@ -31,8 +31,9 @@
     }
     
     &.dark {
-        --background: #{$color-light};
-        --color: #{$color-dark};
+        --background: #{styles.$color-gray-98};
+        --color: #{styles.$color-gray-10};
+        --color-hover: #{styles.$shade-light-gray-10};
     }
     
     &__menu {
@@ -42,7 +43,7 @@
         &__icon {
             cursor: pointer;
             
-            @include transform-transition;
+            @include styles.transform-transition;
             
             &:hover {
                 transform: scale(1.1);
@@ -53,8 +54,8 @@
             background: transparent;
             
             position: fixed;
-            top: -1.8rem;
-            right: -1.8rem;
+            top: -5px;
+            right: -18px;
             z-index: -1;
             
             width: 10rem;
@@ -74,10 +75,82 @@
         display: none;
         
         a {
+            --padding-block: 0.5rem;
+            --padding-inline: 1.5rem;
+            
+            position: relative;
+            
             color: var(--color);
             
             font-size: var(--font-size-header-nav);
             font-weight: var(--font-weight-header-nav);
+            
+            &,
+            &::before {
+                transition: all 0.1s ease-in-out;
+            }
+            
+            &::before {
+                content: "";
+                
+                background: var(--color-hover);
+                
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                z-index: -1;
+                
+                box-sizing: content-box;
+                
+                width: 0;
+                height: 0;
+                
+                border-radius: 999rem;
+                
+                transform: translate(-50%, -50%);
+            }
+            
+            &:hover {
+                transform: scale(1.05);
+                
+                &::before {
+                    width: 100%;
+                    height: 100%;
+                    
+                    padding: var(--padding-block) var(--padding-inline);
+                }
+            }
+            
+            &.active {
+                position: relative;
+                
+                font-weight: var(--font-weight-header-nav--active);
+                
+                &:hover {
+                    transform: scale(1);
+                }
+                
+                &::before {
+                    display: none;
+                }
+                
+                &::after {
+                    --border-size: 0.2rem;
+                    
+                    content: "";
+                    
+                    background: currentColor;
+                    
+                    position: absolute;
+                    left: calc(var(--padding-inline) * -0.5);
+                    right: calc(var(--padding-inline) * -0.5);
+                    bottom: calc(var(--border-size) * -2);
+                    
+                    box-sizing: content-box;
+                    
+                    height: var(--border-size);
+                }
+            }
         }
     }
     
@@ -90,7 +163,7 @@
         
         margin-inline-start: auto;
         
-        @include transform-transition;
+        @include styles.transform-transition;
         
         &__text {
             display: inline-block;
@@ -133,9 +206,9 @@
                 
                 display: flex;
                 flex-direction: column;
-                gap: 2rem;
                 align-items: center;
                 justify-content: center;
+                gap: 2rem;
                 
                 pointer-events: none;
                 
@@ -159,6 +232,16 @@
     }
 }
 
+@media (min-width: 576px) {
+    .header {
+        &__menu {
+            &__background {
+                right: 2px;
+            }
+        }
+    }
+}
+
 @media (min-width: 768px) {
     .header {
         &__menu {
@@ -168,7 +251,7 @@
         &__nav {
             display: flex;
             flex-direction: row;
-            gap: 2rem;
+            gap: 3rem;
         }
         
         &__logo {
@@ -179,8 +262,6 @@
 @media (min-width: 1200px) {
     .header {
         left: 50%;
-        
-        padding-inline: 0;
         
         transform: translateX(-50%);
     }

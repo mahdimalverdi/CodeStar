@@ -1,45 +1,162 @@
-@use "/src/app/styles" as *;
+@use "/src/app/styles";
 
-.technologies {
-    @include technologies-and-time-line;
+.technologies,
+.concepts {
+    width: 100%;
+    max-width: var(--container-max-width);
     
-    &__list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
-        
-        margin: 50px 10px;
+    margin: 0 auto;
+    padding-inline: var(--container-inline-padding);
+    
+    h1,
+    h2,
+    h3 {
+        text-align: center;
     }
     
-    &__technology {
-        --size: 200px;
+    ul {
+        direction: ltr;
         
-        color: $color-dark;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: space-between;
+        gap: 5rem;
         
-        display: block;
+        margin: 5rem 0 10rem;
         
-        width: var(--size);
-        
-        user-select: none;
-        
-        text-align: center;
-        text-decoration: none;
-        
-        @include transform-transition;
-        
-        &-image {
-            width: var(--size);
-            height: var(--size);
-            object-fit: contain;
-        }
-        
-        p {
-            direction: ltr;
+        list-style: none;
+    }
+}
+
+.technologies {
+    padding-block-start: var(--container-padding-block-start);
+    
+    ul {
+        li {
+            --size: 15rem;
+            
+            flex: 1 0 var(--size);
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            
+            transform: scale(1);
+            
+            @include styles.transform-transition;
+            
+            &:hover {
+                transform: scale(1.1);
+                
+                img {
+                    filter: grayscale(0) !important;
+                }
+            }
+            
+            img {
+                width: auto;
+                height: var(--size);
+                object-fit: contain;
+            }
         }
         
         &:hover {
-            transform: scale(1.05);
+            li {
+                img {
+                    filter: grayscale(100%);
+                }
+            }
         }
+    }
+}
+
+.concepts {
+    ul {
+        justify-content: space-evenly;
+        
+        li {
+            --size: 15rem;
+            --padding: 5rem;
+            
+            position: relative;
+            box-sizing: content-box;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            width: var(--size);
+            height: var(--size);
+            
+            padding: var(--padding);
+            
+            transform: scale(1);
+            
+            @include styles.transform-transition;
+            
+            &:hover {
+                color: styles.$color-gray-98;
+                
+                transform: scale(1.1);
+                
+                h3 {
+                    font-weight: var(--font-weight-h3--active);
+                }
+                
+                i {
+                    border-color: currentColor !important;
+                }
+            }
+            
+            @for $li from 1 to 6  + 1 {
+                &:nth-child(#{$li}) {
+                    $hue: ($li + 1) * 45;
+                    @if $hue >= 360 {
+                        $hue: $hue - 360;
+                    }
+                    
+                    $color: hsl($hue, 100%, 40%);
+                    
+                    i {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: -1;
+                        
+                        width: 100%;
+                        height: 100%;
+                        
+                        border: 0.05rem solid $color;
+                        border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+                        
+                        @for $i from 1 to 3  + 1 {
+                            &:nth-child(#{$i}) {
+                                animation: rotateAnimation #{1 + $i * 2}s linear infinite -#{$i * 2 + $li}s;
+                            }
+                        }
+                    }
+                    
+                    &:hover {
+                        i {
+                            background: $color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+    
+    100% {
+        transform: rotate(360deg);
     }
 }
