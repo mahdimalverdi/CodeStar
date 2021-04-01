@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Meta} from '@angular/platform-browser';
-import colors from '../../models/colors';
+import colors from '../../utils/colors';
 
 @Component({
     selector: 'app-home',

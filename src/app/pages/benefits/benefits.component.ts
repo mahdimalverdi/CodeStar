@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import colors from '../../models/colors';
+import colors, {generateLinearBackground} from '../../utils/colors';
 
 @Component({
     selector: 'app-benefits',
@@ -7,7 +7,7 @@ import colors from '../../models/colors';
     styleUrls: ['./benefits.component.scss'],
 })
 export class BenefitsComponent {
-    public svgColors = {
+    public colors = {
         light: colors.orangered.light,
         dark: colors.orangered.dark,
     };
@@ -16,4 +16,8 @@ export class BenefitsComponent {
         '--color-primary--light': colors.orangered.light,
         '--color-primary--dark': colors.orangered.dark,
     };
+    
+    public get footerBackground() {
+        return generateLinearBackground(this.colors.light, this.colors.dark);
+    }
 }

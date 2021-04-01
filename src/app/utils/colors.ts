@@ -21,4 +21,8 @@ const colors = {
     },
 };
 
+export function generateLinearBackground(firstColor: string, secondColor: string, direction: string = 'to bottom right') {
+    return `linear-gradient(${direction}, ${firstColor}, ${secondColor})`;
+}
+
 export default colors;

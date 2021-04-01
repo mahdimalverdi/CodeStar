@@ -1,61 +1,35 @@
 @use "/src/app/styles";
 
-.footer {
-    border-top: solid styles.$color-gray-98 1px;
-    line-height: 2rem;
-    font-size: 1.25rem;
-    text-align: justify;
-    text-align-last: center;
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     
-    @media (max-width: 575px) {
-        padding: 20px 20px 0 10px;
+    padding: 1rem var(--container-inline-padding);
+    
+    h4 {
+        flex: 1;
     }
     
-    @media (min-width: 576px) {
-        padding: 20px 38px 0 38px;
-    }
-    
-    @media (min-width: 768px) {
-        padding: 20px 134px 0 134px;
-    }
-    
-    @media (min-width: 992px) {
-        padding: 20px 246px 0 246px;
-    }
-    
-    @media (min-width: 1200px) {
-        padding: 20px 350px 0 350px;
-    }
-    
-    &__text {
-        margin-top: 20px;
-        margin-bottom: 20px;
+    ul {
+        display: flex;
+        gap: 2rem;
         
-        &-icon {
-            width: 30px;
-            object-fit: cover;
-            margin: 0 10px;
-        }
-    }
-    
-    &__title {
-        text-align: center;
-        font-size: 2.5rem;
-        margin-bottom: 60px;
-        color: styles.$color-gray-98;
-    }
-    
-    &__detail {
-        min-height: 100vh;
-        background: styles.$color-gray-98;
-        z-index: 10;
+        list-style: none;
         
-        &-owner {
-            text-align: center;
-            padding: 10px 0;
-            margin: 0;
-            line-height: 1rem;
-            font-size: 1rem;
+        li {
+            display: inline;
+            
+            width: 2rem;
+            
+            a {
+                color: inherit;
+                
+                &::ng-deep {
+                    fill: currentColor;
+                }
+            }
         }
     }
 }

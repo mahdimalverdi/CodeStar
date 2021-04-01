@@ -11,8 +11,8 @@
               transform="translate(263.405 483.838)"/>
         <defs>
             <linearGradient id="gradient" gradientTransform="rotate(45)">
-                <stop offset="0" [attr.stop-color]="svgColors.light"/>
-                <stop offset="100%" [attr.stop-color]="svgColors.dark"/>
+                <stop offset="0" [attr.stop-color]="colors.light"/>
+                <stop offset="100%" [attr.stop-color]="colors.dark"/>
             </linearGradient>
         </defs>
     </svg>
@@ -80,4 +80,4 @@
     </div>
 </div>
 
-<app-footer></app-footer>
+<app-footer [background]="footerBackground" color="white"></app-footer>
