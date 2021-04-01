@@ -1,35 +1,50 @@
 @use "/src/app/styles";
 
 footer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    
-    padding: 1rem var(--container-inline-padding);
-    
-    h4 {
-        flex: 1;
-    }
-    
-    ul {
+    div {
         display: flex;
-        gap: 2rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
         
-        list-style: none;
+        max-width: var(--container-max-width);
+        width: 100%;
         
-        li {
-            display: inline;
+        margin: 0 auto;
+        padding: 1rem var(--container-inline-padding);
+        
+        h4 {
+            flex: 1;
+        }
+        
+        ul {
+            display: flex;
+            gap: 2rem;
             
-            width: 2rem;
+            list-style: none;
             
-            a {
-                color: inherit;
+            li {
+                display: inline;
                 
-                &::ng-deep {
-                    fill: currentColor;
+                width: 2rem;
+                
+                a {
+                    color: inherit;
+                    
+                    &::ng-deep {
+                        fill: currentColor;
+                    }
                 }
             }
+        }
+    }
+}
+
+@media (min-width: 576px) {
+    footer {
+        div {
+            flex-direction: row;
         }
     }
 }

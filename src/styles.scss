@@ -66,37 +66,40 @@ svg {
 }
 
 body {
-    --container-inline-padding: 4rem;
+    --container-max-width: 1200px;
+    --container-inline-padding: 2rem;
     
-    --font-size-header-logo: 2rem;
     --font-size-h1: 2.4rem;
     --font-size-h2: 2rem;
     --font-size-h3: 1.6rem;
-    --font-size-h4: 2rem;
+    --font-size-h4: 1.2rem;
+    --font-size-header-logo: 2.4rem;
+    --font-size-header-nav: var(--font-size-h3);
     
-    --font-weight-header-logo: 700;
     --font-weight-h1: 700;
     --font-weight-h2: 600;
     --font-weight-h3: 300;
     --font-weight-h4: 500;
-    --font-weight-h4--active: 600;
+    --font-weight-header-logo: 700;
+    --font-weight-header-nav: var(--font-weight-h4);
+    --font-weight-header-nav--active: var(--font-weight-h2);
     
     @media (min-width: 576px) {
+        --container-inline-padding: 4rem;
     }
     
     @media (min-width: 768px) {
-        --font-size-header-logo: 2.4rem;
         --font-size-h1: 3.2rem;
         --font-size-h2: 2.4rem;
         --font-size-h3: 2rem;
         --font-size-h4: 1.6rem;
+        --font-size-header-nav: var(--font-size-h4);
     }
     
     @media (min-width: 992px) {
     }
     
     @media (min-width: 1200px) {
-        --font-size-header-logo: 2.4rem;
         --font-size-h1: 3.6rem;
         --font-size-h2: 2.8rem;
         --font-size-h3: 2.4rem;

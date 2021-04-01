@@ -16,7 +16,7 @@
     justify-content: space-between;
     
     width: 100%;
-    max-width: 1200px;
+    max-width: var(--container-max-width);
     
     padding: 2rem var(--container-inline-padding);
     
@@ -75,8 +75,8 @@
         a {
             color: var(--color);
             
-            font-size: var(--font-size-h4);
-            font-weight: var(--font-weight-h4);
+            font-size: var(--font-size-header-nav);
+            font-weight: var(--font-weight-header-nav);
         }
     }
     
@@ -132,9 +132,9 @@
                 
                 display: flex;
                 flex-direction: column;
-                gap: 2rem;
                 align-items: center;
                 justify-content: center;
+                gap: 2rem;
                 
                 pointer-events: none;
                 

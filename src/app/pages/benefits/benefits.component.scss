@@ -8,21 +8,23 @@
     flex-direction: column;
     align-items: center;
     
-    padding: 10rem var(--container-inline-padding) 2rem;
+    padding-inline: var(--container-inline-padding);
     
     &__svg {
         fill: url("#gradient");
         
         position: absolute;
-        left: -263.41px;
-        top: -141.84px;
+        left: 50%;
+        top: -101.84px;
         z-index: -1;
+        
+        transform: translateX(-50%);
     }
     
     &__top,
     &__bottom {
         width: 100%;
-        max-width: 1200px;
+        max-width: var(--container-max-width);
     }
     
     &__top {
@@ -33,14 +35,20 @@
         align-items: flex-start;
         justify-content: space-between;
         
-        height: max-content;
+        height: 900px;
+        
+        padding-block-start: 16rem;
         
         &__text {
+            flex: 1;
+            
             h1 {
                 text-align: center;
             }
             
             ul {
+                list-style: inside;
+                
                 li {
                     margin-block: 2rem;
                     
@@ -56,27 +64,22 @@
     }
     
     &__bottom {
-        margin-top: 20rem;
-        
         ul {
             display: grid;
-            grid-auto-flow: column;
+            grid-template-columns: repeat(auto-fit, minmax(25rem, 35rem));
+            justify-content: center;
             gap: 5rem;
             
             list-style: none;
             
+            margin-bottom: 5rem;
+            
             li {
                 display: flex;
                 flex-direction: column;
-                gap: 1rem;
                 align-items: center;
                 justify-content: flex-start;
-                
-                width: 35rem;
-                
-                padding: 3rem;
-                
-                border-radius: 1.5rem;
+                gap: 1rem;
                 
                 .icon {
                     position: relative;
@@ -108,27 +111,8 @@
     }
 }
 
-@media (min-width: 768px) {
-    .header {
-        &__menu {
-            display: none;
-        }
-        
-        &__nav {
-            display: flex;
-            flex-direction: row;
-            gap: 2rem;
-        }
-        
-        &__logo {
-        }
-    }
-}
-
 @media (min-width: 1200px) {
     .benefits {
-        padding-top: 16rem;
-        
         &__top {
             &__text {
                 h1 {
