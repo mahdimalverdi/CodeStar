@@ -1,4 +1,13 @@
 /*************** COLORS ***************/
+$color-primary-dark: #2980b9;
+$color-primary-light: #3498db;
+$color-accent-dark: #d35400;
+$color-accent-light: #e67e22;
+$color-success-dark: #27ae60;
+$color-success-light: #2ecc71;
+$color-danger-dark: #c0392b;
+$color-danger-light: #e74c3c;
+
 $color-white: #ffffff;
 $color-gray-98: #fafafa;
 $color-gray-95: #f2f2f2;
@@ -15,6 +24,7 @@ $color-black: #000000;
 
 /*************** SHADES ***************/
 $shade-dark-gray-90: transparentize($color-gray-10, 0.9);
+$shade-dark-gray-80: transparentize($color-gray-10, 0.8);
 $shade-dark-gray-70: transparentize($color-gray-10, 0.7);
 $shade-dark-gray-50: transparentize($color-gray-10, 0.5);
 $shade-dark-gray-30: transparentize($color-gray-10, 0.3);

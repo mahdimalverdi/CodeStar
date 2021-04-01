@@ -1,69 +1,161 @@
 @use "/src/app/styles";
 
-.requirements {
+@mixin _shadow($horizontal-multiplier) {
+    box-shadow: #{$horizontal-multiplier * 0.2rem} 0.2rem 0.8rem styles.$shade-dark-gray-90;
+}
+
+@mixin _status-indicator($color) {
+    content: "";
     
-    padding: 90px 20px;
-    margin: 0 auto;
-    font-size: 1.5em;
-    line-height: 2em;
-    text-align: justify;
+    background: $color;
     
-    @media (min-width: 576px) {
-        max-width: 540px;
-        padding-top: 95px;
-    }
-    @media (min-width: 768px) {
-        max-width: 720px;
-        padding-top: 120px;
-    }
-    @media (min-width: 992px) {
-        max-width: 960px;
-        padding-top: 140px;
-        font-size: 2em;
-        line-height: 2em;
-    }
-    @media (min-width: 1200px) {
-        max-width: 1140px;
-        padding-top: 170px;
-    }
-    @media (min-width: 1400px) {
-        max-width: 1320px;
-    }
+    display: block;
     
-    &__text {
-        margin-top: 20px;
-        margin-bottom: 20px;
+    align-self: stretch;
+    
+    width: 0.5rem;
+}
+
+@mixin _rounded-corners($side) {
+    border-start-#{$side}-radius: 999rem;
+    border-end-#{$side}-radius: 999rem;
+}
+
+@mixin _list-item($color, $side-circle) {
+    --color: #{styles.$color-success-light};
+    
+    $side-status-indicator: after;
+    $shadow-horizontal-multiplier: 1;
+    
+    @if $side-circle == end {
+        $side-status-indicator: before;
+        $shadow-horizontal-multiplier: -1;
     }
     
-    &__title {
-        text-align: center;
-        font-size: 2.5rem;
-        margin-bottom: 60px;
-        color: styles.$color-gray-98;
+    &::#{$side-status-indicator} {
+        @include _status-indicator($color);
     }
     
-    &__list {
-        &-item {
-            align-items: flex-end;
-            
-            &-circle {
-                list-style-type: circle;
-            }
-            
-            &-number {
-                list-style-type: none;
-                font-size: 1rem;
-            }
-        }
-    }
-    
-    &__image {
-        padding: 50px 0;
-        text-align: center;
+    i {
+        @include _shadow($shadow-horizontal-multiplier);
         
-        img {
-            max-width: 100%;
-            object-fit: cover;
+        &::after {
+            border-color: $color;
         }
     }
+    
+    h3 {
+        @include _shadow($shadow-horizontal-multiplier);
+        @include _rounded-corners($side-circle);
+    }
+}
+
+h1,
+.requirements,
+.extras {
+    width: 100%;
+    max-width: var(--container-max-width);
+    
+    margin: 0 auto;
+    padding-inline: var(--container-inline-padding);
+    
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5rem;
+        
+        margin-block-start: 2rem;
+        
+        list-style: none;
+        
+        li {
+            --size: 5rem;
+            --gap: 2rem;
+            
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            gap: var(--gap);
+            
+            i {
+                position: relative;
+                
+                display: none;
+                
+                width: var(--size);
+                height: var(--size);
+                
+                border-radius: 999rem;
+                
+                &::after {
+                    --border: 1rem solid;
+                    
+                    content: "";
+                    
+                    position: absolute;
+                    top: 0;
+                    left: 1rem;
+                    
+                    width: var(--size);
+                    height: calc(var(--size) * 0.5);
+                    
+                    border-inline-end: var(--border);
+                    border-block-end: var(--border);
+                    
+                    transform: rotate(-45deg);
+                }
+                
+                @media (min-width: 360px) {
+                    display: block;
+                }
+            }
+            
+            h3 {
+                flex: 1;
+                
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                
+                min-height: var(--size);
+                
+                padding: var(--gap);
+                
+                text-align: start;
+            }
+        }
+    }
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+h1 {
+    padding-block-start: var(--container-padding-block-start);
+}
+
+h2 {
+    margin-block-start: 6rem;
+}
+
+.requirements {
+    ul {
+        li {
+            @include _list-item(styles.$color-success-light, start);
+        }
+    }
+}
+
+.extras {
+    ul {
+        li {
+            @include _list-item(styles.$color-gray-90, end);
+        }
+    }
+    
+    margin-block-end: 8rem;
 }
