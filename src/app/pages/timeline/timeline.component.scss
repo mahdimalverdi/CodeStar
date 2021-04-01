@@ -1,24 +1,24 @@
-@use "/src/app/styles" as *;
+@use "/src/app/styles";
 
 .time-line {
-    @include technologies-and-time-line;
+    @include styles.technologies-and-time-line;
     
     &__title {
         text-align: center;
         font-size: 2.5rem;
         margin-bottom: 60px;
-        color: $color-light;
+        color: styles.$color-gray-98;
     }
     
     &__button {
-        border: solid $color-light;
+        border: solid styles.$color-gray-98;
         padding: 20px;
         border-radius: 10px;
         text-decoration: none;
-        color: $color-dark;
+        color: styles.$color-gray-10;
         
         &:hover {
-            background-color: transparentize($color-light, 0.1);
+            background-color: transparentize(styles.$color-gray-98, 0.1);
         }
     }
     
@@ -39,9 +39,9 @@
                 justify-content: center;
                 height: 100px;
                 border-radius: 100%;
-                background-color: $color-dark;
-                background-image: linear-gradient(147deg, $color-dark 0%, #04619f 74%);
-                color: $color-light;
+                background-color: styles.$color-gray-10;
+                background-image: linear-gradient(147deg, styles.$color-gray-10 0%, #04619f 74%);
+                color: styles.$color-gray-98;
                 padding-left: 10px;
                 padding-right: 10px;
             }
@@ -55,7 +55,7 @@
                 padding-bottom: 5px;
                 
                 span {
-                    border-left: $color-dark dashed 6px;
+                    border-left: styles.$color-gray-10 dashed 6px;
                     width: 47px;
                     display: block;
                     height: 100%;

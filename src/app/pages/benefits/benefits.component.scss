@@ -1,50 +1,147 @@
+@use "/src/app/styles";
+
 .benefits {
-    padding: 90px 20px;
-    margin: 0 auto;
-    font-size: 1.5em;
-    line-height: 2em;
-    text-align: justify;
+    position: relative;
+    overflow: hidden;
     
-    @media (min-width: 576px) {
-        max-width: 540px;
-        padding-top: 95px;
-    }
-    @media (min-width: 768px) {
-        max-width: 720px;
-        padding-top: 120px;
-    }
-    @media (min-width: 992px) {
-        max-width: 960px;
-        padding-top: 140px;
-        font-size: 2em;
-        line-height: 2em;
-    }
-    @media (min-width: 1200px) {
-        max-width: 1140px;
-        padding-top: 170px;
-    }
-    @media (min-width: 1400px) {
-        max-width: 1320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    padding: 10rem var(--container-inline-padding) 2rem;
+    
+    &__svg {
+        fill: url("#gradient");
+        
+        position: absolute;
+        left: -263.41px;
+        top: -141.84px;
+        z-index: -1;
     }
     
-    &__list {
-        &-item {
-            &-number {
-                list-style: none;
-                font-size: .75em;
-                line-height: 1.5em;
+    &__top,
+    &__bottom {
+        width: 100%;
+        max-width: 1200px;
+    }
+    
+    &__top {
+        color: styles.$color-gray-98;
+        
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        
+        height: max-content;
+        
+        &__text {
+            h1 {
+                text-align: center;
             }
+            
+            ul {
+                li {
+                    margin-block: 2rem;
+                    
+                    font-size: var(--font-size-h3);
+                    font-weight: var(--font-weight-h3);
+                }
+            }
+        }
+        
+        &__svg {
+            display: none;
         }
     }
     
-    &__image {
-        display: flex;
-        justify-content: center;
-        max-width: 100%;
+    &__bottom {
+        margin-top: 20rem;
         
-        img {
-            max-width: 100%;
-            object-fit: cover;
+        ul {
+            display: grid;
+            grid-auto-flow: column;
+            gap: 5rem;
+            
+            list-style: none;
+            
+            li {
+                //background: styles.$color-white;
+                //box-shadow: styles.$shadow-subtle;
+                
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+                justify-content: flex-start;
+                
+                width: 35rem;
+                
+                padding: 3rem;
+                
+                border-radius: 1.5rem;
+                
+                .icon {
+                    position: relative;
+                    
+                    width: 40%;
+                    
+                    &::ng-deep {
+                        svg {
+                            fill: url("#gradient");
+                        }
+                    }
+                }
+                
+                h2 {
+                    width: 100%;
+                    
+                    margin-top: 0.5em;
+                    
+                    text-align: center;
+                }
+                
+                p {
+                    color: styles.$color-gray-40;
+                    
+                    text-align: justify;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .header {
+        &__menu {
+            display: none;
+        }
+        
+        &__nav {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+        }
+        
+        &__logo {
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .benefits {
+        padding-top: 16rem;
+        
+        &__top {
+            &__text {
+                h1 {
+                    text-align: start;
+                }
+            }
+            
+            &__svg {
+                display: unset;
+            }
         }
     }
 }

@@ -1,7 +1,7 @@
-@use "/src/app/styles" as *;
+@use "/src/app/styles";
 
 .technologies {
-    @include technologies-and-time-line;
+    @include styles.technologies-and-time-line;
     
     &__list {
         display: flex;
@@ -15,7 +15,7 @@
     &__technology {
         --size: 200px;
         
-        color: $color-dark;
+        color: styles.$color-gray-10;
         
         display: block;
         
@@ -26,7 +26,7 @@
         text-align: center;
         text-decoration: none;
         
-        @include transform-transition;
+        @include styles.transform-transition;
         
         &-image {
             width: var(--size);

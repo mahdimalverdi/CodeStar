@@ -1,4 +1,4 @@
-@use "/src/app/styles" as *;
+@use "/src/app/styles";
 
 :host {
     flex: 1;
@@ -20,73 +20,62 @@
             
             transform: translateX(0);
             
-            @include transform-transition(0.5s);
-            
-            &.step--1 {
-                transform: translateX(0);
-            }
-            
-            &.step--2 {
-                transform: translateX(100%);
-            }
-            
-            &.step--3 {
-                transform: translateX(200%);
-            }
+            @include styles.transform-transition(0.5s);
             
             .slide {
                 flex-shrink: 0;
             }
+            
+            @for $i from 0 to 3 {
+                &.step--#{$i + 1} {
+                    transform: translateX(#{$i * 100%});
+                }
+            }
         }
         
-        // =========================
-        // Next and Prev buttons
-        // =========================
         .control {
-            border: none;
-            background-color: transparent;
+            --size: var(--font-size-h3);
+            
+            color: styles.$color-gray-98;
+            
             position: absolute;
             top: 0;
-            cursor: pointer;
+            
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 0.5em;
-            color: white;
-            font-weight: bold;
-            font-size: 3em;
-            user-select: none;
+            
             height: 100%;
-            opacity: 80%;
-            // opacity effect on hover
-            transition: opacity 150ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
             
-            &:hover, &:focus {
-                opacity: 1;
-            }
+            cursor: pointer;
+            user-select: none;
             
-            /* Position the buttons */
-            &.next {
-                left: 0;
-            }
-            
-            &.prev {
-                right: 0;
-            }
-            
-            /* style the arrows */
-            .arrow {
-                display: block;
-                border-left: 0.1em solid white;
-                border-bottom: 0.1em solid white;
-                width: 0.5em;
-                height: 0.5em;
+            &::after {
+                --border: 0.2rem solid #{styles.$color-gray-98};
                 
-                &.left {
+                content: "";
+                
+                width: var(--size);
+                height: var(--size);
+                
+                border-left: var(--border);
+                border-bottom: var(--border);
+            }
+            
+            &--left {
+                left: 0;
+                padding-inline-end: var(--size);
+                
+                &::after {
                     transform: rotate(45deg);
                 }
+            }
+            
+            &--right {
+                right: 0;
+                padding-inline-start: var(--size);
                 
-                &.right {
+                &::after {
                     transform: rotate(225deg);
                 }
             }

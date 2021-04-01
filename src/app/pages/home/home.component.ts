@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Meta} from '@angular/platform-browser';
+import colors from '../../models/colors';
 
 @Component({
     selector: 'app-home',
@@ -8,10 +9,9 @@ import {Meta} from '@angular/platform-browser';
 })
 export class HomeComponent {
     public slideColors = [
-        ['#30134d', '#200040'],
-        ['#1a3366', '#001233'],
-        // ['#ff9716', '#ca792f'],
-        ['#053305', '#002600'],
+        [colors.purple.light, colors.purple.dark],
+        [colors.blue.light, colors.blue.dark],
+        [colors.green.light, colors.green.dark],
     ];
     public slideColorsStyle = {};
     

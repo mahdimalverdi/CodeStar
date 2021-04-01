@@ -1,9 +1,8 @@
-@use "/src/app/styles" as *;
+@use "/src/app/styles";
 
 .header {
-    --background: #{$color-dark};
-    --color: #{$color-light};
-    --gap: 2em;
+    --background: #{styles.$color-gray-10};
+    --color: #{styles.$color-gray-98};
     
     position: absolute;
     top: 0;
@@ -19,7 +18,7 @@
     width: 100%;
     max-width: 1200px;
     
-    padding: var(--gap);
+    padding: 2rem var(--container-inline-padding);
     
     font-size: var(--font-size-header-navbar);
     font-weight: var(--font-weight-header-navbar);
@@ -31,8 +30,8 @@
     }
     
     &.dark {
-        --background: #{$color-light};
-        --color: #{$color-dark};
+        --background: #{styles.$color-gray-98};
+        --color: #{styles.$color-gray-10};
     }
     
     &__menu {
@@ -42,7 +41,7 @@
         &__icon {
             cursor: pointer;
             
-            @include transform-transition;
+            @include styles.transform-transition;
             
             &:hover {
                 transform: scale(1.1);
@@ -54,7 +53,7 @@
             
             position: fixed;
             top: -1.8rem;
-            right: -1.8rem;
+            right: 0.2rem;
             z-index: -1;
             
             width: 10rem;
@@ -76,8 +75,8 @@
         a {
             color: var(--color);
             
-            font-size: var(--font-size-header-nav);
-            font-weight: var(--font-weight-header-nav);
+            font-size: var(--font-size-h4);
+            font-weight: var(--font-weight-h4);
         }
     }
     
@@ -90,7 +89,7 @@
         
         margin-inline-start: auto;
         
-        @include transform-transition;
+        @include styles.transform-transition;
         
         &__text {
             display: inline-block;

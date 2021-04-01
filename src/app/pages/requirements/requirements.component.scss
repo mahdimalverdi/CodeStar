@@ -1,4 +1,4 @@
-@use "/src/app/styles" as *;
+@use "/src/app/styles";
 
 .requirements {
     
@@ -39,7 +39,7 @@
         text-align: center;
         font-size: 2.5rem;
         margin-bottom: 60px;
-        color: $color-light;
+        color: styles.$color-gray-98;
     }
     
     &__list {
