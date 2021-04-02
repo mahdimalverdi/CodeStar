@@ -15,7 +15,7 @@ export class AppComponent {
                 if (e instanceof NavigationEnd) {
                     const url = (e as NavigationEnd).urlAfterRedirects;
                     
-                    if (['/Home', '/Benefits'].includes(url)) {
+                    if (!['/Home', '/Benefits'].includes(url)) {
                         this.meta.removeTag('name="theme-color"');
                         this.meta.addTag({name: 'theme-color', content: '#fafafa'}, true);
                     }

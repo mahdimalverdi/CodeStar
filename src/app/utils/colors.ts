@@ -16,8 +16,8 @@ const colors = {
         dark: '#0089ff',
     },
     lime: {
-        light: '#00ffaa',
-        dark: '#00ff55',
+        light: '#00e660',
+        dark: '#009900',
     },
     green: {
         light: '#053305',
