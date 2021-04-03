@@ -17,11 +17,9 @@
     ul {
         direction: ltr;
         
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: stretch;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 15rem);
+        justify-content: center;
         gap: 5rem;
         
         margin: 5rem 0 10rem;
@@ -43,7 +41,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            gap: 1rem;
+            
+            & > * + * { margin-block-start: 1rem }
             
             transform: scale(1);
             
@@ -76,12 +75,14 @@
 
 .concepts {
     ul {
+        --size: 15rem;
+        --padding: 5rem;
+        --column-size: calc(var(--size) + calc(var(--padding) * 2));
+        
+        grid-template-columns: repeat(auto-fit, var(--column-size));
         justify-content: space-evenly;
         
         li {
-            --size: 15rem;
-            --padding: 5rem;
-            
             position: relative;
             box-sizing: content-box;
             

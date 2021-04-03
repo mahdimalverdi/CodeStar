@@ -19,7 +19,8 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 2rem;
+        
+        & > * + * { margin-block-start: 2rem }
         
         height: 100%;
         

@@ -9,7 +9,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            gap: 1rem;
+            
+            & > * + * { margin-block-start: 1rem }
             
             max-width: var(--container-max-width);
             width: 100%;
@@ -25,7 +26,8 @@
             
             ul {
                 display: flex;
-                gap: 2rem;
+                
+                & > * + * { margin-inline-start: 2rem }
                 
                 list-style: none;
                 
