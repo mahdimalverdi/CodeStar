@@ -1,7 +1,7 @@
 const colors = {
     magenta: {
-        light: '#ff0095',
-        dark: '#ff0040',
+        light: '#b30068',
+        dark: '#4d0029',
     },
     purple: {
         light: '#30134d',
@@ -12,16 +12,16 @@ const colors = {
         dark: '#001233',
     },
     blueGreen: {
-        light: '#00ffb8',
-        dark: '#0089ff',
-    },
-    lime: {
-        light: '#00e660',
-        dark: '#009900',
+        light: '#2980b9',
+        dark: '#2c3e50',
     },
     green: {
         light: '#053305',
         dark: '#002600',
+    },
+    darkGreen: {
+        light: '#0f9b0f',
+        dark: '#053305',
     },
     orange: {
         light: '#ff9716',
@@ -30,6 +30,10 @@ const colors = {
     orangered: {
         light: '#ff9500',
         dark: '#ff6016',
+    },
+    darkOrange: {
+        light: '#fe8c00',
+        dark: '#f83600',
     },
 };
 

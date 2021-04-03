@@ -38,8 +38,8 @@ export class TimelineComponent {
     
     public selection = [
         colors.blueGreen,
-        colors.orangered,
-        colors.lime,
+        colors.darkGreen,
+        colors.darkOrange,
         colors.magenta,
     ];
     
