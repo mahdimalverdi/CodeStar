@@ -18,9 +18,7 @@
             display: flex;
             flex-direction: row;
             
-            transform: translateX(0);
-            
-            @include styles.transform-transition(0.5s);
+            transition: transform 0.5s ease-in-out;
             
             .slide {
                 flex-shrink: 0;

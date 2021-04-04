@@ -1,4 +1,13 @@
-import {AfterViewInit, Component, ContentChildren, EventEmitter, Output, QueryList} from '@angular/core';
+import {
+    AfterViewInit,
+    Component,
+    ContentChildren,
+    ElementRef,
+    EventEmitter,
+    Output,
+    QueryList,
+    ViewChild,
+} from '@angular/core';
 import {SlideComponent} from './slide/slide.component';
 
 @Component({
@@ -7,18 +16,36 @@ import {SlideComponent} from './slide/slide.component';
     styleUrls: ['./carousel.component.scss'],
 })
 export class CarouselComponent implements AfterViewInit {
+    @ViewChild('slidesRef') slidesRef: ElementRef;
     @ContentChildren(SlideComponent) inputTabs: QueryList<SlideComponent>;
     
     @Output() public slideChange = new EventEmitter<number>();
     
     public templates: any[] = [];
-    public currentSlide = 0;
+    
+    private slides: HTMLElement;
+    private currentSlide = 0;
     private timeoutTime = 20000;
     private timeout: any;
+    private transferredToLeft: boolean;
     
     ngAfterViewInit(): void {
-        setTimeout(() => this.templates = this.inputTabs.map(i => i.template), 100);
-        this.setTimeout();
+        this.slides = this.slidesRef.nativeElement as HTMLElement;
+        
+        setTimeout(() => this.templates = this.inputTabs.map(i => i.template));
+        this.resetTimeout();
+    }
+    
+    public slidesTransitionEndHandler() {
+        if (this.transferredToLeft)
+            this.rotateForward();
+        else
+            this.rotateBackward();
+        
+        this.slides.style.transition = 'none';
+        this.slides.style.transform = 'translate(0)';
+        
+        setTimeout(() => this.slides.style.transition = 'transform 0.5s ease-in-out');
     }
     
     public swipeHandler(e) {
@@ -29,25 +56,43 @@ export class CarouselComponent implements AfterViewInit {
     }
     
     public onPreviousClick() {
-        const previous = this.currentSlide - 1;
-        this.currentSlide = previous < 0 ? this.inputTabs.length - 1 : previous;
-        this.resetTimeout();
+        this.changeSlide(false);
     }
     
     public onNextClick() {
-        const next = this.currentSlide + 1;
-        this.currentSlide = next === this.inputTabs.length ? 0 : next;
-        this.resetTimeout();
+        this.changeSlide(true);
     }
     
-    private setTimeout() {
-        this.timeout = setTimeout(() => this.onNextClick(), this.timeoutTime);
+    public changeSlide(increment: boolean) {
+        if (increment) {
+            this.slides.style.justifyContent = 'flex-start';
+            this.slides.style.transform = 'translate(100%)';
+        } else {
+            if (this.transferredToLeft)
+                this.rotateForward();
+            
+            this.slides.style.justifyContent = 'flex-end';
+            this.slides.style.transform = 'translate(-100%)';
+        }
+        
+        this.transferredToLeft = increment;
+        
+        this.currentSlide = (this.currentSlide + (increment ? 1 : -1) + 3) % 3;
+        this.resetTimeout();
     }
     
     private resetTimeout() {
         clearTimeout(this.timeout);
-        this.setTimeout();
+        this.timeout = setTimeout(() => this.onNextClick(), this.timeoutTime);
         
         this.slideChange.emit(this.currentSlide);
+    }
+    
+    private rotateForward() {
+        this.templates.push(this.templates.splice(0, 1)[0]);
+    }
+    
+    private rotateBackward() {
+        this.templates.unshift(this.templates.pop());
     }
 }
