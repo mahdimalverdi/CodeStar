@@ -27,7 +27,8 @@ export class CarouselComponent implements AfterViewInit {
     private currentSlide = 0;
     private timeoutTime = 20000;
     private timeout: any;
-    private transferredToLeft: boolean;
+    private transferredToLeft: boolean = true;
+    private transitionEnded: boolean = true;
     
     ngAfterViewInit(): void {
         this.slides = this.slidesRef.nativeElement as HTMLElement;
@@ -45,14 +46,10 @@ export class CarouselComponent implements AfterViewInit {
         this.slides.style.transition = 'none';
         this.slides.style.transform = 'translate(0)';
         
-        setTimeout(() => this.slides.style.transition = 'transform 0.5s ease-in-out');
-    }
-    
-    public swipeHandler(e) {
-        if (e.direction === 2)
-            this.onPreviousClick();
-        else if (e.direction === 4)
-            this.onNextClick();
+        setTimeout(() => {
+            this.slides.style.transition = 'transform 0.5s ease-in-out';
+            this.transitionEnded = true;
+        });
     }
     
     public onPreviousClick() {
@@ -64,7 +61,15 @@ export class CarouselComponent implements AfterViewInit {
     }
     
     public changeSlide(increment: boolean) {
+        if (!this.transitionEnded)
+            return;
+        
+        this.transitionEnded = false;
+        
         if (increment) {
+            if (!this.transferredToLeft)
+                this.rotateBackward();
+            
             this.slides.style.justifyContent = 'flex-start';
             this.slides.style.transform = 'translate(100%)';
         } else {

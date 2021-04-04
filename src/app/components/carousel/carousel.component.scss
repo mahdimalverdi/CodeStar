@@ -7,6 +7,8 @@
         position: relative;
         overflow: hidden;
         
+        touch-action: pan-y !important;
+        
         &,
         .slides,
         .slide {
@@ -22,12 +24,6 @@
             
             .slide {
                 flex-shrink: 0;
-            }
-            
-            @for $i from 0 to 3 {
-                &.step--#{$i + 1} {
-                    transform: translateX(#{$i * 100%});
-                }
             }
         }
         
