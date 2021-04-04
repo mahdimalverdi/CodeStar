@@ -24,7 +24,8 @@
         width: 100%;
         max-width: var(--container-max-width);
         
-        padding-inline: var(--container-inline-padding);
+        padding-left: var(--container-inline-padding);
+        padding-right: var(--container-inline-padding);
     }
     
     &__top {
@@ -37,7 +38,7 @@
         
         height: 900px;
         
-        padding-block-start: var(--container-padding-block-start);
+        padding-top: var(--container-padding-top);
         
         &__text {
             flex: 1;
@@ -50,7 +51,8 @@
                 list-style: inside;
                 
                 li {
-                    margin-block: 2rem;
+                    margin-top: 2rem;
+                    margin-bottom: 2rem;
                     
                     font-size: var(--font-size-h3);
                     font-weight: var(--font-weight-h3);
@@ -71,7 +73,7 @@
             align-items: stretch;
             justify-content: center;
             
-            & > * + * { margin-inline-start: 4rem }
+            & > * + * { margin-right: 4rem }
             
             list-style: none;
             
@@ -85,7 +87,7 @@
                 align-items: center;
                 justify-content: flex-start;
                 
-                & > * + * { margin-block-start: 1rem }
+                & > * + * { margin-top: 1rem }
                 
                 max-width: 35rem;
                 

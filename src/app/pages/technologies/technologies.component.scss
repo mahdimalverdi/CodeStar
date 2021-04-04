@@ -6,7 +6,8 @@
     max-width: var(--container-max-width);
     
     margin: 0 auto;
-    padding-inline: var(--container-inline-padding);
+    padding-left: var(--container-inline-padding);
+    padding-right: var(--container-inline-padding);
     
     h1,
     h2,
@@ -29,7 +30,7 @@
 }
 
 .technologies {
-    padding-block-start: var(--container-padding-block-start);
+    padding-top: var(--container-padding-top);
     
     ul {
         li {
@@ -42,7 +43,7 @@
             align-items: center;
             justify-content: space-between;
             
-            & > * + * { margin-block-start: 1rem }
+            & > * + * { margin-top: 1rem }
             
             transform: scale(1);
             

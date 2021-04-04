@@ -158,11 +158,11 @@
         display: flex;
         align-items: flex-end;
         
-        & > * + * { margin-inline-start: 0.5em }
+        & > * + * { margin-right: 0.5em }
         
         height: calc(var(--font-size-header-logo) * 1.5);
         
-        margin-inline-start: auto;
+        margin-right: auto;
         
         @include styles.transform-transition;
         
@@ -210,7 +210,7 @@
                 align-items: center;
                 justify-content: center;
                 
-                & > * + * { margin-block-start: 2rem }
+                & > * + * { margin-top: 2rem }
                 
                 pointer-events: none;
                 
@@ -254,7 +254,7 @@
             display: flex;
             flex-direction: row;
             
-            & > * + * { margin-inline-start: 3rem }
+            & > * + * { margin-right: 3rem }
         }
         
         &__logo {

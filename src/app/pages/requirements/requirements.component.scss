@@ -53,16 +53,17 @@ h1,
     max-width: var(--container-max-width);
     
     margin: 0 auto;
-    padding-inline: var(--container-inline-padding);
+    padding-left: var(--container-inline-padding);
+    padding-right: var(--container-inline-padding);
     
     ul {
         display: flex;
         flex-direction: column;
         align-items: stretch;
         
-        & > * + * { margin-block-start: 5rem }
+        & > * + * { margin-top: 5rem }
         
-        margin-block-start: 2rem;
+        margin-top: 2rem;
         
         list-style: none;
         
@@ -75,7 +76,7 @@ h1,
             align-items: center;
             justify-content: flex-start;
             
-            & > * + * { margin-inline-start: var(--gap) }
+            & > * + * { margin-right: var(--gap) }
             
             i {
                 position: relative;
@@ -99,8 +100,8 @@ h1,
                     width: var(--size);
                     height: calc(var(--size) * 0.5);
                     
-                    border-inline-end: var(--border);
-                    border-block-end: var(--border);
+                    border-left: var(--border);
+                    border-bottom: var(--border);
                     
                     transform: rotate(-45deg);
                 }
@@ -133,11 +134,11 @@ h2 {
 }
 
 h1 {
-    padding-block-start: var(--container-padding-block-start);
+    padding-top: var(--container-padding-top);
 }
 
 h2 {
-    margin-block-start: 6rem;
+    margin-top: 6rem;
 }
 
 .requirements {
@@ -155,5 +156,5 @@ h2 {
         }
     }
     
-    margin-block-end: 8rem;
+    margin-bottom: 8rem;
 }

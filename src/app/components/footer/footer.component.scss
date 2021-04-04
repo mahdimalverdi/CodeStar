@@ -10,7 +10,7 @@
             align-items: center;
             justify-content: space-between;
             
-            & > * + * { margin-block-start: 1rem }
+            & > * + * { margin-top: 1rem }
             
             max-width: var(--container-max-width);
             width: 100%;
@@ -27,7 +27,7 @@
             ul {
                 display: flex;
                 
-                & > * + * { margin-inline-start: 2rem }
+                & > * + * { margin-right: 2rem }
                 
                 list-style: none;
                 

@@ -20,7 +20,7 @@
         align-items: center;
         justify-content: center;
         
-        & > * + * { margin-block-start: 2rem }
+        & > * + * { margin-top: 2rem }
         
         height: 100%;
         
@@ -47,7 +47,7 @@
             color: styles.$color-gray-10;
             mix-blend-mode: screen;
             
-            margin-block-start: 1rem;
+            margin-top: 1rem;
             padding: 0.5em 3em;
             
             border-radius: 999rem;
