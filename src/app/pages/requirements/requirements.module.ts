@@ -15,7 +15,7 @@ import {RequirementsComponent} from './requirements.component';
         RequirementsRoutingModule,
         HeaderModule,
         FooterModule,
-    ],
+    ]
 })
 export class RequirementsModule {
 }
