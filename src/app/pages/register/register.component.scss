@@ -3,30 +3,32 @@
 .register {
     width: 100%;
     max-width: var(--container-max-width);
-
+    
     margin: 0 auto;
-    padding-inline: var(--container-inline-padding);
-    padding-block-start: var(--container-padding-block-start);
-
+    
+    padding-top: var(--container-padding-top);
+    padding-left: var(--container-inline-padding);
+    padding-right: var(--container-inline-padding);
+    
     h1,
     h2,
     h3 {
         text-align: center;
     }
-
+    
     ul {
         direction: ltr;
-
+        
         display: grid;
         grid-template-columns: repeat(auto-fit, 15rem);
         justify-content: center;
         gap: 5rem;
-
+        
         margin: 5rem 0 10rem;
-
+        
         list-style: none;
     }
-
+    
     &__buttons {
         display: flex;
         justify-content: center;
@@ -44,24 +46,27 @@
     border: 1px solid;
     display: inline-block;
     text-align: center;
-
+    
     word-break: keep-all;
     margin: 20px;
-
+    
     border-radius: 15px;
-
+    
+    transition: 0.1s ease-in-out;
+    
     &:hover {
         background-color: white;
     }
-
+    
     img {
         width: 50%;
     }
-
-    &:hover .light{
+    
+    &:hover .light {
         display: none;
     }
-    &:not(:hover) .dark{
+    
+    &:not(:hover) .dark {
         display: none;
     }
 }
@@ -69,7 +74,7 @@
 .front-end-register {
     background-color: #f13a0b;
     border-color: #f13a0b;
-
+    
     &:hover {
         color: #f13a0b;
     }
@@ -78,7 +83,7 @@
 .software-engineering-register {
     background-color: #1145aa;
     border-color: #1145aa;
-
+    
     &:hover {
         color: #1145aa;
     }
@@ -89,4 +94,3 @@
         width: 40%;
     }
 }
-

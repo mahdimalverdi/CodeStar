@@ -37,7 +37,10 @@ export class CarouselComponent implements AfterViewInit {
         this.resetTimeout();
     }
     
-    public slidesTransitionEndHandler() {
+    public slidesTransitionEndHandler(e) {
+        if (e.target !== this.slides)
+            return;
+        
         if (this.transferredToLeft)
             this.rotateForward();
         else

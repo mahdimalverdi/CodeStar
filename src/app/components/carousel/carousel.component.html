@@ -1,5 +1,5 @@
 <div class="carousel" (swiperight)="onNextClick()" (swipeleft)="onPreviousClick()">
-    <div #slidesRef class="slides" (transitionend)="slidesTransitionEndHandler()">
+    <div #slidesRef class="slides" (transitionend)="slidesTransitionEndHandler($event)">
         <div class="slide" *ngFor="let slide of templates">
             <ng-container *ngTemplateOutlet="slide"></ng-container>
         </div>

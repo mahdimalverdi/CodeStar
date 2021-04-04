@@ -35,9 +35,9 @@ const routes: Routes = [
         data: {animation: 'timeline'},
     },
     {
-        path: 'Register',
+        path: 'register',
         loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterModule),
-        data: {animation: 'RegisterPage'},
+        data: {animation: 'register'},
     },
     {path: '**', redirectTo: '/'},
 ];
