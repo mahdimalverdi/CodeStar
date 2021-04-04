@@ -1,33 +1,40 @@
 import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import {DefaultUrlSerializer, RouterModule, Routes, UrlSerializer, UrlTree} from '@angular/router';
+
+class LowerCaseUrlSerializer extends DefaultUrlSerializer {
+    parse(url: string): UrlTree {
+        return super.parse(url.toLowerCase());
+    }
+}
 
 const routes: Routes = [
-    {path: '', redirectTo: '/Home', pathMatch: 'full'},
     {
-        path: 'Home',
+        path: '',
+        pathMatch: 'full',
         loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
-        data: {animation: 'HomePage'},
+        data: {animation: 'home'},
     },
     {
-        path: 'Technologies',
+        path: 'technologies',
         loadChildren: () => import('./pages/technologies/technologies.module').then(m => m.TechnologiesModule),
-        data: {animation: 'TechnologiesPage'},
+        data: {animation: 'technologies'},
     },
     {
-        path: 'Benefits',
+        path: 'benefits',
         loadChildren: () => import('./pages/benefits/benefits.module').then(m => m.BenefitsModule),
-        data: {animation: 'BenefitsPage'},
+        data: {animation: 'benefits'},
     },
     {
-        path: 'Requirements',
+        path: 'requirements',
         loadChildren: () => import('./pages/requirements/requirements.module').then(m => m.RequirementsModule),
-        data: {animation: 'RequirementsPage'},
+        data: {animation: 'requirements'},
     },
     {
-        path: 'Timeline',
+        path: 'timeline',
         loadChildren: () => import('./pages/timeline/timeline.module').then(m => m.TimelineModule),
-        data: {animation: 'TimelinePage'},
+        data: {animation: 'timeline'},
     },
+    {path: '**', redirectTo: '/'},
 ];
 
 @NgModule({
@@ -35,6 +42,11 @@ const routes: Routes = [
         initialNavigation: 'enabled',
     })],
     exports: [RouterModule],
+    providers: [
+        {
+            provide: UrlSerializer,
+            useClass: LowerCaseUrlSerializer,
+        }],
 })
 export class AppRoutingModule {
 }

@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Meta} from '@angular/platform-browser';
+
 import colors from '../../utils/colors';
 
 @Component({

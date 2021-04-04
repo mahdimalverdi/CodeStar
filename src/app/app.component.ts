@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {routeAnimation} from './route-animation';
 import {NavigationEnd, Router} from '@angular/router';
-import {Meta} from '@angular/platform-browser';
+import {Meta, Title} from '@angular/platform-browser';
 
 @Component({
     selector: 'app-root',
@@ -10,15 +10,40 @@ import {Meta} from '@angular/platform-browser';
     animations: [routeAnimation],
 })
 export class AppComponent {
-    constructor(private router: Router, private meta: Meta) {
+    constructor(private router: Router, private meta: Meta, private titleService: Title) {
         router.events.subscribe((e) => {
                 if (e instanceof NavigationEnd) {
                     const url = (e as NavigationEnd).urlAfterRedirects;
                     
-                    if (!['/Home', '/Benefits'].includes(url)) {
-                        this.meta.removeTag('name="theme-color"');
-                        this.meta.addTag({name: 'theme-color', content: '#fafafa'}, true);
+                    if (!['/home', '/benefits'].includes(url)) {
+                        meta.removeTag('name="theme-color"');
+                        meta.addTag({name: 'theme-color', content: '#fafafa'}, true);
                     }
+                    
+                    const title = 'کداستار';
+                    
+                    let titleSuffix;
+                    switch (url) {
+                        case    '/benefits' :
+                            titleSuffix = 'مزایا';
+                            break;
+                        case    '/technologies' :
+                            titleSuffix = 'فناوری‌ها';
+                            break;
+                        case    '/requirements' :
+                            titleSuffix = 'پیش‌نیازها';
+                            break;
+                        case    '/timeline' :
+                            titleSuffix = 'زمان‌بندی';
+                            break;
+                        default:
+                            titleSuffix = '';
+                    }
+                    
+                    if (titleSuffix)
+                        titleService.setTitle(`${title} - ${titleSuffix}`);
+                    else
+                        titleService.setTitle(title);
                 }
             },
         );
