@@ -37,7 +37,7 @@ export class HomeComponent {
         this.currentSlide = currentSlide;
         
         if (!this.headerMenuOpen)
-            setTimeout(() => this.setThemeColor(this.slideColors[currentSlide][0]), 250);
+            setTimeout(() => this.setThemeColor(this.slideColors[currentSlide].light), 250);
         else
             this.setThemeColor('#1a1a1a');
     }

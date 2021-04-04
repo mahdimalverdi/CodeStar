@@ -1,4 +1,5 @@
 import {Component, EventEmitter, HostListener, Input, Output} from '@angular/core';
+import {Meta} from '@angular/platform-browser';
 
 @Component({
     selector: 'app-header',
@@ -12,6 +13,10 @@ export class HeaderComponent {
     
     public open = false;
     
+    private lastThemeColor;
+    
+    constructor(private meta: Meta) {}
+    
     @HostListener('window:resize', ['$event'])
     getScreenSize() {
         if (window.innerWidth >= 768)
@@ -20,6 +25,22 @@ export class HeaderComponent {
     
     public toggleOpen() {
         this.open = !this.open;
+        
+        if (this.theme === 'light') {
+            if (this.open) {
+                this.lastThemeColor = this.meta.getTag('name="theme-color"').content;
+                console.log(this.lastThemeColor);
+                this.setThemeColor('#1a1a1a');
+            } else {
+                this.setThemeColor(this.lastThemeColor);
+            }
+        }
+        
         this.openChange.emit(this.open);
+    }
+    
+    private setThemeColor(content: string) {
+        this.meta.removeTag('name="theme-color"');
+        this.meta.addTag({name: 'theme-color', content}, true);
     }
 }
