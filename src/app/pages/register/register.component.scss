@@ -1,0 +1,92 @@
+@use "/src/app/styles";
+
+.register {
+    width: 100%;
+    max-width: var(--container-max-width);
+
+    margin: 0 auto;
+    padding-inline: var(--container-inline-padding);
+    padding-block-start: var(--container-padding-block-start);
+
+    h1,
+    h2,
+    h3 {
+        text-align: center;
+    }
+
+    ul {
+        direction: ltr;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 15rem);
+        justify-content: center;
+        gap: 5rem;
+
+        margin: 5rem 0 10rem;
+
+        list-style: none;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        @media (min-width: 900px) {
+            margin-top: 50px;
+        }
+    }
+}
+
+.button {
+    font-size: 3em;
+    padding: 10px;
+    color: white;
+    border: 1px solid;
+    display: inline-block;
+    text-align: center;
+
+    word-break: keep-all;
+    margin: 20px;
+
+    border-radius: 15px;
+
+    &:hover {
+        background-color: white;
+    }
+
+    img {
+        width: 50%;
+    }
+
+    &:hover .light{
+        display: none;
+    }
+    &:not(:hover) .dark{
+        display: none;
+    }
+}
+
+.front-end-register {
+    background-color: #f13a0b;
+    border-color: #f13a0b;
+
+    &:hover {
+        color: #f13a0b;
+    }
+}
+
+.software-engineering-register {
+    background-color: #1145aa;
+    border-color: #1145aa;
+
+    &:hover {
+        color: #1145aa;
+    }
+}
+
+@media (min-width: 900px) {
+    .button {
+        width: 40%;
+    }
+}
+

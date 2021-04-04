@@ -34,6 +34,11 @@ const routes: Routes = [
         loadChildren: () => import('./pages/timeline/timeline.module').then(m => m.TimelineModule),
         data: {animation: 'timeline'},
     },
+    {
+        path: 'Register',
+        loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterModule),
+        data: {animation: 'RegisterPage'},
+    },
     {path: '**', redirectTo: '/'},
 ];
 

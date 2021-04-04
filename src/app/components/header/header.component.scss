@@ -61,7 +61,7 @@
             width: 10rem;
             height: 10rem;
             
-            border-radius: 999rem;
+            border-radius: 15px;
             
             transform: scale(0.4);
             transform-origin: center;
@@ -73,7 +73,7 @@
     
     &__nav {
         display: none;
-        
+
         a {
             --padding-block: 0.5rem;
             --padding-inline: 1.5rem;
@@ -84,7 +84,8 @@
             
             font-size: var(--font-size-header-nav);
             font-weight: var(--font-weight-header-nav);
-            
+            text-align: center;
+
             &,
             &::before {
                 transition: all 0.1s ease-in-out;
@@ -105,7 +106,7 @@
                 width: 0;
                 height: 0;
                 
-                border-radius: 999rem;
+                border-radius: 15px;
                 
                 transform: translate(-50%, -50%);
             }
@@ -219,7 +220,7 @@
                     
                     pointer-events: auto;
                     
-                    @for $i from 1 to 6 + 1 {
+                    @for $i from 1 to 7 + 1 {
                         $duration: 0.4s;
                         $head-start: 0.2s;
                         $delay: ($i) * ($duration - $head-start);
