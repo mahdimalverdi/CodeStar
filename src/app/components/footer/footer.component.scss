@@ -71,6 +71,8 @@
             div {
                 flex-direction: row;
                 
+                & > * + * { margin-top: unset }
+                
                 h4 {
                     text-align: start;
                 }

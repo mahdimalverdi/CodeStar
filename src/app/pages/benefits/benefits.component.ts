@@ -10,8 +10,8 @@ import colors, {generateLinearBackground} from '../../utils/colors';
 })
 export class BenefitsComponent {
     public colors = {
-        light: colors.orangered.light,
-        dark: colors.orangered.dark,
+        light: colors.darkOrange.light,
+        dark: colors.darkOrange.dark,
     };
     
     public style = {

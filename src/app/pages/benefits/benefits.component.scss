@@ -31,8 +31,8 @@
     &__top {
         color: styles.$color-gray-98;
         
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: 1fr;
         align-items: flex-start;
         justify-content: space-between;
         
@@ -41,13 +41,14 @@
         padding-top: var(--container-padding-top);
         
         &__text {
-            flex: 1;
-            
             h1 {
                 text-align: center;
             }
             
             ul {
+                width: fit-content;
+                margin: 0 auto;
+                
                 list-style: inside;
                 
                 li {
@@ -94,7 +95,9 @@
                 .icon {
                     position: relative;
                     
-                    width: 40%;
+                    //width: 40%;
+                    width: max-content;
+                    height: 14rem;
                     
                     &::ng-deep {
                         svg {
@@ -121,6 +124,18 @@
     }
 }
 
+@media (min-width: 992px) {
+    .benefits {
+        &__top {
+            grid-template-columns: auto 1fr;
+            
+            &__svg {
+                display: unset;
+            }
+        }
+    }
+}
+
 @media (min-width: 1200px) {
     .benefits {
         &__top {
@@ -128,10 +143,6 @@
                 h1 {
                     text-align: start;
                 }
-            }
-            
-            &__svg {
-                display: unset;
             }
         }
     }

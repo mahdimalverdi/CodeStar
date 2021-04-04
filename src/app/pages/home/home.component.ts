@@ -9,9 +9,9 @@ import colors from '../../utils/colors';
 })
 export class HomeComponent {
     public slideColors = [
-        [colors.purple.light, colors.purple.dark],
-        [colors.blue.light, colors.blue.dark],
-        [colors.green.light, colors.green.dark],
+        colors.purple,
+        colors.blue,
+        colors.green,
     ];
     public slideColorsStyle = {};
     
@@ -19,9 +19,9 @@ export class HomeComponent {
     private currentSlide = 0;
     
     constructor(private meta: Meta) {
-        for (const [i, colors] of this.slideColors.entries()) {
-            this.slideColorsStyle[`--slide-color-${i + 1}-1`] = colors[0];
-            this.slideColorsStyle[`--slide-color-${i + 1}-2`] = colors[1];
+        for (const [i, color] of this.slideColors.entries()) {
+            this.slideColorsStyle[`--slide-color-${i + 1}-1`] = color.light;
+            this.slideColorsStyle[`--slide-color-${i + 1}-2`] = color.dark;
         }
         
         this.updateThemeColor();

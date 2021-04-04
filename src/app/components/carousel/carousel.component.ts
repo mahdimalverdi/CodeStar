@@ -13,7 +13,7 @@ export class CarouselComponent implements AfterViewInit {
     
     public templates: any[] = [];
     public currentSlide = 0;
-    private timeoutTime = 10000;
+    private timeoutTime = 20000;
     private timeout: any;
     
     ngAfterViewInit(): void {
