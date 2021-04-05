@@ -15,7 +15,7 @@ export class TechnologiesComponent {
     
     public technologyGroups: { title: string; technologies: Technology[] }[] = [
         {
-            title: 'فناوری‌های مربوط به دورۀ فرانت‌اند',
+            title: 'برخی از مباحث دوره‌ی Front-End',
             technologies: [
                 {
                     title: 'npm',
@@ -52,7 +52,7 @@ export class TechnologiesComponent {
             ],
         },
         {
-            title: 'فناوری‌های مربوط به دورۀ مهندسی نرم‌افزار',
+            title: 'برخی از مباحث دوره‌ی Software Engineering',
             technologies: [
                 {
                     title: 'Java',
@@ -63,7 +63,7 @@ export class TechnologiesComponent {
                     image: 'c-sharp.svg',
                 },
                 {
-                    title: 'NuGet',
+                    title: 'Package Management',
                     image: 'nuget.svg',
                 },
                 {
@@ -83,7 +83,7 @@ export class TechnologiesComponent {
                     image: 'apm.svg',
                 },
                 {
-                    title: 'Microsoft SQL Server',
+                    title: 'SQL Database',
                     image: 'microsoft-sql-server.svg',
                 },
             ],

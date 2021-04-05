@@ -28,7 +28,7 @@ export class AppComponent {
                             titleSuffix = 'مزایا';
                             break;
                         case    '/technologies' :
-                            titleSuffix = 'فناوری‌ها';
+                            titleSuffix = 'محتوای دوره‌ها';
                             break;
                         case    '/requirements' :
                             titleSuffix = 'پیش‌نیازها';
