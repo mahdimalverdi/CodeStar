@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="47.7px" height="54px" viewBox="0 0 47.7 54">
+    <style type="text/css">
+        .st0 {
+            fill-rule: evenodd;
+            clip-rule: evenodd;
+            fill: #fec617;
+        }
+        
+        .st1 {
+            fill-rule: evenodd;
+            clip-rule: evenodd;
+            fill: #343842;
+        }
+        
+        .st2 {
+            fill-rule: evenodd;
+            clip-rule: evenodd;
+            fill: #1fbbb1;
+        }
+    </style>
+    <defs></defs>
+    <g id="group_1_" transform="translate(8.000000, 4.999500)">
+        <path id="Fill-1_1_" class="st0" d="M39.7,4.7L39.7,4.7C34.8-1.2,27.3-5,19-5C8.4-5-0.8,1.1-5.2,10H30c2.5,0,5-0.9,6.9-2.5
+		C37.9,6.7,38.9,5.7,39.7,4.7"/>
+        <path id="Fill-4_1_"
+              class="st1"
+              d="M-8,22c0,2.4,0.3,4.8,0.9,7H26c3.9,0,7-3.1,7-7s-3.1-7-7-7H-7.1C-7.7,17.2-8,19.6-8,22"/>
+        <path id="Fill-6_1_" class="st2" d="M39.7,39.3L39.7,39.3C34.8,45.2,27.3,49,19,49C8.4,49-0.8,42.9-5.2,34H30c2.5,0,5,0.9,6.9,2.5
+		C37.9,37.3,38.9,38.3,39.7,39.3"/>
+    </g>
+</svg>

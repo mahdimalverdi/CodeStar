@@ -2,12 +2,16 @@
 
 <div class="technologies">
     <h1>کسب مهارت در کار با فناوری‌های مطرح دنیا</h1>
-    <ul>
-        <li *ngFor="let technology of technologies">
-            <img [src]="technology.image" alt=""/>
-            <h3>{{technology.title}}</h3>
-        </li>
-    </ul>
+    
+    <ng-container *ngFor="let group of technologyGroups">
+        <h2>{{group.title}}</h2>
+        <ul>
+            <li *ngFor="let technology of group.technologies">
+                <img [src]="imagesPath + technology.image" alt=""/>
+                <h4>{{technology.title}}</h4>
+            </li>
+        </ul>
+    </ng-container>
 </div>
 
 <div class="concepts">
@@ -17,7 +21,7 @@
             <i></i>
             <i></i>
             <i></i>
-            <h3>{{concept}}</h3>
+            <h4>{{concept}}</h4>
         </li>
     </ul>
 </div>

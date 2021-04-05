@@ -11,55 +11,100 @@ interface Technology {
     styleUrls: ['./technologies.component.scss'],
 })
 export class TechnologiesComponent {
-    public technologies: Technology[] = [
+    public imagesPath = '../../../assets/technologies/';
+    
+    public technologyGroups: { title: string; technologies: Technology[] }[] = [
         {
-            title: 'Java',
-            image: '../../../assets/technologies/java.png',
+            title: 'فناوری‌های مربوط به دورۀ فرانت‌اند',
+            technologies: [
+                {
+                    title: 'npm',
+                    image: 'npm.svg',
+                },
+                {
+                    title: 'Angular',
+                    image: 'angular.svg',
+                },
+                {
+                    title: 'Material',
+                    image: 'material.svg',
+                },
+                {
+                    title: 'TypeScript',
+                    image: 'typescript.svg',
+                },
+                {
+                    title: 'SASS',
+                    image: 'sass.svg',
+                },
+                {
+                    title: 'Jest',
+                    image: 'jest.svg',
+                },
+                {
+                    title: 'Highcharts',
+                    image: 'highcharts.svg',
+                },
+                {
+                    title: 'Ogma',
+                    image: 'ogma.svg',
+                },
+            ],
         },
         {
-            title: 'C#',
-            image: '../../../assets/technologies/c-sharp.png',
-        },
-        {
-            title: 'Asp.Net Core',
-            image: '../../../assets/technologies/asp.png',
-        },
-        {
-            title: 'Angular',
-            image: '../../../assets/technologies/angular.png',
-        },
-        {
-            title: 'TypeScript',
-            image: '../../../assets/technologies/type-script.png',
-        },
-        {
-            title: 'SASS',
-            image: '../../../assets/technologies/sass.png',
-        },
-        {
-            title: 'Elasticsearch',
-            image: '../../../assets/technologies/elasticsearch.png',
-        },
-        {
-            title: 'Kibana',
-            image: '../../../assets/technologies/kibana.png',
-        },
-        {
-            title: 'APM',
-            image: '../../../assets/technologies/apm.png',
-        },
-        {
-            title: 'Microsoft SQL server',
-            image: '../../../assets/technologies/sql-server.png',
+            title: 'فناوری‌های مربوط به دورۀ مهندسی نرم‌افزار',
+            technologies: [
+                {
+                    title: 'Java',
+                    image: 'java.svg',
+                },
+                {
+                    title: 'C#',
+                    image: 'c-sharp.svg',
+                },
+                {
+                    title: 'NuGet',
+                    image: 'nuget.svg',
+                },
+                {
+                    title: 'ASP.NET Core',
+                    image: 'asp.svg',
+                },
+                {
+                    title: 'Elasticsearch',
+                    image: 'elasticsearch.svg',
+                },
+                {
+                    title: 'Kibana',
+                    image: 'kibana.svg',
+                },
+                {
+                    title: 'APM',
+                    image: 'apm.svg',
+                },
+                {
+                    title: 'Microsoft SQL Server',
+                    image: 'microsoft-sql-server.svg',
+                },
+            ],
         },
     ];
     
     public concepts: string [] = [
         'Advanced Object Oriented Programming',
-        'SOLID principles',
+        'SOLID Principles',
         'Test Driven Development',
+        'Continuous Integration',
+        'Continuous Deployment',
+        'Version Control',
+        'GitHub Actions',
+        'JavaScript Object Notation',
         'Application Profiling',
-        'Unit Testing, Integration Testing, Load Testing',
-        'SQL, NoSQL, High Availability Databases',
+        'Unit Testing',
+        'Integration Testing',
+        'Load Testing',
+        'SQL\nNoSQL',
+        'High Availability Databases',
+        'Pair Programming',
     ];
 }

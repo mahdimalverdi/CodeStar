@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="204.1px" height="193.8px" viewBox="0 0 204.1 193.8">
+    <style type="text/css">
+        .st0 {
+            fill: #8084c0;
+        }
+        
+        .st1 {
+            fill: #30436b;
+        }
+        
+        .st2 {
+            fill: #6699a1;
+        }
+        
+        .st3 {
+            fill: #78758c;
+        }
+        
+        .st4 {
+            fill: #aad8b4;
+        }
+    </style>
+    <defs></defs>
+    <g id="symbol_1_" transform="translate(46.27183278401693,10) scale(3)">
+        <polygon id="svg_2_1_" class="st0" points="26.1,-3.3 14.9,22.9 0.1,57.3 34.4,42.8 52.6,35.2 	"/>
+        <polygon id="svg_3_1_" class="st1" points="31.8,28.4 34.4,42.8 52.6,35.2 	"/>
+        <polygon id="svg_4_1_" class="st2" points="26.1,-3.3 31.8,28.4 52.6,35.2 	"/>
+        <polygon id="svg_5_1_" class="st3" points="31.8,28.4 52.6,35.2 14.9,22.9 0.1,57.3 34.4,42.8 	"/>
+        <polygon id="svg_6_1_" class="st4" points="0.1,57.3 14.9,22.9 -15.4,13 	"/>
+        <polygon id="svg_7_1_" class="st2" points="34.4,42.8 37.8,61.3 52.6,35.2 	"/>
+        <polygon id="svg_8_1_" class="st0" points="26.1,-3.3 14.9,22.9 31.8,28.4 	"/>
+    </g>
+</svg>

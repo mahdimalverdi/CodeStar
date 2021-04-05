@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
+    <style type="text/css">
+        .st0 {
+            fill-rule: evenodd;
+            clip-rule: evenodd;
+            fill: #ef4f98;
+        }
+        
+        .st1 {
+            fill-rule: evenodd;
+            clip-rule: evenodd;
+            fill: #2576bc;
+        }
+        
+        .st2 {
+            fill-rule: evenodd;
+            clip-rule: evenodd;
+            fill: #343842;
+        }
+    </style>
+    <defs></defs>
+    <g id="group_1_" transform="translate(5.000000, 5.000000)">
+        <polygon id="Fill-1_1_" class="st0" points="-5,12 49,12 49,-5 -5,-5 	"/>
+        <polygon id="Fill-4_1_" class="st1" points="27,49 49,49 49,34 27,34 	"/>
+        <path id="Rectangle_1_" class="st2" d="M12,12h37c0,9.4-7.6,17-17,17H12l0,0V12z"/>
+    </g>
+</svg>

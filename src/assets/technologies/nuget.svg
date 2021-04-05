@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="508.6px" height="494.1px" viewBox="0 0 508.6 494.1">
+    <style type="text/css">
+        .st0 {
+            fill-rule: evenodd;
+            clip-rule: evenodd;
+            fill: #0f4a7f;
+        }
+        
+        .st1 {
+            filter: url(#Adobe_OpacityMaskFilter);
+        }
+        
+        .st2 {
+            fill-rule: evenodd;
+            clip-rule: evenodd;
+            fill: #ffffff;
+        }
+        
+        .st3 {
+            mask: url(#mask-2_2_);
+            fill-rule: evenodd;
+            clip-rule: evenodd;
+            fill: #0f4a7f;
+        }
+    </style>
+    <defs></defs>
+    <g id="logo_1_" transform="translate(0.000000, 6.000000)">
+        <path id="Fill-12_1_" class="st0" d="M374.4,445.2c-46.7,0-84.7-37.9-84.7-84.7c0-46.7,37.9-84.7,84.7-84.7s84.7,37.9,84.7,84.7
+		C459.1,407.3,421.2,445.2,374.4,445.2 M205.6,251.1c-29.2,0-52.9-23.7-52.9-52.9c0-29.2,23.7-52.9,52.9-52.9s52.9,23.7,52.9,52.9
+		C258.5,227.4,234.8,251.1,205.6,251.1 M378.2,86H236.9c-72,0-130.4,58.4-130.4,130.4v141.3c0,72,58.4,130.4,130.4,130.4h141.3
+		c72,0,130.4-58.4,130.4-130.4V216.4C508.6,144.4,450.2,86,378.2,86"/>
+        <defs>
+            <filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="0" y="-6" width="84.7" height="84.7">
+                <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+            </filter>
+        </defs>
+        <mask maskUnits="userSpaceOnUse" x="0" y="-6" width="84.7" height="84.7" id="mask-2_2_">
+            <g class="st1">
+                <polygon id="path-1_2_" class="st2" points="0,36.3 0,-6 84.7,-6 84.7,78.7 0,78.7 			"/>
+            </g>
+        </mask>
+        <path id="Fill-14_1_" class="st3" d="M84.7,36.3c0,23.4-19,42.3-42.3,42.3C18.9,78.7,0,59.7,0,36.3C0,13,18.9-6,42.3-6
+		C65.7-6,84.7,13,84.7,36.3"/>
+    </g>
+</svg>

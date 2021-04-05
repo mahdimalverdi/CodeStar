@@ -11,19 +11,25 @@
     
     h1,
     h2,
-    h3 {
+    h4 {
         text-align: center;
     }
     
+    h4 {
+        white-space: break-spaces;
+    }
+    
     ul {
+        --size: 10rem;
+        
         direction: ltr;
         
         display: grid;
-        grid-template-columns: repeat(auto-fit, 15rem);
-        justify-content: center;
-        gap: 5rem;
+        grid-template-columns: repeat(auto-fit, minmax(var(--size), 1fr));
+        justify-items: stretch;
+        gap: 4rem;
         
-        margin: 5rem 0 10rem;
+        margin: 4rem 0 10rem;
         
         list-style: none;
     }
@@ -32,18 +38,18 @@
 .technologies {
     padding-top: var(--container-padding-top);
     
+    h1 {
+        margin-bottom: 6rem;
+    }
+    
     ul {
         li {
-            --size: 15rem;
-            
             flex: 1 0 var(--size);
             
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            
-            & > * + * { margin-top: 1rem }
+            display: grid;
+            grid-template-rows: 10rem 1fr;
+            align-items: flex-start;
+            gap: 1rem;
             
             transform: scale(1);
             
@@ -58,8 +64,9 @@
             }
             
             img {
-                width: auto;
-                height: var(--size);
+                width: 100%;
+                height: 100%;
+                
                 object-fit: contain;
             }
         }
@@ -76,12 +83,11 @@
 
 .concepts {
     ul {
-        --size: 15rem;
-        --padding: 5rem;
+        --padding: 3rem;
         --column-size: calc(var(--size) + calc(var(--padding) * 2));
         
-        grid-template-columns: repeat(auto-fit, var(--column-size));
-        justify-content: space-evenly;
+        grid-template-columns: repeat(auto-fit, minmax(var(--column-size), 1fr));
+        justify-items: center;
         
         li {
             position: relative;
@@ -105,8 +111,8 @@
                 
                 transform: scale(1.1);
                 
-                h3 {
-                    font-weight: var(--font-weight-h3--active);
+                h4 {
+                    font-weight: var(--font-weight-h4--active);
                 }
                 
                 i {
@@ -114,9 +120,9 @@
                 }
             }
             
-            @for $li from 1 to 6  + 1 {
+            @for $li from 1 to 15 + 1 {
                 &:nth-child(#{$li}) {
-                    $hue: ($li + 1) * 45;
+                    $hue: ($li + 2) * 40;
                     @if $hue >= 360 {
                         $hue: $hue - 360;
                     }
