@@ -1,32 +1,17 @@
-<app-header theme="dark"></app-header>
+<app-header theme="light"></app-header>
 
-<div class="register">
-    <div class="register__buttons">
-        <a href="https://quera.ir/contest/add_to_contest/kd8anQxp6HZ1j3B/" class="button front-end-register">
-            ثبت نام
-            کارآموزی تابستانه
-            <br/>
-            Front-End
-            <br/>
-            <img class="light" src="../../../assets/logo-light.png" alt="">
-            <img class="dark" src="../../../assets/logo-orange.png" alt="">
-            <br/>
-            کُداستار
-            <br/>
-        </a>
-        <a href="https://quera.ir/contest/add_to_contest/r7XHEClfVbVFwN3/" class="button software-engineering-register">
-            ثبت نام
-            کارآموزی تابستانه
-            <br/>
-            Software Engineering
-            <br/>
-            <img class="light" src="../../../assets/logo-light.png" alt="">
-            <img class="dark" src="../../../assets/logo-blue.png" alt="">
-            <br/>
-            کُداستار
-            <br/>
-        </a>
+<div #registerRef class="register" [style]="style">
+    <div class="frontend" (mouseover)="hoverHandler(true, true)" (mouseout)="hoverHandler(true, false)">
+        <div class="content">
+            <h2>فرانت‌اند</h2>
+        </div>
     </div>
+    
+    <div class="software" (mouseover)="hoverHandler(false, true)" (mouseout)="hoverHandler(false, false)">
+        <div class="content">
+            <h2>مهندسی نرم‌افزار</h2>
+        </div>
+    </div>
+    
+    <div class="overlay"></div>
 </div>
-
-<app-footer></app-footer>

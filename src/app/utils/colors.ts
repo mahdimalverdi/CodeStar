@@ -1,4 +1,12 @@
 const colors = {
+    frontend: {
+        light: '#f3440e',
+        dark: '#f02e08',
+    },
+    software: {
+        light: '#1151b2',
+        dark: '#0e38a1',
+    },
     magenta: {
         light: '#b30068',
         dark: '#4d0029',
@@ -11,7 +19,7 @@ const colors = {
         light: '#1a3366',
         dark: '#001233',
     },
-    blueGreen: {
+    midnightBlue: {
         light: '#2980b9',
         dark: '#2c3e50',
     },

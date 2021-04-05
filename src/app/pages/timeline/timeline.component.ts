@@ -37,7 +37,7 @@ export class TimelineComponent {
     ];
     
     public selection = [
-        colors.blueGreen,
+        colors.midnightBlue,
         colors.darkGreen,
         colors.darkOrange,
         colors.magenta,
