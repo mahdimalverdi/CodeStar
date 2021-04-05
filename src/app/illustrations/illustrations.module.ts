@@ -8,14 +8,16 @@ import { WorkingWithComputerComponent } from './working-with-computer/working-wi
 import { AparatComponent } from './aparat/aparat.component';
 import { InstagramComponent } from './instagram/instagram.component';
 import { TelegramComponent } from './telegram/telegram.component';
+import { FrontendComponent } from './frontend/frontend.component';
+import { SoftwareComponent } from './software/software.component';
 
 @NgModule({
-    declarations: [ComputerSpaceshipComponent, VirusComponent, GraduationCapComponent, WorkingWithComputerComponent, AparatComponent, InstagramComponent, TelegramComponent],
+    declarations: [ComputerSpaceshipComponent, VirusComponent, GraduationCapComponent, WorkingWithComputerComponent, AparatComponent, InstagramComponent, TelegramComponent, FrontendComponent, SoftwareComponent],
     imports: [
         CommonModule,
         RouterModule,
     ],
-    exports: [ComputerSpaceshipComponent, VirusComponent, GraduationCapComponent, WorkingWithComputerComponent, AparatComponent, InstagramComponent, TelegramComponent],
+    exports: [ComputerSpaceshipComponent, VirusComponent, GraduationCapComponent, WorkingWithComputerComponent, AparatComponent, InstagramComponent, TelegramComponent, FrontendComponent, SoftwareComponent],
 })
 export class IllustrationsModule {
 }

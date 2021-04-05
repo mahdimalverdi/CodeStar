@@ -20,7 +20,7 @@
     }
     
     &.frontend-hover {
-        --splitter-half-size: -2%;
+        --splitter-half-size: 2%;
         
         --frontend-size: var(--big-size);
         --software-size: var(--small-size);
@@ -51,12 +51,43 @@
         flex-direction: row;
         
         .content {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-rows: 1fr 20rem 1fr;
             align-items: center;
-            justify-content: center;
+            justify-items: center;
             
             height: 100%;
+            
+            h2 {
+                align-self: flex-end;
+            }
+            
+            .illustration {
+                height: 100%;
+            }
+            
+            a {
+                align-self: flex-start;
+                
+                background: styles.$color-gray-98;
+                color: styles.$color-gray-10;
+                mix-blend-mode: screen;
+                
+                margin-top: 1rem;
+                padding: 0.5em 3em;
+                
+                border-radius: 999rem;
+                
+                transform: scale(1);
+                
+                cursor: pointer;
+                
+                @include styles.transform-transition;
+                
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
         }
     }
     
