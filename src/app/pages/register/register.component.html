@@ -1,32 +1,40 @@
 <app-header theme="light"></app-header>
 
 <div #registerRef class="register" [style]="style">
-    <div class="frontend" (mouseover)="hoverHandler(true, true)" (mouseout)="hoverHandler(true, false)">
-        <div class="content">
-            <h2>Front-End</h2>
-            
-            <div class="illustration">
-                <svg-frontend></svg-frontend>
+    <div class="frontend">
+        <div class="wrapper">
+            <div class="content" (mouseover)="hoverHandler(true, true)" (mouseout)="hoverHandler(true, false)">
+                <h2>Front-End</h2>
+                
+                <div class="illustration">
+                    <svg-frontend></svg-frontend>
+                </div>
+                
+                <a href="https://quera.ir/contest/add_to_contest/kd8anQxp6HZ1j3B/">
+                    <h3>ثبت نام</h3>
+                </a>
             </div>
-            
-            <a href="https://quera.ir/contest/add_to_contest/kd8anQxp6HZ1j3B/">
-                <h3>ثبت نام</h3>
-            </a>
         </div>
+        
+        <div class="multiply"></div>
     </div>
     
-    <div class="software" (mouseover)="hoverHandler(false, true)" (mouseout)="hoverHandler(false, false)">
-        <div class="content">
-            <h2>Software Engineering</h2>
-            
-            <div class="illustration">
-                <svg-software></svg-software>
+    <div class="software">
+        <div class="wrapper">
+            <div class="content" (mouseover)="hoverHandler(false, true)" (mouseout)="hoverHandler(false, false)">
+                <h2>Software Engineering</h2>
+                
+                <div class="illustration">
+                    <svg-software></svg-software>
+                </div>
+                
+                <a href="https://quera.ir/contest/add_to_contest/r7XHEClfVbVFwN3/">
+                    <h3>ثبت نام</h3>
+                </a>
             </div>
-            
-            <a href="https://quera.ir/contest/add_to_contest/r7XHEClfVbVFwN3/">
-                <h3>ثبت نام</h3>
-            </a>
         </div>
+        
+        <div class="multiply"></div>
     </div>
     
     <div class="overlay"></div>
