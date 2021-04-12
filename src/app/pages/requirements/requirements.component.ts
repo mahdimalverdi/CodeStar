@@ -7,7 +7,7 @@ import {Component} from '@angular/core';
 })
 export class RequirementsComponent {
     public requirements: string[] = [
-        'دانشجوی کارشناسی رشتۀ مهندسی کامپیوتر یا علوم کامپیوتر',
+        'دانشجوی کارشناسی مهندسی کامپیوتر، علوم کامپیوتر یا سایر رشته‌های مرتبط',
         'گذراندن درس برنامه‌سازی پیشرفته (Advanced Programming)',
         'آشنایی با HTML و CSS و JavaScript (دورۀ Front-End)',
         'وقت کافی در طول دوره (مرداد و شهریور ۱۴۰۰)، ساعت ۱۰ صبح تا ۶ بعد از ظهر شنبه تا چهارشنبه',
