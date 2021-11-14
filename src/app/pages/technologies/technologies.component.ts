@@ -11,7 +11,7 @@ interface Technology {
     styleUrls: ['./technologies.component.scss'],
 })
 export class TechnologiesComponent {
-    public imagesPath = '../../../assets/technologies/';
+    public imagesPath = 'assets/technologies/';
     
     public technologyGroups: { title: string; technologies: Technology[] }[] = [
         {
