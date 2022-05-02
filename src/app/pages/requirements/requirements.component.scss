@@ -1,160 +1,87 @@
-@use "/src/app/styles";
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
 
-@mixin _status-indicator($color) {
-    content: "";
-    
-    background: $color;
-    
-    display: block;
-    
-    align-self: stretch;
-    
-    width: 0.5rem;
-}
+    header {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 
-@mixin _rounded-corners($side) {
-    border-start-#{$side}-radius: 999rem;
-    border-end-#{$side}-radius: 999rem;
-}
+        h2 {
+            transition: transform var(--animation--duration--slow);
+        }
 
-@mixin _list-item($color, $side-circle) {
-    --color: #{styles.$color-success-light};
-    
-    $side-status-indicator: after;
-    $shadow-horizontal-multiplier: 1;
-    
-    @if $side-circle == end {
-        $side-status-indicator: before;
-        $shadow-horizontal-multiplier: -1;
-    }
-    
-    &::#{$side-status-indicator} {
-        @include _status-indicator($color);
-    }
-    
-    i {
-        @include styles.shadow-offset($shadow-horizontal-multiplier);
-        
-        &::after {
-            border-color: $color;
+        &:not(.fade-in) {
+            h2 {
+                transform: translateY(100%);
+            }
+        }
+
+        &.fade-in {
+            h2 {
+                transform: translateY(0%);
+            }
         }
     }
-    
-    h3 {
-        @include styles.shadow-offset($shadow-horizontal-multiplier);
-        @include _rounded-corners($side-circle);
-    }
-}
 
-h1,
-.requirements,
-.extras {
-    width: 100%;
-    max-width: var(--container-max-width);
-    
-    margin: 0 auto;
-    padding-left: var(--container-inline-padding);
-    padding-right: var(--container-inline-padding);
-    
-    ul {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        
-        & > * + * { margin-top: 5rem }
-        
-        margin-top: 2rem;
-        
-        list-style: none;
-        
-        li {
-            --size: 5rem;
-            --gap: 2rem;
-            
+    main {
+        > ul {
+            direction: ltr;
+
             display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: flex-start;
-            
-            & > * + * { margin-right: var(--gap) }
-            
-            i {
-                position: relative;
-                
-                display: none;
-                
-                width: var(--size);
-                height: var(--size);
-                
-                border-radius: 999rem;
-                
-                &::after {
-                    --border: 1rem solid;
-                    
-                    content: "";
-                    
-                    position: absolute;
-                    top: 0;
-                    left: 1rem;
-                    
-                    width: var(--size);
-                    height: calc(var(--size) * 0.5);
-                    
-                    border-left: var(--border);
-                    border-bottom: var(--border);
-                    
-                    transform: rotate(-45deg);
+            flex-direction: column;
+            gap: 4rem;
+
+            > li {
+                h3 {
+                    transition: opacity var(--animation--duration--slow);
+
+                    &:not(.fade-in) {
+                        opacity: 0;
+                    }
+
+                    &.fade-in {
+                        opacity: 1;
+                    }
                 }
-                
-                @media (min-width: 360px) {
-                    display: block;
+
+                > ul {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 1rem;
+
+                    > li {
+                        flex: 1 0 auto;
+
+                        background-color: var(--color--primary);
+                        color: var(--color--primary-opposite);
+
+	                    width: fit-content;
+	                    
+                        padding: 2rem;
+
+                        border-radius: var(--border-radius);
+
+                        font-family: IRANSansX, sans-serif;
+
+                        transition: transform var(--animation--duration--slow);
+
+                        &::selection {
+                            background-color: var(--color--primary-opposite);
+                            color: var(--color--primary);
+                        }
+
+                        &:not(.fade-in) {
+                            opacity: 0;
+                            transform: scale(0);
+                        }
+
+                        &.fade-in {
+                            opacity: 1;
+                            transform: scale(1);
+                        }
+                    }
                 }
             }
-            
-            h3 {
-                flex: 1;
-                
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                
-                min-height: var(--size);
-                
-                padding: var(--gap);
-                
-                text-align: start;
-            }
         }
     }
-}
-
-h1,
-h2 {
-    text-align: center;
-}
-
-h1 {
-    padding-top: var(--container-padding-top);
-}
-
-h2 {
-    margin-top: 6rem;
-}
-
-.requirements {
-    ul {
-        li {
-            @include _list-item(styles.$color-success-light, start);
-        }
-    }
-}
-
-.extras {
-    ul {
-        li {
-            @include _list-item(styles.$color-gray-90, end);
-        }
-    }
-    
-    margin-bottom: 8rem;
 }

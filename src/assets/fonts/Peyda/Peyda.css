@@ -1,0 +1,61 @@
+﻿/*
+Peyda fonts are considered a proprietary software. To gain information about the laws regarding the use
+of these fonts, please visit www.fontiran.com
+---------------------------------------------------------------------
+This set of fonts are used in this project under the license: (3YFCCT)
+---------------------------------------------------------------------
+*/
+
+@font-face {
+    font-family: Peyda;
+    font-weight: 100;
+    src: url("./Peyda-Thin.woff") format("woff");
+}
+
+@font-face {
+    font-family: Peyda;
+    font-weight: 200;
+    src: url("./Peyda-ExtraLight.woff") format("woff");
+}
+
+@font-face {
+    font-family: Peyda;
+    font-weight: 300;
+    src: url("./Peyda-Light.woff") format("woff");
+}
+
+@font-face {
+    font-family: Peyda;
+    font-weight: 400;
+    src: url("./Peyda-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: Peyda;
+    font-weight: 500;
+    src: url("./Peyda-Medium.woff") format("woff");
+}
+
+@font-face {
+    font-family: Peyda;
+    font-weight: 600;
+    src: url("./Peyda-SemiBold.woff") format("woff");
+}
+
+@font-face {
+    font-family: Peyda;
+    font-weight: 700;
+    src: url("./Peyda-Bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: Peyda;
+    font-weight: 800;
+    src: url("./Peyda-ExtraBold.woff") format("woff");
+}
+
+@font-face {
+    font-family: Peyda;
+    font-weight: 900;
+    src: url("./Peyda-Black.woff") format("woff");
+}

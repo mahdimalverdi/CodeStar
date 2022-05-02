@@ -1,0 +1,72 @@
+﻿/**
+*
+*	Name:			IRANSansX Fonts
+*	Version:			1.0
+*	Author:			Moslem Ebrahimi (moslemebrahimi.com)
+*	Created on:		Apr 22, 2021
+*	Updated on:		Apr 22, 2021
+*	Website:			http://fontiran.com
+*	Copyright:		Commercial/Proprietary Software
+--------------------------------------------------------------------------------------
+فونتایران سنس Xا یک نرم افزار مالکیتی محسوب می شود. جهت آگاهی از قوانین استفاده از این فونت ها لطفا به وب سایت (فونت ایران دات کام) مراجعه نمایید
+--------------------------------------------------------------------------------------
+IRANSansX fonts are considered a proprietary software. To gain information about the laws regarding the use of these fonts, please visit www.fontiran.com
+--------------------------------------------------------------------------------------
+This set of fonts are used in this project under the license: SNBEKD
+------------------------------------------------------------------------------------- fonts/-
+*
+**/
+
+@font-face {
+    font-family: IRANSansX;
+    font-weight: 100;
+    src: url("./IRANSansX-Thin.woff") format("woff");
+}
+
+@font-face {
+    font-family: IRANSansX;
+    font-weight: 200;
+    src: url("./IRANSansX-ExtraLight.woff") format("woff");
+}
+
+@font-face {
+    font-family: IRANSansX;
+    font-weight: 300;
+    src: url("./IRANSansX-Light.woff") format("woff");
+}
+
+@font-face {
+    font-family: IRANSansX;
+    font-weight: 400;
+    src: url("./IRANSansX-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: IRANSansX;
+    font-weight: 500;
+    src: url("./IRANSansX-Medium.woff") format("woff");
+}
+
+@font-face {
+    font-family: IRANSansX;
+    font-weight: 600;
+    src: url("./IRANSansX-SemiBold.woff") format("woff");
+}
+
+@font-face {
+    font-family: IRANSansX;
+    font-weight: 700;
+    src: url("./IRANSansX-Bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: IRANSansX;
+    font-weight: 800;
+    src: url("./IRANSansX-ExtraBold.woff") format("woff");
+}
+
+@font-face {
+    font-family: IRANSansX;
+    font-weight: 900;
+    src: url("./IRANSansX-Black.woff") format("woff");
+}

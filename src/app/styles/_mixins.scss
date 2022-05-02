@@ -1,9 +1,0 @@
-@use "./color";
-
-@mixin shadow-offset($horizontal-multiplier) {
-    box-shadow: #{$horizontal-multiplier * 0.2rem} 0.2rem 0.8rem color.$shade-dark-gray-90;
-}
-
-@mixin transform-transition($duration: 0.1s) {
-    transition: transform #{$duration} ease-in-out;
-}

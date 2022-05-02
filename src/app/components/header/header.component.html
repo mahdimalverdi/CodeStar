@@ -1,20 +1,19 @@
-<header class="header" [ngClass]="[theme, open ? 'open' : '']">
-    <button (click)="toggleOpen()" class="header__menu">
-        <span class="header__menu__icon material-icons" aria-hidden="false" aria-label="منو">menu</span>
-        <span class="header__menu__background"></span>
-    </button>
-    
-    <nav class="header__nav">
-        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">خانه</a>
-        <a routerLink="/benefits" routerLinkActive="active">مزایا</a>
-        <a routerLink="/technologies" routerLinkActive="active">محتوای دوره‌ها</a>
-        <a routerLink="/requirements" routerLinkActive="active">پیش‌نیازها</a>
-        <a routerLink="/timeline" routerLinkActive="active">زمان‌بندی</a>
-        <a routerLink="/register" routerLinkActive="active">ثبت نام</a>
-    </nav>
-    
-    <a routerLink="/" class="header__logo">
-        <div class="header__logo__text">کداستار</div>
-        <img class="header__logo__image" [src]="'assets/logo/'+theme+'.png'" alt="Star Academy Logo"/>
+<header #header>
+    <a routerLink="/">
+        <div class="logo">
+            CodeStar
+            <logo-code-star></logo-code-star>
+        </div>
     </a>
+
+    <nav>
+        <ul>
+            <li><a href="#roadmap">نقشه راه</a></li>
+            <li><a href="#content">محتوا</a></li>
+            <li><a href="#concepts">مفاهیم</a></li>
+            <li><a href="#requirements">پیش‌نیازها</a></li>
+            <li><a href="#numbers">آمار و ارقام</a></li>
+            <li><a href="#faq">سوالات متداول</a></li>
+        </ul>
+    </nav>
 </header>

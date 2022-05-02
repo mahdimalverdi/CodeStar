@@ -1,0 +1,91 @@
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    header {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+
+        h2 {
+            transition: transform var(--animation--duration--slow);
+        }
+
+        &:not(.fade-in) {
+            h2 {
+                transform: translateY(100%);
+            }
+        }
+
+        &.fade-in {
+            h2 {
+                transform: translateY(0%);
+            }
+        }
+    }
+
+    main {
+        margin: auto;
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10rem;
+
+            li {
+                flex: 1 0 auto;
+
+                .number,
+                .title {
+                    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+
+                    .text {
+                        transition: transform var(--animation--duration--slow) var(--animation--duration--slow);
+                    }
+                }
+
+                .number {
+                    --starting-position-multiplier: 1;
+	
+	                font-size: clamp(10rem, 1rem + 6vw, 14.4rem);
+                    font-weight: 700;
+
+                    .text {
+                        height: 1em;
+                    }
+                }
+
+                .line {
+                    border-block-end: 0.2rem solid currentColor;
+
+                    transition: transform var(--animation--duration--slow);
+                }
+
+                .title {
+                    --starting-position-multiplier: -1;
+	
+	                font-size: clamp(2.8rem, 1rem + 2vw, 3.6rem);
+                }
+
+                &:not(.fade-in) {
+                    .text {
+                        transform: translateY(calc(var(--starting-position-multiplier) * 100%));
+                    }
+
+                    .line {
+                        transform: scaleX(0);
+                    }
+                }
+
+                &.fade-in {
+                    .text {
+                        transform: translateY(0%);
+                    }
+
+                    .line {
+                        transform: scaleX(1);
+                    }
+                }
+            }
+        }
+    }
+}

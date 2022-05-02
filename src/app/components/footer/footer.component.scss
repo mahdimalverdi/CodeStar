@@ -1,82 +1,57 @@
-@use "/src/app/styles";
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 5rem;
+    row-gap: 2rem;
 
-:host {
-    margin-top: auto;
-    
-    footer {
-        div {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            
-            & > * + * { margin-top: 1rem }
-            
-            max-width: var(--container-max-width);
-            width: 100%;
-            
-            margin: 0 auto;
-            padding: 1rem var(--container-inline-padding);
-            
-            h4 {
-                flex: 1;
-                
-                text-align: center;
-            }
-            
-            ul {
+    padding-block: 2rem;
+    padding-inline: var(--full-width-padding-inline);
+
+    font-size: 1.8rem;
+
+    ul {
+        display: flex;
+        gap: 3rem;
+
+        margin-inline-start: auto;
+
+        li {
+            a {
                 display: flex;
-                
-                & > * + * { margin-right: 2rem }
-                
-                list-style: none;
-                
-                li {
-                    display: inline;
-                    
-                    width: 2rem;
-                    
-                    a {
-                        color: inherit;
-                        
-                        &::ng-deep {
-                            fill: currentColor;
-                        }
-                    }
-                    
-                    &.aparat {
-                        &:hover {
-                            color: #ed145b;
-                        }
-                    }
-                    
-                    &.instagram {
-                        &:hover {
-                            color: #fd1d1d;
-                        }
-                    }
-                    
-                    &.telegram {
-                        &:hover {
-                            color: #25a3e2;
-                        }
+                flex-direction: column;
+                gap: 0.2rem;
+
+                &::after {
+                    content: "";
+
+                    display: block;
+
+                    border-block-end: 0.2rem solid currentColor;
+
+                    transform: scaleX(0);
+
+                    transition: transform var(--animation--duration--fast);
+                }
+
+                &:hover {
+                    &::after {
+                        transform: scaleX(1);
                     }
                 }
             }
         }
     }
-    
-    @media (min-width: 576px) {
-        footer {
-            div {
-                flex-direction: row;
-                
-                & > * + * { margin-top: unset }
-                
-                h4 {
-                    text-align: start;
-                }
-            }
+}
+
+@media (max-width: 800px) {
+    footer {
+        justify-content: center;
+
+        text-align: center;
+
+        ul {
+            margin-inline: auto;
         }
     }
 }

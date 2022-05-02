@@ -1,17 +1,31 @@
-<app-header theme="dark"></app-header>
-<div class="timeline" [style]="style">
-    <h1>زمان‌بندی</h1>
-    <ul>
-        <li *ngFor="let timeline of timelines">
-            <div class="head">
-                <h2>{{timeline.title}}</h2>
-                <h4>{{timeline.event}}</h4>
-            </div>
-            <div class="body">
-                <h3>{{timeline.description}}</h3>
-            </div>
-        </li>
-    </ul>
-</div>
+<div class="divider divider--top"></div>
 
-<app-footer></app-footer>
+<section #section id="roadmap">
+    <header>
+        <h2>نقشه راه</h2>
+    </header>
+
+    <main>
+        <ul>
+            <li *ngFor="let item of items">
+                <div class="card">
+                    <div class="content">
+                        <h3 class="title">{{ item.title }}</h3>
+                        <div class="description">
+                            <p *ngFor="let paragraph of item.description">{{ paragraph }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="circle">
+                    <div class="line"></div>
+                    <div class="date">
+                        <div class="day">{{ item.day }}</div>
+                        <div class="month">{{ item.month }}</div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </main>
+</section>
+
+<div class="divider divider--bottom"></div>

@@ -1,126 +1,199 @@
-@use "assets/fonts/fontiran.css";
-@use "/src/app/styles";
+// VARIABLES
+:root {
+    --color-gray-98: hsl(210, 10%, 98%);
+    --color-gray-90: hsl(210, 10%, 90%);
+    --color-gray-80: hsl(210, 10%, 80%);
+    --color-gray-70: hsl(210, 10%, 70%);
+    --color-gray-40: hsl(210, 10%, 40%);
+    --color-gray-30: hsl(210, 10%, 30%);
+    --color-gray-20: hsl(210, 10%, 20%);
+    --color-gray-10: hsl(210, 10%, 10%);
 
+    --color--primary: hsl(210, 40%, 15%);
+    --color--primary-opposite: var(--color-gray-98);
+
+    --color--default-background: var(--color--primary-opposite);
+    --color--default-foreground: var(--color--primary);
+
+    --color--body-background: var(--color--default-background);
+    --color--body-foreground: var(--color--default-foreground);
+
+    --color--box-shadow--subtle: hsla(210, 10%, 10%, 12%);
+    --box-shadow--subtle: 0 0.2rem 1rem 0 var(--color--box-shadow--subtle);
+
+    --section-padding-block: 10rem;
+    --minimum-inline-padding: 2rem;
+
+    --full-width: 160rem;
+    --full-width-padding-inline: max((100% - var(--full-width)) / 2, var(--minimum-inline-padding));
+
+    --border-radius: 0.4rem;
+
+    --animation--duration--fast: 0.2s;
+    --animation--duration--normal: 0.5s;
+    --animation--duration--slow: 1s;
+}
+
+// RESET
 *,
 *::before,
 *::after {
-    background: none;
-    
     box-sizing: border-box;
-    
+
     margin: 0;
     padding: 0;
-    
-    border: none;
-    outline: none;
-    
-    font-family: peyda, sans-serif;
-    
-    line-height: 150%;
-    text-decoration: none;
+
+    -webkit-tap-highlight-color: transparent;
 }
 
-*:focus {
-    outline: none;
-}
-
-*::-webkit-scrollbar {
-    width: 1rem;
-}
-
-*::-webkit-scrollbar-thumb {
-    background: #bfbfbf;
-    
-    border: none;
-    border-radius: 1rem;
+::selection {
+    background-color: var(--color--primary);
+    color: var(--color--primary-opposite);
 }
 
 html {
-    font-size: 62.5%;
-    font-weight: 300;
-}
-
-html,
-body {
     overflow-x: hidden;
-    
-    min-height: 100vh;
-    
+
+    font-family: Peyda, sans-serif;
+    font-size: 62.5%;
+
     scroll-behavior: smooth;
 }
 
-body {
-    background: styles.$color-gray-98;
-    color: styles.$color-gray-10;
-    
-    margin: 0;
-    
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+input,
+label,
+select,
+textarea,
+button,
+fieldset,
+legend,
+datalist,
+output,
+option,
+optgroup {
+    font-family: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+button,
+.button {
+    background-color: var(--color--primary);
+    color: var(--color--primary-opposite);
+
+    display: block;
+
+    min-width: 16rem;
+    width: fit-content;
+
+    padding: 0.5em 2em;
+
+    border: none;
+    border-radius: var(--border-radius);
+
+    font-size: clamp(1.8rem, 1rem + 1vw, 2rem);
+    font-weight: 700;
+    text-align: center;
+
+    cursor: pointer;
+
+    &::selection {
+        background-color: var(--color--primary-opposite);
+        color: var(--color--primary);
+    }
+}
+
+input {
+    &:focus {
+        outline: none;
+    }
+
+    &[type="file"] {
+        display: none;
+    }
+}
+
+img {
+    display: block;
 }
 
 svg {
-    display: flex;
+    fill: currentColor;
+
+    display: block;
+
+    width: 1em;
+    height: 1em;
 }
 
-.material-icons {
-    display: flex;
-    
-    font-family: "Material Icons", sans-serif !important;
-}
-
+// MAIN
 body {
-    --container-max-width: 1200px;
-    --container-padding-top: 16rem;
-    --container-inline-padding: 2rem;
-    
-    --font-size-h1: 2.4rem;
-    --font-size-h2: 2rem;
-    --font-size-h3: 1.6rem;
-    --font-size-h4: 1.2rem;
-    --font-size-header-logo: 2.4rem;
-    --font-size-header-nav: var(--font-size-h3);
-    
-    --font-weight-h1: 700;
-    --font-weight-h2: 600;
-    --font-weight-h3: 300;
-    --font-weight-h3--active: 500;
-    --font-weight-h4: 500;
-    --font-weight-header-logo: 700;
-    --font-weight-header-nav: var(--font-weight-h4);
-    --font-weight-header-nav--active: var(--font-weight-h2);
-    
-    @media (min-width: 576px) {
-        --container-inline-padding: 4rem;
-    }
-    
-    @media (min-width: 768px) {
-        --font-size-h1: 3.2rem;
-        --font-size-h2: 2.4rem;
-        --font-size-h3: 2rem;
-        --font-size-h4: 1.6rem;
-        --font-size-header-nav: var(--font-size-h4);
-    }
-    
-    @media (min-width: 992px) {
-    }
-    
-    @media (min-width: 1200px) {
-        --font-size-h1: 3.6rem;
-        --font-size-h2: 2.8rem;
-        --font-size-h3: 2.4rem;
-        --font-size-h4: 1.6rem;
-    }
+    background-color: var(--color--body-background);
+    color: var(--color--body-foreground);
+
+    font-size: clamp(1.6rem, 1rem + 1vw, 1.8rem);
 }
 
-@for $i from 1 to 6 + 1 {
-    h#{$i} {
-        font-size: var(--font-size-h#{$i});
-        font-weight: var(--font-weight-h#{$i});
-    }
+section {
+    overflow-x: hidden;
+
+    min-height: 100vh;
+
+    padding-block: var(--section-padding-block);
+    padding-inline: var(--full-width-padding-inline);
+}
+
+h1 {
+    font-size: clamp(3.6rem, 1rem + 4vw, 7.2rem);
+    font-weight: 800;
+}
+
+h2 {
+    font-size: clamp(3.2rem, 1rem + 4vw, 4.8rem);
+    font-weight: 700;
+}
+
+h3 {
+    font-size: clamp(2.4rem, 1rem + 3vw, 3.8rem);
+    font-weight: 600;
 }
 
 p {
-    font-size: var(--font-size-h4);
-    font-weight: var(--font-weight-h4);
+    font-family: IRANSansX, sans-serif;
+    font-size: clamp(1.6rem, 1rem + 0.8vw, 2.4rem);
+    line-height: 1.5;
+}
+
+.divider {
+    background-color: var(--color--primary);
+
+    height: 10rem;
+
+    &--top {
+        margin-block-end: -0.2rem;
+        clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
+    }
+
+    &--bottom {
+        margin-block-start: -0.2rem;
+        clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+    }
+}
+
+@media (max-width: 800px) {
+    section {
+        header {
+            h2 {
+                text-align: center;
+            }
+        }
+    }
 }

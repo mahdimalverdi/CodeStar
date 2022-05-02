@@ -1,0 +1,147 @@
+section {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    .watermark {
+        position: absolute;
+        inset-inline-end: 50%;
+
+        transform: translateX(-50%);
+
+        font-size: 26vw;
+        font-weight: 900;
+        text-transform: uppercase;
+
+        pointer-events: none;
+        user-select: none;
+
+        transition: opacity var(--animation--duration--slow) 0.4s;
+
+        &:not(.fade-in) {
+            opacity: 0;
+        }
+
+        &.fade-in {
+            opacity: 0.05;
+        }
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        max-width: 100rem;
+
+        h1 {
+            .line {
+                clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+
+                .text {
+                    transition: transform var(--animation--duration--slow);
+                }
+
+                &:not(.fade-in) {
+                    .text {
+                        transform: translateY(100%);
+                    }
+                }
+
+                &.fade-in {
+                    .text {
+                        transform: translateY(0%);
+                    }
+                }
+            }
+        }
+
+        p {
+            transition: clip-path var(--animation--duration--slow), transform var(--animation--duration--slow);
+
+            &:not(.fade-in) {
+                clip-path: polygon(99% 0%, 100% 0%, 100% 100%, 99% 100%);
+                transform: translateY(2rem);
+            }
+
+            &.fade-in {
+                clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+                transform: translateY(0);
+            }
+        }
+
+        a {
+            margin-block-start: 4rem;
+
+            transition: opacity var(--animation--duration--normal), transform var(--animation--duration--slow);
+
+            &:not(.fade-in) {
+                opacity: 0;
+                transform: translateY(3rem);
+            }
+
+            &.fade-in {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            &:hover {
+                background-color: var(--color--primary-opposite);
+                color: var(--color--primary);
+
+                outline: 0.2rem solid currentColor;
+            }
+        }
+    }
+
+    .scroll-indicator {
+        position: absolute;
+        inset-block-end: 6rem;
+        inset-inline-end: var(--full-width-padding-inline);
+        overflow: hidden;
+
+        font-size: 7.2rem;
+
+        pointer-events: none;
+        user-select: none;
+
+        .arrow {
+            animation: hero-scroll-indicator-animation 2s infinite;
+        }
+    }
+}
+
+@keyframes hero-scroll-indicator-animation {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    20%,
+    80% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+@media (max-width: 800px) {
+    section {
+        main {
+            align-items: center;
+
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    section {
+        .scroll-indicator {
+            display: none;
+        }
+    }
+}

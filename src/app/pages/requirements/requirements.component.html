@@ -1,25 +1,97 @@
-<app-header theme="dark"></app-header>
+<section #frontendSection id="requirements">
+    <header>
+        <h2>پیش‌نیازهای دوره فرانت‌اند</h2>
+    </header>
 
-<h1>پیش‌نیازها</h1>
+    <main>
+        <ul>
+            <li>
+                <h3>HTML</h3>
+                <ul>
+                    <li>Basic Knowledge</li>
+                    <li>Form Validation</li>
+                    <li>Input Types (password, checkbox, ...)</li>
+                    <li>Input Attributes (value, min, max, ...)</li>
+                </ul>
+            </li>
+            <li>
+                <h3>CSS</h3>
+                <ul>
+                    <li>Flexbox Layout</li>
+                    <li>Grid Layout</li>
+                    <li>Pseudo Selectors (:hover, :focus, ...)</li>
+                    <li>Pseudo Elements (::before, ::after, ...)</li>
+                    <li>Font Management</li>
+                    <li>Image Management</li>
+                    <li>Responsiveness & Media Queries</li>
+                    <li>Transitions & Animations</li>
+                </ul>
+            </li>
+            <li>
+                <h3>JavaScript</h3>
+                <ul>
+                    <li>DOM Manipulation</li>
+                    <li>Event Handling</li>
+                    <li>String Manipulation</li>
+                    <li>Regex</li>
+                    <li>Array Methods (forEach, filter, map, ...)</li>
+                    <li>Async/Await</li>
+                    <li>Promise</li>
+                    <li>Fetch API</li>
+                    <li>Storage Management (cookie, localStorage, ...)</li>
+                    <li>Web Animation API</li>
+                </ul>
+            </li>
+        </ul>
+    </main>
+</section>
 
-<div class="requirements">
-    <h2>موارد ضروری</h2>
-    <ul>
-        <li *ngFor="let requirement of requirements">
-            <i></i>
-            <h3>{{requirement}}</h3>
-        </li>
-    </ul>
-</div>
+<section #softwareSection>
+    <header>
+        <h2>پیش‌نیازهای دوره مهندسی نرم‌افزار</h2>
+    </header>
 
-<div class="extras">
-    <h2>موارد غیر ضروری اما مفید</h2>
-    <ul>
-        <li *ngFor="let extra of extras">
-            <h3>{{extra}}</h3>
-            <i></i>
-        </li>
-    </ul>
-</div>
+    <main>
+        <ul>
+            <li>
+                <h3>Data Structures</h3>
+                <ul>
+                    <li>List</li>
+                    <li>Set</li>
+                    <li>Map</li>
+                    <li>Stack</li>
+                    <li>Queue</li>
+                    <li>Graph</li>
+                </ul>
+            </li>
+            <li>
+                <h3>Algorithms</h3>
+                <ul>
+                    <li>Sort</li>
+                    <li>Tree</li>
 
-<app-footer></app-footer>
+                    <li>Dynamic Programming</li>
+                </ul>
+            </li>
+            <li>
+                <h3>Object-Oriented Programming</h3>
+                <ul>
+                    <li>Inheritance</li>
+                    <li>Abstraction</li>
+                    <li>Polymorphism</li>
+                    <li>Encapsulation</li>
+                </ul>
+            </li>
+            <li>
+                <h3>Not Necessary But Good to Know</h3>
+                <ul>
+                    <li>Git</li>
+                    <li>Regex</li>
+                    <li>Unit Testing</li>
+                    <li>Greedy Algorithm</li>
+                    <li>Working With APIs</li>
+                </ul>
+            </li>
+        </ul>
+    </main>
+</section>

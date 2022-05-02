@@ -1,0 +1,103 @@
+section {
+    background-color: var(--color--primary);
+    color: var(--color--primary-opposite);
+
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    *::selection {
+        background-color: var(--color--primary-opposite);
+        color: var(--color--primary);
+    }
+
+    header {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+
+        h2 {
+            transition: transform var(--animation--duration--slow);
+        }
+
+        &:not(.fade-in) {
+            h2 {
+                transform: translateY(100%);
+            }
+        }
+
+        &.fade-in {
+            h2 {
+                transform: translateY(0%);
+            }
+        }
+    }
+
+    main {
+        ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+
+            li {
+                --padding: 4rem;
+
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+
+                padding: var(--padding);
+
+                h3 {
+                    transition: opacity var(--animation--duration--normal), transform var(--animation--duration--slow);
+
+                    &:not(.fade-in) {
+                        opacity: 0;
+                        transform: translateY(-2rem);
+                    }
+
+                    &.fade-in {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                p {
+                    transition: opacity var(--animation--duration--normal), transform var(--animation--duration--slow);
+
+                    &:not(.fade-in) {
+                        opacity: 0;
+                        transform: translateY(2rem);
+                    }
+
+                    &.fade-in {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1080px) {
+    section {
+        main {
+            ul {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    section {
+        main {
+            ul {
+                li {
+                    align-items: center;
+
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

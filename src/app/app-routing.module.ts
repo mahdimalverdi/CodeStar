@@ -1,57 +1,14 @@
 import {NgModule} from '@angular/core';
-import {DefaultUrlSerializer, RouterModule, Routes, UrlSerializer, UrlTree} from '@angular/router';
-
-class LowerCaseUrlSerializer extends DefaultUrlSerializer {
-    parse(url: string): UrlTree {
-        return super.parse(url.toLowerCase());
-    }
-}
+import {RouterModule, Routes} from '@angular/router';
+import {AppComponent} from './app.component';
 
 const routes: Routes = [
-    {
-        path: '',
-        pathMatch: 'full',
-        loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
-        data: {animation: 'home'},
-    },
-    {
-        path: 'technologies',
-        loadChildren: () => import('./pages/technologies/technologies.module').then(m => m.TechnologiesModule),
-        data: {animation: 'technologies'},
-    },
-    {
-        path: 'benefits',
-        loadChildren: () => import('./pages/benefits/benefits.module').then(m => m.BenefitsModule),
-        data: {animation: 'benefits'},
-    },
-    {
-        path: 'requirements',
-        loadChildren: () => import('./pages/requirements/requirements.module').then(m => m.RequirementsModule),
-        data: {animation: 'requirements'},
-    },
-    {
-        path: 'timeline',
-        loadChildren: () => import('./pages/timeline/timeline.module').then(m => m.TimelineModule),
-        data: {animation: 'timeline'},
-    },
-    {
-        path: 'register',
-        loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterModule),
-        data: {animation: 'register'},
-    },
-    {path: '**', redirectTo: '/'},
+    {path: '', pathMatch: 'full', component: AppComponent},
+    {path: '*', redirectTo: ''},
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, {
-        initialNavigation: 'enabled',
-    })],
+    imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule],
-    providers: [
-        {
-            provide: UrlSerializer,
-            useClass: LowerCaseUrlSerializer,
-        }],
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

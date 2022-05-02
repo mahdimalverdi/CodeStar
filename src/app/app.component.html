@@ -1,3 +1,15 @@
-<div class="app" [@routeAnimation]="outlet?.activatedRouteData['animation']">
-    <router-outlet #outlet="outlet"></router-outlet>
+<div id="app">
+    <app-header></app-header>
+
+    <app-hero></app-hero>
+    <app-timeline></app-timeline>
+    <app-content></app-content>
+    <app-concepts></app-concepts>
+    <app-requirements></app-requirements>
+    <app-numbers></app-numbers>
+    <app-faq></app-faq>
+
+    <app-footer></app-footer>
 </div>
+
+<div class="noise"></div>
