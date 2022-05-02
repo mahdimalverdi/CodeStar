@@ -29,7 +29,7 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: 'dist/CodeStar'
+    SourceFolder: 'dist/code-star'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
