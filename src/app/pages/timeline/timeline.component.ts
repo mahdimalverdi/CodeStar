@@ -131,7 +131,7 @@ export class TimelineComponent implements AfterViewInit {
         },
         {
             title: 'پایان کارآموزی',
-            day: 4,
+            day: 11,
             month: 'شهریور',
             description: [
                 `
